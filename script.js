@@ -19,10 +19,30 @@ fetch("Soal.json")
     timerDurationMinutes = data.timer_menit || 60;
     questionsData = data.questions || [];
 
-    // Set informasi logo & lembaga jika ada
-    if (data.logo) document.getElementById("logo-lembaga").src = data.logo;
-    if (data.lembaga) document.getElementById("disp-lembaga").textContent = data.lembaga;
-    if (data.sub_lembaga) document.getElementById("disp-sub-lembaga").textContent = data.sub_lembaga;
+    // Set informasi logo & lembaga pada halaman login
+    if (data.logo) {
+      document.getElementById("logo-lembaga").src = data.logo;
+      if (document.getElementById("logo-lembaga-cbt")) {
+        document.getElementById("logo-lembaga-cbt").src = data.logo;
+      }
+    }
+    if (data.lembaga) {
+      document.getElementById("disp-lembaga").textContent = data.lembaga;
+      if (document.getElementById("disp-lembaga-cbt")) {
+        document.getElementById("disp-lembaga-cbt").textContent = data.lembaga;
+      }
+    }
+    if (data.sub_lembaga) {
+      document.getElementById("disp-sub-lembaga").textContent = data.sub_lembaga;
+      if (document.getElementById("disp-sub-lembaga-cbt")) {
+        document.getElementById("disp-sub-lembaga-cbt").textContent = data.sub_lembaga;
+      }
+    }
+
+    // Tampilkan durasi di tabel informasi
+    if (document.getElementById("disp-durasi")) {
+      document.getElementById("disp-durasi").textContent = timerDurationMinutes;
+    }
   })
   .catch(err => {
     console.error(err);
@@ -41,20 +61,22 @@ document.getElementById("form-identitas").addEventListener("submit", function(e)
     return;
   }
 
-  // Simpan Identitas Peserta
+  // Simpan Identitas Peserta Lengkap
   userIdentitas = {
     nama: document.getElementById("nama").value,
     sekolah: document.getElementById("sekolah").value,
-    nisn: document.getElementById("nisn").value
+    kelas: document.getElementById("kelas").value,
+    nisn: document.getElementById("nisn").value,
+    daerah: document.getElementById("daerah").value
   };
 
   // Switch Tampilan ke Arena CBT
   document.getElementById("login-card").classList.add("hidden");
   document.getElementById("cbt-container").classList.remove("hidden");
 
-  // Render Identitas Siswa di Header
+  // Render Identitas Siswa di Header CBT
   document.getElementById("disp-nama").textContent = userIdentitas.nama.toUpperCase();
-  document.getElementById("disp-nisn").textContent = userIdentitas.nisn;
+  document.getElementById("disp-nisn").textContent = `${userIdentitas.nisn} (${userIdentitas.kelas})`;
 
   // Jalankan CBT & Timer
   initCBT();
@@ -91,7 +113,7 @@ function startTimer(totalSeconds) {
   }, 1000);
 }
 
-// 5. Render Soal & Opsi Jawaban (Updated: innerHTML untuk MathJax/LaTeX)
+// 5. Render Soal & Opsi Jawaban
 function loadQuestion(index) {
   const q = questionsData[index];
   if (!q) return;
@@ -129,7 +151,6 @@ function loadQuestion(index) {
 
       // Event listener saat opsi diklik
       optionRow.addEventListener("click", (e) => {
-        // Mencegah double trigger dari element radio internal
         if (e.target.tagName !== "INPUT") {
           pilihJawaban(q.No, key);
         }
@@ -139,7 +160,7 @@ function loadQuestion(index) {
     }
   });
 
-  // Re-render MathJax untuk rumus matematika/fisika
+  // Re-render MathJax untuk rumus
   if (window.MathJax) {
     MathJax.typesetPromise();
   }
@@ -166,7 +187,7 @@ function navigasi(direction) {
   }
 }
 
-// 8. Render Panel Bulatan Angka Navigasi (Merah = Belum, Biru = Sudah)
+// 8. Render Panel Bulatan Angka Navigasi
 function renderNumberGrid() {
   const grid = document.getElementById("number-grid");
   grid.innerHTML = "";
@@ -186,7 +207,7 @@ function renderNumberGrid() {
   });
 }
 
-// 9. Update Warna Bulatan Navigasi
+// 9. Update Warna Bulatan Navigasi (Merah = Belum, Biru = Sudah)
 function updateGridStatus() {
   questionsData.forEach((q, idx) => {
     const circle = document.getElementById(`circle-num-${idx}`);
@@ -194,14 +215,12 @@ function updateGridStatus() {
 
     circle.className = "circle-btn";
 
-    // Cek apakah sudah dijawab (Biru = Dijawab, Merah = Belum)
     if (userAnswers[q.No]) {
       circle.classList.add("answered");
     } else {
       circle.classList.add("unanswered");
     }
 
-    // Tandai soal aktif saat ini
     if (idx === currentIndex) {
       circle.classList.add("active");
     }
@@ -226,8 +245,6 @@ function submitJawaban() {
       <p>Terima kasih telah mengikuti ujian.</p>
     </div>
   `;
-  
-  // Catatan: Fungsi pengiriman webhook POST akan disambungkan penuh di Phase 2.
 }
 
 function toggleNavigator() {
