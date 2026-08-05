@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TEMA: FUTURISTIC AI SOFT CREAM
+   TEMA: FUTURISTIC AI SOFT CREAM (CBT-KIBI v1.1)
    Warna Utama: Soft Cream (#FDFBF7), Off-White (#F7F4EF), Warm Gold (#D4A373)
    ========================================================================== */
 
@@ -43,12 +43,12 @@ body {
 }
 
 /* ==========================================
-   1. PAGE 1: CARD LOGIN FUTURISTIK & INFO KEGIATAN
+   1. CARD LAYOUT (PAGE 1 & PAGE 2)
    ========================================== */
 .card {
-  max-width: 650px; /* Diperlebar agar judul & teks instansi tidak flip line */
-  width: 90%;
-  margin: 40px auto;
+  max-width: 680px;
+  width: 92%;
+  margin: 35px auto;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   padding: 35px 40px;
@@ -72,7 +72,7 @@ body {
 }
 
 .header-welcome h2 {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   color: var(--brand-purple);
   margin-bottom: 6px;
   font-weight: 700;
@@ -80,18 +80,123 @@ body {
 }
 
 .header-welcome h3 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--accent-warm);
   font-weight: 600;
 }
 
-/* Box Informasi Kegiatan (Terpisah Jelas & Ciamik) */
+/* Form Identitas & Grid 2-Kolom (Kode & Token) */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.hint-label {
+  font-weight: normal;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 11px 14px;
+  background: var(--bg-main);
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--accent-warm);
+  box-shadow: 0 0 10px rgba(212, 163, 115, 0.25);
+  background: #ffffff;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, var(--brand-purple), #635274);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  margin-top: 10px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(74, 62, 86, 0.3);
+}
+
+.btn-secondary {
+  padding: 13px 20px;
+  background: var(--bg-panel);
+  color: var(--text-dark);
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--accent-warm);
+  color: #ffffff;
+}
+
+.error-msg {
+  color: #d9534f;
+  font-size: 0.88rem;
+  text-align: center;
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+/* Footer Motivasi */
+.footer-motto {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(212, 163, 115, 0.2);
+  text-align: center;
+}
+
+.footer-motto p {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+
+/* ==========================================
+   2. PAGE 2: INFORMASI KEGIATAN & TATA TERTIB
+   ========================================== */
 .info-kegiatan-box {
   background-color: var(--bg-panel);
   border: 1px solid rgba(212, 163, 115, 0.35);
   border-radius: 12px;
   padding: 18px 22px;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
@@ -119,88 +224,112 @@ body {
 
 .table-info td:first-child {
   font-weight: 600;
-  width: 30%;
+  width: 38%;
   color: var(--text-muted);
+}
+
+.badge-code {
+  background: var(--brand-purple);
+  color: #ffffff;
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
 }
 
 .table-info tr:not(:last-child) td {
   border-bottom: 1px dashed rgba(212, 163, 115, 0.3);
 }
 
-/* Input Form Identitas */
-.form-group {
-  margin-bottom: 16px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 6px;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 11px 14px;
-  background: var(--bg-main);
-  border: 1px solid rgba(212, 163, 115, 0.3);
-  border-radius: 10px;
-  font-size: 0.9rem;
-  color: var(--text-dark);
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-.form-group input:focus {
-  border-color: var(--accent-warm);
-  box-shadow: 0 0 10px rgba(212, 163, 115, 0.25);
+/* Box Rules / Tata Tertib Ujian */
+.rules-box {
   background: #ffffff;
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 22px;
 }
 
-.btn-primary {
-  width: 100%;
-  padding: 13px;
-  background: linear-gradient(135deg, var(--brand-purple), #635274);
-  color: #ffffff;
-  border: none;
+.rules-box h4 {
+  font-size: 0.95rem;
+  color: var(--brand-purple);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rules-content ol {
+  padding-left: 18px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+.rules-content li {
+  margin-bottom: 10px;
+}
+
+.warning-rule {
+  background: #fff8f8;
+  border: 1px solid #f5c6cb;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #721c24;
+}
+
+.warning-rule ul {
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+.warning-rule li {
+  margin-bottom: 4px;
+}
+
+/* Checkbox Persetujuan Custom */
+.agreement-box {
+  background: var(--bg-panel);
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  padding: 14px 18px;
   border-radius: 10px;
-  font-size: 1rem;
+  margin-bottom: 22px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-dark);
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  margin-top: 10px;
+  user-select: none;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(74, 62, 86, 0.3);
+.checkbox-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--brand-purple);
+  cursor: pointer;
 }
 
-.error-msg {
-  color: #d9534f;
-  font-size: 0.85rem;
-  text-align: center;
-  margin-top: 12px;
+.action-buttons-page2 {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
 }
 
-/* Footer Motivasi */
-.footer-motto {
-  margin-top: 25px;
-  padding-top: 15px;
-  border-top: 1px solid rgba(212, 163, 115, 0.2);
-  text-align: center;
+.btn-start-disabled {
+  opacity: 0.55;
+  cursor: not-allowed !important;
+  background: #a39ba8 !important;
+  box-shadow: none !important;
 }
 
-.footer-motto p {
-  font-size: 0.88rem;
-  font-style: italic;
-  color: var(--text-muted);
-  font-weight: 600;
-}
 
 /* ==========================================
-   2. PAGE 2: HEADER ATAS (FUTURISTIC PURPLE)
+   3. PAGE 3: ARENA SOAL CBT
    ========================================== */
 .cbt-layout {
   display: flex;
@@ -280,9 +409,6 @@ body {
   margin-top: 2px;
 }
 
-/* ==========================================
-   3. ARENA UTAMA (SOAL & BULATAN NAVIGASI)
-   ========================================== */
 .cbt-body {
   display: flex;
   flex: 1;
@@ -430,7 +556,6 @@ body {
   transform: scale(1.1);
 }
 
-/* Status Bulatan */
 .circle-btn.unanswered {
   background: var(--color-unanswered); /* Merah = Belum */
 }
@@ -444,6 +569,7 @@ body {
   box-shadow: 0 0 12px rgba(212, 163, 115, 0.8);
   transform: scale(1.15);
 }
+
 
 /* ==========================================
    4. FOOTER BOTTOM BAR
@@ -494,6 +620,12 @@ body {
 @media (max-width: 768px) {
   .card {
     padding: 25px 20px;
+  }
+  .form-row-2col {
+    grid-template-columns: 1fr;
+  }
+  .action-buttons-page2 {
+    flex-direction: column;
   }
   .cbt-body {
     flex-direction: column;
