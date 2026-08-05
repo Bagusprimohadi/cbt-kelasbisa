@@ -1,3 +1,7 @@
+// ==========================================================
+// CBT-KIBI Versi 1.1 - Core Engine
+// ==========================================================
+
 // Variable Global
 let WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwSDl2BHPDPLhMlHV8fojPkUHcJ8D4q08tXjEyrabTjYW8lD5OWDPAUclpt1TCTW3c/exec"; 
 let questionsData = [];
@@ -7,6 +11,7 @@ let currentIndex = 0;
 let userAnswers = {};
 let userIdentitas = {};
 let timerInterval = null;
+let currentKodeUjian = "";
 
 // Variable Anti-Kecurangan & Submit Lock
 let isExamStarted = false;
@@ -14,93 +19,146 @@ let isExamSubmitted = false;
 let warningCount = 0;
 const MAX_WARNINGS = 3;
 
-// 1. Memuat File Soal.json saat Aplikasi Dibuka
-fetch("Soal.json")
-  .then(res => {
-    if (!res.ok) throw new Error("Gagal mengambil file Soal.json");
-    return res.json();
-  })
-  .then(data => {
-    validToken = data.token || "";
-    timerDurationMinutes = data.timer_menit || 60;
-    questionsData = data.questions || [];
-
-    // Set informasi logo & lembaga pada halaman login
-    if (data.logo) {
-      document.getElementById("logo-lembaga").src = data.logo;
-      if (document.getElementById("logo-lembaga-cbt")) {
-        document.getElementById("logo-lembaga-cbt").src = data.logo;
-      }
-    }
-    if (data.lembaga) {
-      document.getElementById("disp-lembaga").textContent = data.lembaga;
-      if (document.getElementById("disp-lembaga-cbt")) {
-        document.getElementById("disp-lembaga-cbt").textContent = data.lembaga;
-      }
-    }
-    if (data.sub_lembaga) {
-      document.getElementById("disp-sub-lembaga").textContent = data.sub_lembaga;
-      if (document.getElementById("disp-sub-lembaga-cbt")) {
-        document.getElementById("disp-sub-lembaga-cbt").textContent = data.sub_lembaga;
-      }
-    }
-
-    // Tampilkan durasi di tabel informasi
-    if (document.getElementById("disp-durasi")) {
-      document.getElementById("disp-durasi").textContent = timerDurationMinutes;
-    }
-  })
-  .catch(err => {
-    console.error(err);
-    alert("Gagal memuat file Soal.json! Pastikan file berada di folder yang sama.");
-  });
-
-// 2. Verifikasi Form Login & Token
+// ==========================================================
+// 1. PAGE 1: VERIFIKASI IDENTITAS, KODE UJIAN & TOKEN
+// ==========================================================
 document.getElementById("form-identitas").addEventListener("submit", function(e) {
   e.preventDefault();
   
+  const kodeInput = document.getElementById("kode-ujian-input").value.trim().toUpperCase();
   const inputToken = document.getElementById("token-input").value.trim();
-  const errorElement = document.getElementById("pesan-error");
+  const errorElement = document.getElementById("pesan-error-login");
+  const btnSubmit = document.getElementById("btn-lanjut-info");
 
-  if (inputToken !== validToken) {
-    errorElement.textContent = "Token salah atau belum diisi!";
+  if (!kodeInput) {
+    errorElement.textContent = "Silakan masukkan Kode Ujian!";
+    return;
+  }
+  if (!inputToken) {
+    errorElement.textContent = "Silakan masukkan Token Ujian!";
     return;
   }
 
-  // Simpan Identitas Peserta Lengkap
-  userIdentitas = {
-    nama: document.getElementById("nama").value,
-    sekolah: document.getElementById("sekolah").value,
-    kelas: document.getElementById("kelas").value,
-    nisn: document.getElementById("nisn").value,
-    daerah: document.getElementById("daerah").value
-  };
+  errorElement.textContent = "";
+  btnSubmit.disabled = true;
+  btnSubmit.textContent = "Memeriksa Kode Ujian...";
 
-  // Switch Tampilan ke Arena CBT
-  document.getElementById("login-card").classList.add("hidden");
-  document.getElementById("cbt-container").classList.remove("hidden");
+  // Panggil File JSON Sesuai Kode Ujian (contoh: FISIKA01-Soal.json)
+  const targetJsonFile = `${kodeInput}-Soal.json`;
 
-  // Render Identitas Siswa di Header CBT
+  fetch(targetJsonFile)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(`Kode Ujian '${kodeInput}' tidak ditemukan atau belum dipublikasikan!`);
+      }
+      return res.json();
+    })
+    .then(data => {
+      // Verifikasi Token
+      if (inputToken !== data.token) {
+        throw new Error("Token Ujian salah atau tidak berlaku untuk paket ini!");
+      }
+
+      // Simpan data konfigurasi soal
+      currentKodeUjian = kodeInput;
+      validToken = data.token || "";
+      timerDurationMinutes = data.timer_menit || 60;
+      questionsData = data.questions || [];
+
+      // Simpan Identitas Peserta
+      userIdentitas = {
+        nama: document.getElementById("nama").value.trim(),
+        sekolah: document.getElementById("sekolah").value.trim(),
+        kelas: document.getElementById("kelas").value.trim(),
+        nisn: document.getElementById("nisn").value.trim(),
+        daerah: document.getElementById("daerah").value.trim(),
+        kode_ujian: currentKodeUjian
+      };
+
+      // Set Informasi Branding & Ujian di Page 2 (Information Page)
+      if (data.logo) {
+        document.getElementById("logo-lembaga-info").src = data.logo;
+        document.getElementById("logo-lembaga-cbt").src = data.logo;
+      }
+      if (data.lembaga) {
+        document.getElementById("disp-lembaga-info").textContent = data.lembaga;
+        document.getElementById("disp-lembaga-cbt").textContent = data.lembaga;
+      }
+      if (data.sub_lembaga) {
+        document.getElementById("disp-sub-lembaga").textContent = data.sub_lembaga;
+        document.getElementById("disp-sub-lembaga-info").textContent = data.sub_lembaga;
+        document.getElementById("disp-sub-lembaga-cbt").textContent = data.sub_lembaga;
+      }
+
+      document.getElementById("disp-kode-ujian").textContent = currentKodeUjian;
+      document.getElementById("disp-durasi").textContent = timerDurationMinutes;
+      document.getElementById("disp-jumlah-soal").textContent = questionsData.length;
+
+      // Pindah Tampilan ke Page 2
+      document.getElementById("page-login").classList.add("hidden");
+      document.getElementById("page-info").classList.remove("hidden");
+      window.scrollTo(0, 0);
+    })
+    .catch(err => {
+      console.error(err);
+      errorElement.textContent = err.message;
+    })
+    .finally(() => {
+      btnSubmit.disabled = false;
+      btnSubmit.textContent = "Verifikasi & Lanjut ke Petunjuk >>";
+    });
+});
+
+// ==========================================================
+// 2. PAGE 2: CONTROLLER KETENTUAN & TOMBOL MULAI
+// ==========================================================
+function toggleMulaiButton() {
+  const isChecked = document.getElementById("check-setuju").checked;
+  const btnMulai = document.getElementById("btn-mulai-ujian");
+  
+  if (isChecked) {
+    btnMulai.disabled = false;
+    btnMulai.classList.remove("btn-start-disabled");
+  } else {
+    btnMulai.disabled = true;
+    btnMulai.classList.add("btn-start-disabled");
+  }
+}
+
+function kembaliKePage1() {
+  document.getElementById("page-info").classList.add("hidden");
+  document.getElementById("page-login").classList.remove("hidden");
+  window.scrollTo(0, 0);
+}
+
+function mulaiUjianPenuh() {
+  // Pindah Tampilan dari Page 2 ke Page 3 (Arena CBT)
+  document.getElementById("page-info").classList.add("hidden");
+  document.getElementById("page-cbt").classList.remove("hidden");
+
+  // Render Identitas Peserta di Header CBT
   document.getElementById("disp-nama").textContent = userIdentitas.nama.toUpperCase();
   document.getElementById("disp-nisn").textContent = `${userIdentitas.nisn} (${userIdentitas.kelas})`;
 
-  // Jalankan CBT & Timer
+  // Inisialisasi Arena Ujian & Timer
   initCBT();
-});
+}
 
-// 3. Inisialisasi CBT, Anti-Cheat, & Timer
+// ==========================================================
+// 3. PAGE 3: INISIALISASI CBT, ANTI-CHEAT & TIMER
+// ==========================================================
 function initCBT() {
   isExamStarted = true;
   renderNumberGrid();
   loadQuestion(currentIndex);
   startTimer(timerDurationMinutes * 60);
 
-  // Pasang Event Listener Anti-Kecurangan (Pindah Tab / Pindah Window)
+  // Pasang Listener Anti-Kecurangan
   document.addEventListener("visibilitychange", handleVisibilityChange);
   window.addEventListener("blur", handleWindowBlur);
 }
 
-// 4. Hitung Mundur Timer (Auto-Submit Ketika Waktu Habis)
+// Hitung Mundur Timer (Auto-Submit Saat Habis)
 function startTimer(totalSeconds) {
   let timerSeconds = totalSeconds;
   const timerDisplay = document.getElementById("timer");
@@ -125,7 +183,7 @@ function startTimer(totalSeconds) {
   }, 1000);
 }
 
-// 5. Fitur Suara Peringatan (Text-to-Speech Bahasa Indonesia)
+// Suara Peringatan (Text-to-Speech)
 function playVoiceWarning(text) {
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();
@@ -137,7 +195,7 @@ function playVoiceWarning(text) {
   }
 }
 
-// 6. Fitur Anti-Kecurangan: Pindah Tab & Blur Window (Toleransi Max 3 Kali)
+// Anti-Kecurangan: Pindah Tab / Blur Window (Max 3 Warning)
 function handleVisibilityChange() {
   if (isExamStarted && !isExamSubmitted && document.hidden) {
     prosesPeringatanKecurangan();
@@ -167,17 +225,17 @@ function prosesPeringatanKecurangan() {
   }
 }
 
-// 7. Render Soal & Opsi Jawaban
+// ==========================================================
+// 4. RENDER SOAL & NAVIGASI
+// ==========================================================
 function loadQuestion(index) {
   const q = questionsData[index];
   if (!q) return;
 
   document.getElementById("q-num").textContent = index + 1;
-  
-  // Menggunakan innerHTML agar MathJax/LaTeX ter-render dengan benar
   document.getElementById("q-text").innerHTML = q.Soal;
 
-  // Render Gambar Soal jika ada
+  // Render Gambar Soal
   const imgContainer = document.getElementById("q-image-container");
   if (q.Gambar && String(q.Gambar).trim() !== "") {
     imgContainer.innerHTML = `<img src="${q.Gambar}" class="img-soal" alt="Gambar Soal">`;
@@ -185,7 +243,7 @@ function loadQuestion(index) {
     imgContainer.innerHTML = "";
   }
 
-  // Render Opsi Jawaban A, B, C, D, E
+  // Render Opsi A - E
   const optionsBox = document.getElementById("options-box");
   optionsBox.innerHTML = "";
 
@@ -203,7 +261,6 @@ function loadQuestion(index) {
         <span class="opt-val">${q[key]}</span>
       `;
 
-      // Event listener saat opsi diklik
       optionRow.addEventListener("click", (e) => {
         if (e.target.tagName !== "INPUT") {
           pilihJawaban(q.No, key);
@@ -214,25 +271,23 @@ function loadQuestion(index) {
     }
   });
 
-  // Re-render MathJax untuk rumus
+  // Re-render MathJax
   if (window.MathJax) {
     MathJax.typesetPromise();
   }
 
-  // Update Status Navigasi Tombol
+  // Update Status Navigasi
   document.getElementById("btn-prev").disabled = (index === 0);
   document.getElementById("btn-next").disabled = (index === questionsData.length - 1);
 
   updateGridStatus();
 }
 
-// 8. Simpan Jawaban yang Dipilih
 function pilihJawaban(qNo, key) {
   userAnswers[qNo] = key;
   loadQuestion(currentIndex);
 }
 
-// 9. Navigasi Soal (Sebelum/Berikutnya)
 function navigasi(direction) {
   const newIndex = currentIndex + direction;
   if (newIndex >= 0 && newIndex < questionsData.length) {
@@ -241,7 +296,6 @@ function navigasi(direction) {
   }
 }
 
-// 10. Render Panel Bulatan Angka Navigasi
 function renderNumberGrid() {
   const grid = document.getElementById("number-grid");
   grid.innerHTML = "";
@@ -261,7 +315,6 @@ function renderNumberGrid() {
   });
 }
 
-// 11. Update Warna Bulatan Navigasi (Merah = Belum, Biru = Sudah)
 function updateGridStatus() {
   questionsData.forEach((q, idx) => {
     const circle = document.getElementById(`circle-num-${idx}`);
@@ -281,7 +334,9 @@ function updateGridStatus() {
   });
 }
 
-// 12. Konfirmasi & Submit Jawaban (Dengan Integrasi Webhook Google Sheets)
+// ==========================================================
+// 5. SUBMIT JAWABAN & WEBHOOK INTEGRATION
+// ==========================================================
 function konfirmasiSubmit() {
   const total = questionsData.length;
   const dijawab = Object.keys(userAnswers).length;
@@ -291,37 +346,41 @@ function konfirmasiSubmit() {
   }
 }
 
+function konfirmasiKeluar() {
+  if (confirm("Apakah Anda yakin ingin keluar dari halaman ujian? Seluruh progres ujian Anda akan terhenti.")) {
+    location.reload();
+  }
+}
+
 function submitJawaban() {
-  // Cegah pemanggilan fungsi submit berulang kali
   if (isExamSubmitted) return;
   isExamSubmitted = true;
 
-  // Hentikan Timer & Lepas Listener Anti-Cheat
   clearInterval(timerInterval);
   document.removeEventListener("visibilitychange", handleVisibilityChange);
   window.removeEventListener("blur", handleWindowBlur);
 
-  // Tampilan Loading Pengiriman Data
-  document.getElementById("cbt-container").innerHTML = `
+  // Tampilan Loading
+  document.getElementById("page-cbt").innerHTML = `
     <div style="text-align:center; padding: 60px 20px; font-family: sans-serif;">
       <h2 style="color: #4a3e56; margin-bottom: 10px;">Mengirimkan Jawaban...</h2>
       <p style="color: #7d756d;">Mohon tunggu sebentar, jawaban Anda sedang disimpan ke sistem.</p>
     </div>
   `;
 
-  // Susun Data Payload
+  // Susun Payload dengan kode_ujian
   const payload = {
+    kode_soal: currentKodeUjian,
     identitas: userIdentitas,
     jawaban: userAnswers,
     total_dijawab: Object.keys(userAnswers).length,
     total_soal: questionsData.length
   };
 
-  // Pengiriman POST ke Webhook Google Apps Script
   if (WEBHOOK_URL && WEBHOOK_URL.trim() !== "") {
     fetch(WEBHOOK_URL, {
       method: "POST",
-      mode: "no-cors", // Menghindari isu CORS pada Google Apps Script
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json"
       },
@@ -340,10 +399,10 @@ function submitJawaban() {
 }
 
 function tampilkanLayarSelesai() {
-  document.getElementById("cbt-container").innerHTML = `
+  document.getElementById("page-cbt").innerHTML = `
     <div style="text-align:center; padding: 60px 20px; font-family: sans-serif;">
-      <h2 style="color: #4a3e56; margin-bottom: 10px;">✅ Jawaban Anda Berhasil Diterima!</h2>
-      <p style="color: #7d756d;">Terima kasih telah mengikuti ujian dengan jujur dan tertib.</p>
+      <h2 style="color: #2e7d32; margin-bottom: 10px;">✅ Jawaban Anda Berhasil Diterima!</h2>
+      <p style="color: #555;">Terima kasih telah mengikuti ujian [Kode: <strong>${currentKodeUjian}</strong>] dengan jujur dan tertib.</p>
     </div>
   `;
 }
