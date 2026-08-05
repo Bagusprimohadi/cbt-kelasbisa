@@ -1,5 +1,5 @@
 // ==========================================================
-// CBT-KIBI Versi 1.1 - Core Engine
+// CBT-KIBI Versi 1.1 - Core Engine (Mobile Touch Fixed)
 // ==========================================================
 
 // Variable Global
@@ -226,7 +226,7 @@ function prosesPeringatanKecurangan() {
 }
 
 // ==========================================================
-// 4. RENDER SOAL & NAVIGASI
+// 4. RENDER SOAL & NAVIGASI (FIXED UNTUK MOBILE)
 // ==========================================================
 function loadQuestion(index) {
   const q = questionsData[index];
@@ -252,20 +252,21 @@ function loadQuestion(index) {
     if (q[key] && String(q[key]).trim() !== "") {
       const isSelected = userAnswers[q.No] === key;
       
-      const optionRow = document.createElement("label");
+      // PERBAIKAN: Menggunakan tag <div> (bukan <label>) agar aman di browser HP
+      const optionRow = document.createElement("div"); 
       optionRow.className = `option-row ${isSelected ? 'selected' : ''}`;
       
+      // PERBAIKAN: Tambahkan pointer-events: none pada input radio
       optionRow.innerHTML = `
-        <input type="radio" name="option_${q.No}" value="${key}" ${isSelected ? 'checked' : ''}>
+        <input type="radio" name="option_${q.No}" value="${key}" ${isSelected ? 'checked' : ''} style="pointer-events: none;">
         <span class="opt-key">${key}.</span>
         <span class="opt-val">${q[key]}</span>
       `;
 
-      optionRow.addEventListener("click", (e) => {
-        if (e.target.tagName !== "INPUT") {
-          pilihJawaban(q.No, key);
-        }
-      });
+      // PERBAIKAN: Gunakan onclick langsung ke container barisnya
+      optionRow.onclick = function() {
+        pilihJawaban(q.No, key);
+      };
 
       optionsBox.appendChild(optionRow);
     }
