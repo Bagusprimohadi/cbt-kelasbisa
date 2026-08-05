@@ -95,7 +95,7 @@ function initCBT() {
   loadQuestion(currentIndex);
   startTimer(timerDurationMinutes * 60);
 
-  // Pasang Event Listener Anti-Kecurangan (Pindah Tab / Pindah Window)
+  // === TAMBAHKAN 2 BARIS INI AGAR NOTIFIKASI PINDAH TAB AKTIF ===
   document.addEventListener("visibilitychange", handleVisibilityChange);
   window.addEventListener("blur", handleWindowBlur);
 }
