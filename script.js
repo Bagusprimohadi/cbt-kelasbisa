@@ -1,5 +1,5 @@
 // Variable Global
-let WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzSDmsM8eEMruL-i0AiOSjzlrwrkqpC2x7ui_Gzq_1Olmst37s637ZdcOC6zQK3_Iw/exec"; 
+let WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwSDl2BHPDPLhMlHV8fojPkUHcJ8D4q08tXjEyrabTjYW8lD5OWDPAUclpt1TCTW3c/exec"; 
 let questionsData = [];
 let validToken = "";
 let timerDurationMinutes = 60;
