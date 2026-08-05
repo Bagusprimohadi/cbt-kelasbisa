@@ -95,7 +95,7 @@ function initCBT() {
   loadQuestion(currentIndex);
   startTimer(timerDurationMinutes * 60);
 
-  // === TAMBAHKAN 2 BARIS INI AGAR NOTIFIKASI PINDAH TAB AKTIF ===
+  // Pasang Event Listener Anti-Kecurangan (Pindah Tab / Pindah Window)
   document.addEventListener("visibilitychange", handleVisibilityChange);
   window.addEventListener("blur", handleWindowBlur);
 }
@@ -118,13 +118,26 @@ function startTimer(totalSeconds) {
 
     if (--timerSeconds < 0) {
       clearInterval(timerInterval);
+      playVoiceWarning("Waktu ujian telah habis. Jawaban Anda otomatis dikirim.");
       alert("⏱️ Waktu Ujian Telah Habis!\nJawaban Anda secara otomatis disimpan dan dikirim ke sistem.");
       submitJawaban();
     }
   }, 1000);
 }
 
-// 5. Fitur Anti-Kecurangan: Pindah Tab & Blur Window (Toleransi Max 3 Kali)
+// 5. Fitur Suara Peringatan (Text-to-Speech Bahasa Indonesia)
+function playVoiceWarning(text) {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel(); // Hentikan suara jika masih berjalan
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'id-ID';
+    utterance.rate = 1.0;
+    utterance.pitch = 1.0;
+    window.speechSynthesis.speak(utterance);
+  }
+}
+
+// 6. Fitur Anti-Kecurangan: Pindah Tab & Blur Window (Toleransi Max 3 Kali)
 function handleVisibilityChange() {
   if (isExamStarted && !isExamSubmitted && document.hidden) {
     prosesPeringatanKecurangan();
@@ -141,14 +154,20 @@ function prosesPeringatanKecurangan() {
   warningCount++;
   
   if (warningCount >= MAX_WARNINGS) {
+    const pesanTerakhir = "Batas toleransi habis! Ujian Anda otomatis diakhiri.";
+    playVoiceWarning(pesanTerakhir);
+    
     alert(`⚠️ PERINGATAN KE-${warningCount} (BATAS MAKSIMAL)!\nAnda kedapatan meninggalkan halaman ujian. Ujian Anda otomatis diakhiri dan jawaban langsung dikirim.`);
     submitJawaban();
   } else {
+    const pesanTeguran = `Peringatan ke ${warningCount}. Dilarang membuka tab atau aplikasi lain saat ujian!`;
+    playVoiceWarning(pesanTeguran);
+
     alert(`⚠️ PERINGATAN KECURANGAN (${warningCount}/${MAX_WARNINGS})!\nDilarang membuka tab, jendela, atau aplikasi lain selama ujian berlangsung! Jika mencapai ${MAX_WARNINGS} kali, ujian akan terhenti otomatis.`);
   }
 }
 
-// 6. Render Soal & Opsi Jawaban
+// 7. Render Soal & Opsi Jawaban
 function loadQuestion(index) {
   const q = questionsData[index];
   if (!q) return;
@@ -207,13 +226,13 @@ function loadQuestion(index) {
   updateGridStatus();
 }
 
-// 7. Simpan Jawaban yang Dipilih
+// 8. Simpan Jawaban yang Dipilih
 function pilihJawaban(qNo, key) {
   userAnswers[qNo] = key;
   loadQuestion(currentIndex);
 }
 
-// 8. Navigasi Soal (Sebelum/Berikutnya)
+// 9. Navigasi Soal (Sebelum/Berikutnya)
 function navigasi(direction) {
   const newIndex = currentIndex + direction;
   if (newIndex >= 0 && newIndex < questionsData.length) {
@@ -222,7 +241,7 @@ function navigasi(direction) {
   }
 }
 
-// 9. Render Panel Bulatan Angka Navigasi
+// 10. Render Panel Bulatan Angka Navigasi
 function renderNumberGrid() {
   const grid = document.getElementById("number-grid");
   grid.innerHTML = "";
@@ -242,7 +261,7 @@ function renderNumberGrid() {
   });
 }
 
-// 10. Update Warna Bulatan Navigasi (Merah = Belum, Biru = Sudah)
+// 11. Update Warna Bulatan Navigasi (Merah = Belum, Biru = Sudah)
 function updateGridStatus() {
   questionsData.forEach((q, idx) => {
     const circle = document.getElementById(`circle-num-${idx}`);
@@ -262,7 +281,7 @@ function updateGridStatus() {
   });
 }
 
-// 11. Konfirmasi & Submit Jawaban (Dengan Proteksi Anti Double Submit)
+// 12. Konfirmasi & Submit Jawaban
 function konfirmasiSubmit() {
   const total = questionsData.length;
   const dijawab = Object.keys(userAnswers).length;
