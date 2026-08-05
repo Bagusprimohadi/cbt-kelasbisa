@@ -46,11 +46,12 @@ body {
    1. PAGE 1: CARD LOGIN FUTURISTIK & INFO KEGIATAN
    ========================================== */
 .card {
-  max-width: 500px;
+  max-width: 650px; /* Diperlebar agar judul & teks instansi tidak flip line */
+  width: 90%;
   margin: 40px auto;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  padding: 35px 30px;
+  padding: 35px 40px;
   border-radius: 20px;
   border: 1px solid rgba(212, 163, 115, 0.25);
   box-shadow: var(--shadow-soft);
@@ -59,11 +60,11 @@ body {
 /* Header Welcome Rata Tengah */
 .header-welcome {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .header-welcome .logo-img {
-  max-height: 75px;
+  max-height: 80px;
   width: auto;
   margin-bottom: 12px;
   object-fit: contain;
@@ -71,35 +72,38 @@ body {
 }
 
 .header-welcome h2 {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   color: var(--brand-purple);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   font-weight: 700;
   letter-spacing: 0.3px;
 }
 
 .header-welcome h3 {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--accent-warm);
   font-weight: 600;
 }
 
-/* Tabel Informasi Kegiatan Ciamik */
+/* Box Informasi Kegiatan (Terpisah Jelas & Ciamik) */
 .info-kegiatan-box {
   background-color: var(--bg-panel);
-  border: 1px solid rgba(212, 163, 115, 0.3);
+  border: 1px solid rgba(212, 163, 115, 0.35);
   border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 22px;
+  padding: 18px 22px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
 .info-kegiatan-box h4 {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--brand-purple);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   font-weight: 700;
+  border-bottom: 1px solid rgba(212, 163, 115, 0.25);
+  padding-bottom: 6px;
 }
 
 .table-info {
@@ -108,14 +112,14 @@ body {
 }
 
 .table-info td {
-  padding: 7px 4px;
-  font-size: 0.88rem;
+  padding: 8px 0;
+  font-size: 0.92rem;
   color: var(--text-dark);
 }
 
 .table-info td:first-child {
   font-weight: 600;
-  width: 40%;
+  width: 30%;
   color: var(--text-muted);
 }
 
@@ -130,7 +134,7 @@ body {
 
 .form-group label {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-dark);
   margin-bottom: 6px;
@@ -189,7 +193,7 @@ body {
 }
 
 .footer-motto p {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-style: italic;
   color: var(--text-muted);
   font-weight: 600;
@@ -488,6 +492,9 @@ body {
 
 /* Responsif Mobile */
 @media (max-width: 768px) {
+  .card {
+    padding: 25px 20px;
+  }
   .cbt-body {
     flex-direction: column;
   }
