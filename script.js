@@ -1,5 +1,5 @@
 // Variable Global
-let WEBHOOK_URL = ""; // Akan diisi URL Google Apps Script pada Phase 2
+let WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzSDmsM8eEMruL-i0AiOSjzlrwrkqpC2x7ui_Gzq_1Olmst37s637ZdcOC6zQK3_Iw/exec"; 
 let questionsData = [];
 let validToken = "";
 let timerDurationMinutes = 60;
@@ -128,7 +128,7 @@ function startTimer(totalSeconds) {
 // 5. Fitur Suara Peringatan (Text-to-Speech Bahasa Indonesia)
 function playVoiceWarning(text) {
   if ('speechSynthesis' in window) {
-    window.speechSynthesis.cancel(); // Hentikan suara jika masih berjalan
+    window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'id-ID';
     utterance.rate = 1.0;
@@ -281,7 +281,7 @@ function updateGridStatus() {
   });
 }
 
-// 12. Konfirmasi & Submit Jawaban
+// 12. Konfirmasi & Submit Jawaban (Dengan Integrasi Webhook Google Sheets)
 function konfirmasiSubmit() {
   const total = questionsData.length;
   const dijawab = Object.keys(userAnswers).length;
@@ -301,10 +301,48 @@ function submitJawaban() {
   document.removeEventListener("visibilitychange", handleVisibilityChange);
   window.removeEventListener("blur", handleWindowBlur);
 
-  // Tampilan Akhir Setelah Submit
+  // Tampilan Loading Pengiriman Data
   document.getElementById("cbt-container").innerHTML = `
     <div style="text-align:center; padding: 60px 20px; font-family: sans-serif;">
-      <h2 style="color: #4a3e56; margin-bottom: 10px;">Jawaban Anda Berhasil Diterima!</h2>
+      <h2 style="color: #4a3e56; margin-bottom: 10px;">Mengirimkan Jawaban...</h2>
+      <p style="color: #7d756d;">Mohon tunggu sebentar, jawaban Anda sedang disimpan ke sistem.</p>
+    </div>
+  `;
+
+  // Susun Data Payload
+  const payload = {
+    identitas: userIdentitas,
+    jawaban: userAnswers,
+    total_dijawab: Object.keys(userAnswers).length,
+    total_soal: questionsData.length
+  };
+
+  // Pengiriman POST ke Webhook Google Apps Script
+  if (WEBHOOK_URL && WEBHOOK_URL.trim() !== "") {
+    fetch(WEBHOOK_URL, {
+      method: "POST",
+      mode: "no-cors", // Menghindari isu CORS pada Google Apps Script
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(() => {
+      tampilkanLayarSelesai();
+    })
+    .catch(err => {
+      console.error("Error Webhook:", err);
+      tampilkanLayarSelesai();
+    });
+  } else {
+    tampilkanLayarSelesai();
+  }
+}
+
+function tampilkanLayarSelesai() {
+  document.getElementById("cbt-container").innerHTML = `
+    <div style="text-align:center; padding: 60px 20px; font-family: sans-serif;">
+      <h2 style="color: #4a3e56; margin-bottom: 10px;">✅ Jawaban Anda Berhasil Diterima!</h2>
       <p style="color: #7d756d;">Terima kasih telah mengikuti ujian dengan jujur dan tertib.</p>
     </div>
   `;
