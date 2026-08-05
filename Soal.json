@@ -1,0 +1,109 @@
+{
+  "token": "UTSMAT2026",
+  "timer_menit": 90,
+  "lembaga": "SMK 2 PENDA KARANGANYAR",
+  "sub_lembaga": "UKK 2016 TEKHNIK",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Logo_of_Ministry_of_Education_and_Culture_of_Republic_of_Indonesia.svg",
+  "questions": [
+    {
+      "No": 1,
+      "Soal": "Dalam kerangka Quasi-Geostrophic (QG), persamaan vortisitas potensial dinyatakan sebagai: ( q = \\nabla^2 \\psi + f_0 + \\beta y + \\frac{\\partial}{\\partial p}\\left( \\frac{f_0^2}{\\sigma} \\frac{\\partial \\psi}{\\partial p} \\right) ). Untuk aliran adiabatik tanpa gesekan, konservasi ( \\frac{Dq}{Dt}=0 ) mengimplikasikan bahwa adveksi ke arah utara ((v>0)) akan menyebabkan...",
+      "A": "Penurunan komponen planetary vorticity ((\\beta y))",
+      "B": "Peningkatan relatif vortisitas siklonik ((\\zeta))",
+      "C": "Pengurangan shear vertikal",
+      "D": "Reduksi stabilitas statik ((\\sigma))",
+      "E": "Tidak ada perubahan dinamika",
+      "Gambar": ""
+    },
+    {
+      "No": 2,
+      "Soal": "Dalam teori baroklinik linear (Eady model), laju pertumbuhan maksimum ((\\sigma_{max})) bergantung pada...",
+      "A": "Gradien tekanan permukaan",
+      "B": "Shear vertikal angin dan stabilitas statik ((N^2))",
+      "C": "Kelembapan spesifik",
+      "D": "Radiasi netto",
+      "E": "Efek topografi",
+      "Gambar": ""
+    },
+    {
+      "No": 3,
+      "Soal": "Persamaan dispersi gelombang Rossby barotropik: ( \\omega = Uk - \\frac{\\beta k}{k^2 + l^2} ). Jika (k^2 + l^2) meningkat, maka fase gelombang akan...",
+      "A": "Semakin cepat ke timur",
+      "B": "Semakin lambat relatif terhadap aliran dasar",
+      "C": "Tidak berubah",
+      "D": "Berubah menjadi gelombang Kelvin",
+      "E": "Menghilang",
+      "Gambar": ""
+    },
+    {
+      "No": 4,
+      "Soal": "Dalam transfer radiasi, solusi persamaan Schwarzschild: ( \\frac{dI_\\nu}{ds} = -\\kappa_\\nu \\rho I_\\nu + \\kappa_\\nu \\rho B_\\nu ) menunjukkan bahwa pada kondisi optically thick ((\\tau \\gg 1))...",
+      "A": "Radiasi ditentukan oleh boundary condition",
+      "B": "(I_\\nu \\approx B_\\nu) (mendekati kesetimbangan termal lokal)",
+      "C": "Tidak ada emisi",
+      "D": "Absorpsi nol",
+      "E": "Hamburan dominan",
+      "Gambar": ""
+    },
+    {
+      "No": 5,
+      "Soal": "Kondisi Courant-Friedrichs-Lewy (CFL) untuk skema adveksi 1D: ( C = \\frac{c \\Delta t}{\\Delta x} ). Untuk stabilitas eksplisit diperlukan...",
+      "A": "(C < 0)",
+      "B": "(C = 0)",
+      "C": "(C \\leq 1)",
+      "D": "(C > 2)",
+      "E": "(C \\to \\infty)",
+      "Gambar": ""
+    },
+    {
+      "No": 6,
+      "Soal": "Dalam formulasi Ertel Potential Vorticity: ( PV = \\frac{1}{\\rho} \\vec{\\omega_a} \\cdot \\nabla \\theta ), nilai negatif PV pada troposfer biasanya mengindikasikan...",
+      "A": "Atmosfer stabil absolut",
+      "B": "Terjadinya symmetric atau inertial instability",
+      "C": "Tidak ada gerakan vertikal",
+      "D": "PV homogen",
+      "E": "Radiasi dominan",
+      "Gambar": ""
+    },
+    {
+      "No": 7,
+      "Soal": "Dalam teori gelombang ekuator Matsuno, gelombang Kelvin memiliki karakteristik...",
+      "A": "(v \\neq 0), simetri antisimetri",
+      "B": "(v = 0), propagasi ke timur",
+      "C": "Bergerak ke barat dengan fase negatif",
+      "D": "Dipengaruhi kuat oleh β-plane",
+      "E": "Tidak terperangkap di ekuator",
+      "Gambar": ""
+    },
+    {
+      "No": 8,
+      "Soal": "Frekuensi Brunt-Väisälä: ( N^2 = \\frac{g}{\\theta} \\frac{d\\theta}{dz} ). Jika ( N^2 < 0 ), maka...",
+      "A": "Atmosfer stabil statik",
+      "B": "Osilasi harmonik terjadi",
+      "C": "Atmosfer labil konvektif",
+      "D": "Tidak ada buoyancy",
+      "E": "Gradien suhu nol",
+      "Gambar": ""
+    },
+    {
+      "No": 9,
+      "Soal": "Dalam 4D-Var data assimilation, fungsi biaya ( J(x) ) mencakup...",
+      "A": "Hanya error observasi",
+      "B": "Error background saja",
+      "C": "Integrasi model dalam jendela waktu dan mismatch observasi",
+      "D": "Tanpa operator adjoint",
+      "E": "Tidak bergantung waktu",
+      "Gambar": ""
+    },
+    {
+      "No": 10,
+      "Soal": "Dalam dinamika Madden-Julian Oscillation (MJO), coupling utama terjadi antara...",
+      "A": "Gelombang Rossby mid-latitude",
+      "B": "Konveksi tropis dan gelombang Kelvin ekuator",
+      "C": "Turbulensi mikro",
+      "D": "Gradien tekanan lokal",
+      "E": "Jet stream polar",
+      "Gambar": ""
+    }
+  ]
+}
