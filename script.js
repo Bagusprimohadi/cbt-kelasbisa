@@ -8,6 +8,12 @@ let userAnswers = {};
 let userIdentitas = {};
 let timerInterval = null;
 
+// Variable Anti-Kecurangan & Submit Lock
+let isExamStarted = false;
+let isExamSubmitted = false;
+let warningCount = 0;
+const MAX_WARNINGS = 3;
+
 // 1. Memuat File Soal.json saat Aplikasi Dibuka
 fetch("Soal.json")
   .then(res => {
@@ -82,14 +88,19 @@ document.getElementById("form-identitas").addEventListener("submit", function(e)
   initCBT();
 });
 
-// 3. Inisialisasi CBT & Timer
+// 3. Inisialisasi CBT, Anti-Cheat, & Timer
 function initCBT() {
+  isExamStarted = true;
   renderNumberGrid();
   loadQuestion(currentIndex);
   startTimer(timerDurationMinutes * 60);
+
+  // Pasang Event Listener Anti-Kecurangan (Pindah Tab / Pindah Window)
+  document.addEventListener("visibilitychange", handleVisibilityChange);
+  window.addEventListener("blur", handleWindowBlur);
 }
 
-// 4. Hitung Mundur Timer
+// 4. Hitung Mundur Timer (Auto-Submit Ketika Waktu Habis)
 function startTimer(totalSeconds) {
   let timerSeconds = totalSeconds;
   const timerDisplay = document.getElementById("timer");
@@ -107,13 +118,37 @@ function startTimer(totalSeconds) {
 
     if (--timerSeconds < 0) {
       clearInterval(timerInterval);
-      alert("Waktu Ujian Telah Habis! Jawaban Anda akan otomatis dikirim.");
+      alert("⏱️ Waktu Ujian Telah Habis!\nJawaban Anda secara otomatis disimpan dan dikirim ke sistem.");
       submitJawaban();
     }
   }, 1000);
 }
 
-// 5. Render Soal & Opsi Jawaban
+// 5. Fitur Anti-Kecurangan: Pindah Tab & Blur Window (Toleransi Max 3 Kali)
+function handleVisibilityChange() {
+  if (isExamStarted && !isExamSubmitted && document.hidden) {
+    prosesPeringatanKecurangan();
+  }
+}
+
+function handleWindowBlur() {
+  if (isExamStarted && !isExamSubmitted) {
+    prosesPeringatanKecurangan();
+  }
+}
+
+function prosesPeringatanKecurangan() {
+  warningCount++;
+  
+  if (warningCount >= MAX_WARNINGS) {
+    alert(`⚠️ PERINGATAN KE-${warningCount} (BATAS MAKSIMAL)!\nAnda kedapatan meninggalkan halaman ujian. Ujian Anda otomatis diakhiri dan jawaban langsung dikirim.`);
+    submitJawaban();
+  } else {
+    alert(`⚠️ PERINGATAN KECURANGAN (${warningCount}/${MAX_WARNINGS})!\nDilarang membuka tab, jendela, atau aplikasi lain selama ujian berlangsung! Jika mencapai ${MAX_WARNINGS} kali, ujian akan terhenti otomatis.`);
+  }
+}
+
+// 6. Render Soal & Opsi Jawaban
 function loadQuestion(index) {
   const q = questionsData[index];
   if (!q) return;
@@ -172,13 +207,13 @@ function loadQuestion(index) {
   updateGridStatus();
 }
 
-// 6. Simpan Jawaban yang Dipilih
+// 7. Simpan Jawaban yang Dipilih
 function pilihJawaban(qNo, key) {
   userAnswers[qNo] = key;
   loadQuestion(currentIndex);
 }
 
-// 7. Navigasi Soal (Sebelum/Berikutnya)
+// 8. Navigasi Soal (Sebelum/Berikutnya)
 function navigasi(direction) {
   const newIndex = currentIndex + direction;
   if (newIndex >= 0 && newIndex < questionsData.length) {
@@ -187,7 +222,7 @@ function navigasi(direction) {
   }
 }
 
-// 8. Render Panel Bulatan Angka Navigasi
+// 9. Render Panel Bulatan Angka Navigasi
 function renderNumberGrid() {
   const grid = document.getElementById("number-grid");
   grid.innerHTML = "";
@@ -207,7 +242,7 @@ function renderNumberGrid() {
   });
 }
 
-// 9. Update Warna Bulatan Navigasi (Merah = Belum, Biru = Sudah)
+// 10. Update Warna Bulatan Navigasi (Merah = Belum, Biru = Sudah)
 function updateGridStatus() {
   questionsData.forEach((q, idx) => {
     const circle = document.getElementById(`circle-num-${idx}`);
@@ -227,22 +262,31 @@ function updateGridStatus() {
   });
 }
 
-// 10. Konfirmasi & Submit Jawaban
+// 11. Konfirmasi & Submit Jawaban (Dengan Proteksi Anti Double Submit)
 function konfirmasiSubmit() {
   const total = questionsData.length;
   const dijawab = Object.keys(userAnswers).length;
 
   if (confirm(`Anda telah menjawab ${dijawab} dari ${total} soal.\nYakin ingin mengakhiri ujian?`)) {
-    clearInterval(timerInterval);
     submitJawaban();
   }
 }
 
 function submitJawaban() {
+  // Cegah pemanggilan fungsi submit berulang kali
+  if (isExamSubmitted) return;
+  isExamSubmitted = true;
+
+  // Hentikan Timer & Lepas Listener Anti-Cheat
+  clearInterval(timerInterval);
+  document.removeEventListener("visibilitychange", handleVisibilityChange);
+  window.removeEventListener("blur", handleWindowBlur);
+
+  // Tampilan Akhir Setelah Submit
   document.getElementById("cbt-container").innerHTML = `
-    <div style="text-align:center; padding: 50px; font-family: sans-serif;">
-      <h2>Jawaban Anda Berhasil Diterima!</h2>
-      <p>Terima kasih telah mengikuti ujian.</p>
+    <div style="text-align:center; padding: 60px 20px; font-family: sans-serif;">
+      <h2 style="color: #4a3e56; margin-bottom: 10px;">Jawaban Anda Berhasil Diterima!</h2>
+      <p style="color: #7d756d;">Terima kasih telah mengikuti ujian dengan jujur dan tertib.</p>
     </div>
   `;
 }
