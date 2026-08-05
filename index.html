@@ -16,52 +16,88 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
 
-  <!-- PAGE 1: FORM LOGIN & TOKEN -->
+  <!-- PAGE 1: FORM LOGIN, INFO KEGIATAN & TOKEN -->
   <div id="login-card" class="card">
-    <div class="card-header">
-      <h2>LOGIN PESERTA CBT</h2>
-      <p>Masukkan Identitas dan Token Ujian</p>
+    <!-- Header Branding (Rata Tengah) -->
+    <div class="header-welcome">
+      <img id="logo-lembaga" src="" alt="Logo" class="logo-img">
+      <h2>Selamat Datang di CBT/CAT Kelas Bisa</h2>
+      <h3 id="disp-lembaga">-</h3>
     </div>
+
+    <!-- Tabel Informasi Kegiatan Ciamik -->
+    <div class="info-kegiatan-box">
+      <h4>Informasi Kegiatan</h4>
+      <table class="table-info">
+        <tr>
+          <td>Sub Lembaga</td>
+          <td id="disp-sub-lembaga">-</td>
+        </tr>
+        <tr>
+          <td>Durasi Ujian</td>
+          <td><span id="disp-durasi">-</span> Menit</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Form Identitas -->
     <form id="form-identitas">
       <div class="form-group">
         <label>Nama Lengkap</label>
         <input type="text" id="nama" required placeholder="Masukkan Nama Lengkap">
       </div>
       <div class="form-group">
-        <label>Asal Sekolah / Kelas</label>
-        <input type="text" id="sekolah" required placeholder="Contoh: XII MIPA 1">
+        <label>Asal Instansi/Sekolah/Kampus</label>
+        <input type="text" id="sekolah" required placeholder="Contoh: Universitas Hasanuddin / SMA 1">
       </div>
       <div class="form-group">
-        <label>Nomor Peserta / NISN</label>
-        <input type="text" id="nisn" required placeholder="Contoh: 17-211-151">
+        <label>Bidang Kerja/Kelas/Jurusan Kuliah</label>
+        <input type="text" id="kelas" required placeholder="Contoh: Meteorologi / XII MIPA 1">
+      </div>
+      <div class="form-group">
+        <label>NIK/NISN/NIM</label>
+        <input type="text" id="nisn" required placeholder="Masukkan NIK, NISN, atau NIM">
+      </div>
+      <div class="form-group">
+        <label>Asal Daerah (Kab-Prov)</label>
+        <input type="text" id="daerah" required placeholder="Contoh: Makassar - Sulawesi Selatan">
       </div>
       <div class="form-group">
         <label>Token Ujian</label>
         <input type="text" id="token-input" required placeholder="Masukkan Kode Token">
       </div>
-      <button type="submit" class="btn-primary">Mulai Ujian</button>
+      
+      <button type="submit" id="btn-mulai" class="btn-primary">Mulai Ujian</button>
     </form>
-    <div id="pesan-error" class="error-msg"></div>
+
+    <p id="pesan-error" class="error-msg"></p>
+
+    <!-- Footer Pesan Motivasi -->
+    <div class="footer-motto">
+      <p>Selamat Mengerjakan Ujiannya, Utamakan Integritas</p>
+    </div>
   </div>
 
   <!-- PAGE 2: ARENA SOAL CBT -->
   <div id="cbt-container" class="cbt-layout hidden">
     
-    <!-- HEADER ATAS (WARNA UNGU SERA) -->
+    <!-- HEADER ATAS -->
     <header class="top-bar">
       <div class="header-left">
-        <img id="logo-lembaga" src="" alt="Logo" class="logo-img">
+        <img id="logo-lembaga-cbt" src="" alt="Logo" class="logo-img">
         <div class="title-box">
-          <h2 id="disp-lembaga">NAMA LEMBAGA</h2>
-          <small id="disp-sub-lembaga">SUB KETERANGAN</small>
+          <h2 id="disp-lembaga-cbt">NAMA LEMBAGA</h2>
+          <small id="disp-sub-lembaga-cbt">SUB KETERANGAN</small>
         </div>
       </div>
       <div class="header-right">
         <div class="user-avatar">👤</div>
         <div class="user-details">
-          <span id="disp-nama" class="u-name">NANDA</span>
-          <span id="disp-nisn" class="u-id">17-211-151</span>
+          <span id="disp-nama" class="u-name">-</span>
+          <span id="disp-nisn" class="u-id">-</span>
           <a href="#" onclick="location.reload()" class="btn-keluar">KELUAR &gt;&gt;</a>
         </div>
       </div>
@@ -81,7 +117,7 @@
 
         <div class="question-content">
           <div id="q-image-container" class="img-box"></div>
-          <p id="q-text" class="q-text">Memuat soal...</p>
+          <div id="q-text" class="q-text">Memuat soal...</div>
           
           <div id="options-box" class="options-group"></div>
         </div>
