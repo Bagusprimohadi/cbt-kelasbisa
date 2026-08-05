@@ -91,17 +91,19 @@ function startTimer(totalSeconds) {
   }, 1000);
 }
 
-// 5. Render Soal & Opsi Jawaban
+// 5. Render Soal & Opsi Jawaban (Updated: innerHTML untuk MathJax/LaTeX)
 function loadQuestion(index) {
   const q = questionsData[index];
   if (!q) return;
 
   document.getElementById("q-num").textContent = index + 1;
-  document.getElementById("q-text").textContent = q.Soal;
+  
+  // Menggunakan innerHTML agar MathJax/LaTeX ter-render dengan benar
+  document.getElementById("q-text").innerHTML = q.Soal;
 
   // Render Gambar Soal jika ada
   const imgContainer = document.getElementById("q-image-container");
-  if (q.Gambar && q.Gambar.trim() !== "") {
+  if (q.Gambar && String(q.Gambar).trim() !== "") {
     imgContainer.innerHTML = `<img src="${q.Gambar}" class="img-soal" alt="Gambar Soal">`;
   } else {
     imgContainer.innerHTML = "";
@@ -113,32 +115,36 @@ function loadQuestion(index) {
 
   const optionsKeys = ["A", "B", "C", "D", "E"];
   optionsKeys.forEach(key => {
-    if (q[key] && q[key].trim() !== "") {
+    if (q[key] && String(q[key]).trim() !== "") {
       const isSelected = userAnswers[q.No] === key;
       
       const optionRow = document.createElement("label");
       optionRow.className = `option-row ${isSelected ? 'selected' : ''}`;
       
       optionRow.innerHTML = `
-        <input type="radio" name="option" value="${key}" ${isSelected ? 'checked' : ''}>
+        <input type="radio" name="option_${q.No}" value="${key}" ${isSelected ? 'checked' : ''}>
         <span class="opt-key">${key}.</span>
         <span class="opt-val">${q[key]}</span>
       `;
 
-      optionRow.addEventListener("click", () => {
-        pilihJawaban(q.No, key);
+      // Event listener saat opsi diklik
+      optionRow.addEventListener("click", (e) => {
+        // Mencegah double trigger dari element radio internal
+        if (e.target.tagName !== "INPUT") {
+          pilihJawaban(q.No, key);
+        }
       });
 
       optionsBox.appendChild(optionRow);
     }
   });
 
-  // Re-render MathJax untuk rumus matematika
+  // Re-render MathJax untuk rumus matematika/fisika
   if (window.MathJax) {
     MathJax.typesetPromise();
   }
 
-  // Update Status Navigasi Soal
+  // Update Status Navigasi Tombol
   document.getElementById("btn-prev").disabled = (index === 0);
   document.getElementById("btn-next").disabled = (index === questionsData.length - 1);
 
@@ -168,7 +174,7 @@ function renderNumberGrid() {
   questionsData.forEach((q, idx) => {
     const circle = document.createElement("div");
     circle.id = `circle-num-${idx}`;
-    circle.className = "circle-btn unanswered"; // Default Merah (Belum Dijawab)
+    circle.className = "circle-btn unanswered";
     circle.textContent = idx + 1;
 
     circle.onclick = () => {
@@ -186,7 +192,6 @@ function updateGridStatus() {
     const circle = document.getElementById(`circle-num-${idx}`);
     if (!circle) return;
 
-    // Reset kelas
     circle.className = "circle-btn";
 
     // Cek apakah sudah dijawab (Biru = Dijawab, Merah = Belum)
