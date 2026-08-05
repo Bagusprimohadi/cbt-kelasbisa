@@ -29,11 +29,24 @@ def clean_latex(text):
 
 
 def convert_excel_to_cbt_json():
-    # ==========================================
-    # KONFIGURASI TERBARU (EDIT DI SINI)
-    # ==========================================
+    # ==========================================================
+    # KONFIGURASI KIBI v1.1 (EDIT DI SINI)
+    # ==========================================================
+    # KODE UJIAN: Kunci pengarah dinamis (Bisa Huruf, Angka, Kombinasi)
+    # Contoh: "FISIKA01", "KIMIA-UKK", "OSN2026", "A1", "01"
+    kode_ujian = "FISIKA01"
+
+    # File Excel Input
     excel_file = r"D:\03-CBT\Soal.xlsx"
-    output_json = r"D:\03-CBT\Soal.json"
+
+    # Path Folder Output
+    base_dir = r"D:\03-CBT"
+
+    # Penamaan File JSON Otomatis Berdasarkan Kode Ujian
+    # Hasil: D:\03-CBT\FISIKA01-Soal.json
+    output_json = os.path.join(base_dir, f"{kode_ujian.upper()}-Soal.json")
+
+    # Metadata Ujian
     token_exam = "UTSMAT2026"
     timer_menit = 60
     nama_lembaga = "KELAS BISA by BRISKA CORP"
@@ -59,7 +72,9 @@ def convert_excel_to_cbt_json():
             }
             questions.append(item)
 
+        # Structure CBT-KIBI v1.1
         cbt_data = {
+            "kode_ujian": kode_ujian.upper(),  # Kunci pengarah sistem
             "token": token_exam,
             "timer_menit": timer_menit,
             "lembaga": nama_lembaga,
@@ -68,40 +83,40 @@ def convert_excel_to_cbt_json():
             "questions": questions,
         }
 
-        # Tulis ulang file Soal.json dengan encoding UTF-8
+        # Tulis/overwrite file JSON khusus per kode
         with open(output_json, "w", encoding="utf-8") as f:
             json.dump(cbt_data, f, ensure_ascii=False, indent=2)
 
         print(
-            f"✅ Sukses overwrite {len(questions)} soal & header terbaru ke '{output_json}'"
+            f"✅ [CBT-KIBI v1.1] Sukses konversi {len(questions)} soal."
         )
+        print(f"📦 Kode Ujian : {kode_ujian.upper()}")
+        print(f"📄 File Output: {output_json}")
 
         # ==========================================
-        # AUTO GIT PUSH TO GITHUB PAGES (DIPERBAIKI)
+        # AUTO GIT PUSH TO GITHUB PAGES
         # ==========================================
         print("\nMemulai upload otomatis ke GitHub Pages...")
 
-        project_dir = os.path.dirname(output_json)
-        if project_dir:
-            os.chdir(project_dir)
+        if base_dir:
+            os.chdir(base_dir)
 
-        # 1. Stage semua file
+        # 1. Stage semua file (termasuk file JSON berkode baru)
         subprocess.run("git add -A", shell=True)
 
-        # 2. Commit (tanpa check=True agar jika tidak ada perubahan baru, script TETAP LANJUT ke push)
-        subprocess.run(
-            'git commit -m "Auto-update CBT: header & soal terbaru"',
-            shell=True,
-        )
+        # 2. Commit dengan pesan mencantumkan Kode Ujian
+        commit_msg = f'Auto-update CBT v1.1: Paket Paket Soal [{kode_ujian.upper()}]'
+        subprocess.run(f'git commit -m "{commit_msg}"', shell=True)
 
-        # 3. PAKSA PUSH KE GITHUB (Pasti dieksekusi)
+        # 3. Push ke GitHub
         print("Mendorong file & perubahan terbaru ke GitHub...")
         push_res = subprocess.run("git push origin main", shell=True)
 
+        json_file_name = os.path.basename(output_json)
         if push_res.returncode == 0:
-            print("\n🚀 BERHASIL! Data terbaru otomatis ter-push ke GitHub Pages.")
+            print("\n🚀 BERHASIL! Data paket soal otomatis ter-upload ke GitHub Pages.")
             print(
-                "Cek direct JSON server: https://bagusprimohadi.github.io/cbt-kelasbisa/Soal.json"
+                f"🔗 Direct JSON URL: https://bagusprimohadi.github.io/cbt-kelasbisa/{json_file_name}"
             )
         else:
             print("\n⚠️ Push gagal. Pastikan koneksi internet aktif.")
