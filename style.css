@@ -1,0 +1,437 @@
+/* ==========================================================================
+   TEMA: FUTURISTIC AI SOFT CREAM
+   Warna Utama: Soft Cream (#FDFBF7), Off-White (#F7F4EF), Warm Gold (#D4A373)
+   ========================================================================== */
+
+:root {
+  --bg-main: #fbf9f5;
+  --bg-card: #ffffff;
+  --bg-panel: #f5f0eb;
+  --text-dark: #2d2a26;
+  --text-muted: #7d756d;
+  --accent-warm: #d4a373;
+  --accent-glow: #e9edc9;
+  --brand-purple: #4a3e56; /* Warna header ungu lembut ala AI */
+  
+  /* Status Warna Bulatan CBT */
+  --color-unanswered: #e66a6a; /* Merah Soft */
+  --color-answered: #4a90e2;   /* Biru Soft */
+  --color-active: #d4a373;     /* Warm Gold Glow */
+  
+  --shadow-soft: 0 8px 30px rgba(212, 163, 115, 0.08);
+  --shadow-glass: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --border-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ==========================================
+   1. PAGE 1: CARD LOGIN FUTURISTIK
+   ========================================== */
+.card {
+  max-width: 460px;
+  margin: 60px auto;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 35px 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 163, 115, 0.2);
+  box-shadow: var(--shadow-soft);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.card-header h2 {
+  font-size: 1.5rem;
+  color: var(--brand-purple);
+  letter-spacing: 0.5px;
+}
+
+.card-header p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 5px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  background: var(--bg-main);
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--accent-warm);
+  box-shadow: 0 0 10px rgba(212, 163, 115, 0.25);
+  background: #ffffff;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, var(--brand-purple), #635274);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(74, 62, 86, 0.3);
+}
+
+.error-msg {
+  color: #d9534f;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* ==========================================
+   2. PAGE 2: HEADER ATAS (FUTURISTIC PURPLE)
+   ========================================== */
+.cbt-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.top-bar {
+  background: linear-gradient(90deg, #3c2f47, #5a4869);
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  height: 42px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.title-box h2 {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.title-box small {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+
+.u-name {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.u-id {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-keluar {
+  color: #ff9999;
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+/* ==========================================
+   3. ARENA UTAMA (SOAL & BULATAN NAVIGASI)
+   ========================================== */
+.cbt-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  background: var(--bg-main);
+}
+
+/* Area Soal (Kiri) */
+.question-area {
+  flex: 1;
+  padding: 25px 30px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgba(212, 163, 115, 0.2);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.q-title {
+  font-size: 1.2rem;
+  color: var(--brand-purple);
+}
+
+.timer-display {
+  background: #ffffff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  font-weight: 700;
+  color: #d9534f;
+  box-shadow: var(--shadow-glass);
+}
+
+.question-content {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  flex: 1;
+}
+
+.img-box img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid var(--bg-panel);
+}
+
+.q-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  margin-bottom: 25px;
+}
+
+/* Opsi Pilihan Ganda AI Modern */
+.options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  background: var(--bg-main);
+  border: 1px solid rgba(212, 163, 115, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-row:hover {
+  background: #ffffff;
+  border-color: var(--accent-warm);
+  transform: translateX(4px);
+}
+
+.option-row.selected {
+  background: #fdf6ed;
+  border-color: var(--accent-warm);
+  box-shadow: 0 0 10px rgba(212, 163, 115, 0.2);
+}
+
+.option-row input[type="radio"] {
+  margin-right: 15px;
+  accent-color: var(--accent-warm);
+  transform: scale(1.2);
+}
+
+.opt-key {
+  font-weight: 700;
+  margin-right: 8px;
+  color: var(--brand-purple);
+}
+
+.opt-val {
+  font-size: 0.95rem;
+}
+
+/* Sidebar Navigasi Bulatan (Kanan) */
+.sidebar-nav {
+  width: 220px;
+  background: rgba(245, 240, 235, 0.7);
+  backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(212, 163, 115, 0.2);
+  padding: 20px 15px;
+  overflow-y: auto;
+}
+
+.circle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  justify-items: center;
+}
+
+.circle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.circle-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Status Bulatan */
+.circle-btn.unanswered {
+  background: var(--color-unanswered); /* Merah = Belum */
+}
+
+.circle-btn.answered {
+  background: var(--color-answered);   /* Biru = Sudah */
+}
+
+.circle-btn.active {
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 12px rgba(212, 163, 115, 0.8);
+  transform: scale(1.15);
+}
+
+/* ==========================================
+   4. FOOTER BOTTOM BAR
+   ========================================== */
+.bottom-bar {
+  background: #ffffff;
+  border-top: 1px solid rgba(212, 163, 115, 0.2);
+  padding: 12px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.btn-footer {
+  padding: 10px 18px;
+  background: var(--bg-panel);
+  color: var(--text-dark);
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-footer:hover {
+  background: var(--accent-warm);
+  color: #ffffff;
+}
+
+.btn-selesai {
+  background: #5ab87c;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-selesai:hover {
+  background: #469b65;
+}
+
+.bottom-center {
+  display: flex;
+  gap: 12px;
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+  .cbt-body {
+    flex-direction: column;
+  }
+  .sidebar-nav {
+    width: 100%;
+    height: 150px;
+    border-left: none;
+    border-top: 1px solid rgba(212, 163, 115, 0.2);
+  }
+  .circle-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
