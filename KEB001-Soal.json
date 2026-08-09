@@ -1,0 +1,1010 @@
+{
+  "kode_ujian": "KEB001",
+  "token": "ICGowa26",
+  "timer_menit": 90,
+  "lembaga": "KELAS BISA by BRISKA CORP",
+  "sub_lembaga": "Latihan Soal OSN Kebumian Semifinal",
+  "logo": "https://lh3.googleusercontent.com/d/1TYEl9QOZV3EU5p3peLGaaUZcjrOISSSz",
+  "questions": [
+    {
+      "No": 1,
+      "Soal": "Dalam atmosfer stabil bersyarat, parcel jenuh naik dengan lapse rate adiabatik lembab (Γm) yang lebih kecil dari lapse rate lingkungan (Γe). Apa implikasi dinamisnya terhadap buoyancy parcel?",
+      "A": "Parcel mengalami buoyancy positif berkelanjutan karena Γm < Γe",
+      "B": "Parcel mengalami buoyancy negatif karena kondensasi meningkatkan densitas",
+      "C": "Parcel netral karena Γm mendekati Γe",
+      "D": "Parcel hanya stabil jika tidak terjadi kondensasi",
+      "E": "Parcel turun akibat efek latent heat release",
+      "Gambar": ""
+    },
+    {
+      "No": 2,
+      "Soal": "Peningkatan vortisitas absolut pada sistem siklonik tanpa perubahan lintang paling konsisten dijelaskan oleh:",
+      "A": "Konservasi momentum sudut akibat divergensi horizontal",
+      "B": "Intensifikasi vortisitas relatif melalui stretching kolom udara",
+      "C": "Penurunan parameter Coriolis akibat perubahan rotasi bumi",
+      "D": "Redistribusi energi potensial menjadi kinetik tanpa perubahan struktur",
+      "E": "Adveksi massa udara dingin ke pusat siklon",
+      "Gambar": ""
+    },
+    {
+      "No": 3,
+      "Soal": "Dalam keseimbangan geostrofik, jika gradien tekanan horizontal meningkat dua kali dan densitas udara konstan, maka respons angin geostrofik adalah:",
+      "A": "Tetap karena dikontrol oleh parameter Coriolis",
+      "B": "Berkurang akibat peningkatan gaya gesek",
+      "C": "Meningkat proporsional terhadap gradien tekanan",
+      "D": "Menjadi tidak stabil dan menghasilkan ageostrophic flow dominan",
+      "E": "Bergantung pada perubahan suhu potensial",
+      "Gambar": ""
+    },
+    {
+      "No": 4,
+      "Soal": "Mekanisme utama ENSO dalam memodulasi distribusi curah hujan global adalah melalui:",
+      "A": "Variasi insolasi akibat perubahan orbit bumi",
+      "B": "Kopling laut-atmosfer yang mengubah sirkulasi Walker",
+      "C": "Perubahan komposisi gas rumah kaca regional",
+      "D": "Fluktuasi tekanan akibat aktivitas tektonik",
+      "E": "Variasi albedo global akibat aerosol vulkanik",
+      "Gambar": ""
+    },
+    {
+      "No": 5,
+      "Soal": "Jika Γe > Γd (lapse rate adiabatik kering), maka kondisi atmosfer tersebut mengindikasikan:",
+      "A": "Stabilitas absolut karena parcel selalu lebih dingin",
+      "B": "Instabilitas absolut karena parcel selalu lebih hangat dari lingkungan",
+      "C": "Stabilitas bersyarat tergantung kelembapan relatif",
+      "D": "Netral terhadap gangguan vertikal kecil",
+      "E": "Terjadi inversi suhu lokal",
+      "Gambar": ""
+    },
+    {
+      "No": 6,
+      "Soal": "Dalam model numerik atmosfer, error akibat diskretisasi spasial dan temporal yang tidak mampu merepresentasikan turunan kontinu disebut:",
+      "A": "Error representativitas observasi",
+      "B": "Error truncation akibat aproksimasi numerik",
+      "C": "Error sistematik dari parameterisasi",
+      "D": "Error stokastik dari kondisi awal",
+      "E": "Error aliasing akibat resolusi spektral",
+      "Gambar": ""
+    },
+    {
+      "No": 7,
+      "Soal": "Pada suhu konstan, peningkatan tekanan parsial uap air (e) terhadap tekanan uap jenuh (es) akan menyebabkan:",
+      "A": "Penurunan kelembapan relatif karena saturasi meningkat",
+      "B": "Kelembapan relatif meningkat menuju kondisi jenuh",
+      "C": "Tidak ada perubahan karena es tetap konstan",
+      "D": "Kelembapan absolut menurun",
+      "E": "Terjadi supersaturasi tanpa kondensasi",
+      "Gambar": ""
+    },
+    {
+      "No": 8,
+      "Soal": "Berdasarkan persamaan Clausius-Clapeyron, hubungan antara tekanan uap jenuh dan suhu menunjukkan bahwa:",
+      "A": "es meningkat linear terhadap suhu absolut",
+      "B": "es meningkat eksponensial terhadap suhu karena latent heat",
+      "C": "es konstan pada fase kesetimbangan",
+      "D": "es berbanding terbalik dengan suhu",
+      "E": "es hanya bergantung pada tekanan total atmosfer",
+      "Gambar": ""
+    },
+    {
+      "No": 9,
+      "Soal": "Bilangan Rossby kecil (Ro << 1) dalam dinamika atmosfer mengindikasikan bahwa:",
+      "A": "Gaya inersia mendominasi dibanding Coriolis",
+      "B": "Gaya Coriolis mendominasi dibanding percepatan lokal",
+      "C": "Gaya gesek menjadi faktor utama",
+      "D": "Sistem berada dalam kondisi turbulen penuh",
+      "E": "Tidak ada keseimbangan dinamis",
+      "Gambar": ""
+    },
+    {
+      "No": 10,
+      "Soal": "Jika neraca radiasi bersih (net radiation) bernilai negatif secara persisten di suatu wilayah, implikasi termodinamik jangka menengah adalah:",
+      "A": "Akumulasi energi internal dan peningkatan suhu",
+      "B": "Penurunan energi internal dan pendinginan sistem",
+      "C": "Tidak ada perubahan karena dikompensasi konveksi",
+      "D": "Terjadi peningkatan tekanan tanpa perubahan suhu",
+      "E": "Fluktuasi suhu acak tanpa tren",
+      "Gambar": ""
+    },
+    {
+      "No": 11,
+      "Soal": "Dalam teori Köhler, peningkatan konsentrasi solut (zat terlarut) dalam droplet akan memodifikasi kurva supersaturasi dengan cara:",
+      "A": "Menurunkan efek Kelvin sehingga radius kritis meningkat",
+      "B": "Meningkatkan efek Raoult sehingga supersaturasi kritis menurun",
+      "C": "Menghilangkan titik kritis karena kesetimbangan tercapai lebih cepat",
+      "D": "Tidak memengaruhi karena hanya suhu yang dominan",
+      "E": "Meningkatkan tekanan uap jenuh secara linear",
+      "Gambar": ""
+    },
+    {
+      "No": 12,
+      "Soal": "Dalam proses pertumbuhan droplet oleh difusi uap air, laju pertumbuhan radius droplet dibatasi oleh:",
+      "A": "Difusi massa dan konduktivitas panas secara simultan",
+      "B": "Hanya gradien tekanan parsial uap",
+      "C": "Hanya viskositas udara",
+      "D": "Fluktuasi turbulensi skala besar",
+      "E": "Gaya Coriolis",
+      "Gambar": ""
+    },
+    {
+      "No": 13,
+      "Soal": "Dalam kondisi supersaturasi rendah, aktivasi CCN terutama dikontrol oleh:",
+      "A": "Distribusi ukuran aerosol dan komposisi higroskopis",
+      "B": "Variasi tekanan dinamis mesoscale",
+      "C": "Fluks radiasi gelombang panjang",
+      "D": "Turbulensi boundary layer saja",
+      "E": "Gradien suhu horizontal",
+      "Gambar": ""
+    },
+    {
+      "No": 14,
+      "Soal": "Proses collision-coalescence pada awan hangat menjadi efisien ketika:",
+      "A": "Semua droplet memiliki ukuran homogen",
+      "B": "Distribusi ukuran droplet lebar sehingga kecepatan terminal berbeda",
+      "C": "Supersaturasi tetap konstan tinggi",
+      "D": "Tidak ada turbulensi",
+      "E": "Semua droplet berada pada keseimbangan Köhler",
+      "Gambar": ""
+    },
+    {
+      "No": 15,
+      "Soal": "Dalam mekanisme Bergeron-Findeisen, pertumbuhan kristal es lebih cepat dibanding droplet cair karena:",
+      "A": "Tekanan uap jenuh terhadap es lebih tinggi dari air",
+      "B": "Tekanan uap jenuh terhadap es lebih rendah dari air",
+      "C": "Difusi panas lebih besar pada fase cair",
+      "D": "Koalesensi lebih dominan pada es",
+      "E": "Efek Kelvin tidak berlaku pada es",
+      "Gambar": ""
+    },
+    {
+      "No": 16,
+      "Soal": "Jika suatu droplet berada di bawah radius kritis pada kurva Köhler, maka secara termodinamik:",
+      "A": "Droplet akan tumbuh spontan",
+      "B": "Droplet berada pada kesetimbangan stabil",
+      "C": "Droplet cenderung menguap kembali",
+      "D": "Droplet mengalami supersaturasi internal",
+      "E": "Droplet langsung menjadi inti es",
+      "Gambar": ""
+    },
+    {
+      "No": 17,
+      "Soal": "Dalam parameterisasi autokonversi (misalnya Kessler scheme), ambang konversi air awan menjadi hujan sangat dipengaruhi oleh:",
+      "A": "Konsentrasi mixing ratio air awan",
+      "B": "Kecepatan angin geostrofik",
+      "C": "Parameter Coriolis",
+      "D": "Flux radiasi masuk",
+      "E": "Tekanan permukaan",
+      "Gambar": ""
+    },
+    {
+      "No": 18,
+      "Soal": "Efek Kelvin menjadi signifikan pada droplet berukuran sangat kecil karena:",
+      "A": "Kelengkungan permukaan meningkatkan tekanan uap jenuh",
+      "B": "Gaya gravitasi mendominasi pada skala kecil",
+      "C": "Difusi massa menjadi nol",
+      "D": "Suhu droplet meningkat drastis",
+      "E": "Interaksi turbulensi meningkat",
+      "Gambar": ""
+    },
+    {
+      "No": 19,
+      "Soal": "Dalam awan dingin, proses riming terjadi ketika:",
+      "A": "Droplet supercooled membeku saat bertabrakan dengan kristal es",
+      "B": "Kristal es menyublim menjadi uap",
+      "C": "Droplet menguap karena subsaturasi",
+      "D": "Terjadi koalesensi antar droplet cair saja",
+      "E": "Es mencair menjadi air",
+      "Gambar": ""
+    },
+    {
+      "No": 20,
+      "Soal": "Dalam persamaan pertumbuhan droplet berbasis difusi, jika supersaturasi konstan, maka radius droplet kira-kira berbanding:",
+      "A": "Linear terhadap waktu (r ∝ t)",
+      "B": "Akar kuadrat waktu (r ∝ √t)",
+      "C": "Eksponensial terhadap waktu",
+      "D": "Tidak berubah",
+      "E": "Berbanding terbalik dengan waktu",
+      "Gambar": ""
+    },
+    {
+      "No": 21,
+      "Soal": "Dalam konteks Madden–Julian Oscillation (MJO), mengapa fase aktif sering diikuti peningkatan konveksi di wilayah tertentu namun tidak langsung merata secara longitudinal?",
+      "A": "Karena propagasi MJO dikontrol oleh gelombang Rossby yang stasioner",
+      "B": "Karena adanya kopling laut-atmosfer dan propagasi intraseasonal yang dipengaruhi shear zonal",
+      "C": "Karena radiasi matahari lebih dominan dibanding dinamika atmosfer",
+      "D": "Karena MJO hanya fenomena lokal tanpa interaksi global",
+      "E": "Karena tekanan permukaan sepenuhnya menentukan distribusi konveksi",
+      "Gambar": ""
+    },
+    {
+      "No": 22,
+      "Soal": "Pada fenomena siklon tropis, kondisi “rapid intensification” paling masuk akal terjadi ketika:",
+      "A": "SST tinggi tetapi shear vertikal kuat",
+      "B": "SST moderat dan kelembapan rendah",
+      "C": "SST tinggi, shear vertikal lemah, dan kandungan panas laut besar",
+      "D": "Tekanan tinggi mendominasi pusat sistem",
+      "E": "Tidak ada fluks laten dari laut",
+      "Gambar": ""
+    },
+    {
+      "No": 23,
+      "Soal": "Mengapa El Niño cenderung mengurangi curah hujan di Indonesia?",
+      "A": "Karena peningkatan tekanan di Pasifik barat melemahkan konveksi",
+      "B": "Karena suhu laut global menurun",
+      "C": "Karena rotasi bumi melambat",
+      "D": "Karena peningkatan kelembapan lokal",
+      "E": "Karena aktivitas monsun meningkat",
+      "Gambar": ""
+    },
+    {
+      "No": 24,
+      "Soal": "Dalam fenomena jet stream, pembentukan meander (gelombang Rossby) terutama dipicu oleh:",
+      "A": "Gradien suhu meridional dan konservasi vortisitas potensial",
+      "B": "Variasi tekanan lokal skala kecil",
+      "C": "Aktivitas konveksi tropis saja",
+      "D": "Pengaruh langsung topografi tanpa dinamika",
+      "E": "Variasi kelembapan saja",
+      "Gambar": ""
+    },
+    {
+      "No": 25,
+      "Soal": "Hujan ekstrem pada sistem mesoscale convective system (MCS) sering persisten karena:",
+      "A": "Sistem tidak memiliki sumber energi",
+      "B": "Adanya regenerasi sel konvektif di sisi upwind (back-building)",
+      "C": "Tidak ada interaksi dengan lingkungan",
+      "D": "Sistem hanya dipengaruhi radiasi",
+      "E": "Tidak ada transport uap air",
+      "Gambar": ""
+    },
+    {
+      "No": 26,
+      "Soal": "Fenomena downburst pada badai konvektif kuat umumnya terkait dengan:",
+      "A": "Pendinginan evaporatif dan percepatan downdraft",
+      "B": "Pemanasan adiabatik parcel naik",
+      "C": "Penurunan kelembapan relatif tanpa presipitasi",
+      "D": "Dominasi angin geostrofik",
+      "E": "Efek Coriolis skala kecil",
+      "Gambar": ""
+    },
+    {
+      "No": 27,
+      "Soal": "Mengapa daerah subtropis sering menjadi wilayah tekanan tinggi (subtropical highs)?",
+      "A": "Karena konvergensi udara di permukaan",
+      "B": "Karena subsiden dari sel Hadley yang menghangat adiabatik",
+      "C": "Karena pendinginan laut ekstrem",
+      "D": "Karena pengaruh langsung kutub",
+      "E": "Karena tidak ada radiasi matahari",
+      "Gambar": ""
+    },
+    {
+      "No": 28,
+      "Soal": "Dalam fenomena monsun, pembalikan arah angin musiman terutama dipicu oleh:",
+      "A": "Variasi suhu darat-laut yang menghasilkan gradien tekanan musiman",
+      "B": "Perubahan gaya Coriolis tahunan",
+      "C": "Aktivitas vulkanik regional",
+      "D": "Fluktuasi kecil tekanan lokal",
+      "E": "Variasi kelembapan saja",
+      "Gambar": ""
+    },
+    {
+      "No": 29,
+      "Soal": "Kabut radiasi lebih mudah terbentuk pada malam hari dengan kondisi:",
+      "A": "Angin kuat dan awan tebal",
+      "B": "Langit cerah, angin lemah, dan pendinginan radiatif kuat",
+      "C": "Suhu tinggi dan turbulensi kuat",
+      "D": "Tekanan rendah ekstrem",
+      "E": "Curah hujan tinggi",
+      "Gambar": ""
+    },
+    {
+      "No": 30,
+      "Soal": "Dalam fenomena atmospheric river, kontribusi utama terhadap kejadian hujan ekstrem adalah:",
+      "A": "Transport uap air terfokus dalam pita sempit dengan flux tinggi",
+      "B": "Pendinginan radiasi jangka panjang",
+      "C": "Pengaruh langsung gaya Coriolis saja",
+      "D": "Tidak adanya adveksi uap air",
+      "E": "Hanya proses lokal konveksi kecil",
+      "Gambar": ""
+    },
+    {
+      "No": 31,
+      "Soal": "Dalam korelasi stratigrafi regional, penggunaan fosil indeks dianggap kuat bukan karena kelimpahannya semata, tetapi karena:",
+      "A": "Rentang hidupnya panjang sehingga mudah ditemukan di berbagai lapisan",
+      "B": "Evolusinya lambat sehingga stabil secara morfologi",
+      "C": "Distribusi geografis luas namun rentang waktu geologinya sempit",
+      "D": "Hanya ditemukan pada lingkungan laut dalam",
+      "E": "Tidak dipengaruhi oleh perubahan lingkungan",
+      "Gambar": ""
+    },
+    {
+      "No": 32,
+      "Soal": "Jika dua satuan batuan memiliki litologi berbeda tetapi mengandung asosiasi fosil yang sama, interpretasi paling masuk akal adalah:",
+      "A": "Keduanya terbentuk pada waktu berbeda dengan lingkungan identik",
+      "B": "Keduanya terbentuk pada waktu yang sama namun lingkungan berbeda",
+      "C": "Salah satu telah mengalami metamorfisme",
+      "D": "Fosil tidak dapat digunakan sebagai alat korelasi",
+      "E": "Terjadi kesalahan sampling",
+      "Gambar": ""
+    },
+    {
+      "No": 33,
+      "Soal": "Dalam penentuan umur absolut menggunakan metode radiometrik, asumsi paling kritis yang harus dipenuhi adalah:",
+      "A": "Sistem tetap tertutup terhadap unsur induk dan anak sejak pembentukan",
+      "B": "Semua isotop memiliki waktu paruh sama",
+      "C": "Suhu tidak pernah berubah",
+      "D": "Tekanan konstan sepanjang waktu",
+      "E": "Tidak ada pelapukan",
+      "Gambar": ""
+    },
+    {
+      "No": 34,
+      "Soal": "Ketidaksesuaian angular unconformity menunjukkan bahwa:",
+      "A": "Sedimentasi berlangsung kontinu tanpa gangguan",
+      "B": "Terjadi erosi setelah lapisan dimiringkan lalu ditutupi kembali",
+      "C": "Tidak ada deformasi tektonik",
+      "D": "Semua lapisan sejajar",
+      "E": "Hanya terjadi di lingkungan laut",
+      "Gambar": ""
+    },
+    {
+      "No": 35,
+      "Soal": "Dalam analisis sikuen stratigrafi, batas sikuen (sequence boundary) umumnya diasosiasikan dengan:",
+      "A": "Kenaikan muka laut relatif",
+      "B": "Kondisi transgresif maksimum",
+      "C": "Penurunan muka laut relatif dan erosi",
+      "D": "Stabilitas muka laut",
+      "E": "Aktivitas vulkanik",
+      "Gambar": ""
+    },
+    {
+      "No": 36,
+      "Soal": "Prinsip superposisi dalam stratigrafi menjadi tidak berlaku secara langsung pada kondisi:",
+      "A": "Sedimen klastik",
+      "B": "Batuan sedimen laut",
+      "C": "Lapisan yang terlipat atau terbalik",
+      "D": "Lingkungan delta",
+      "E": "Endapan evaporit",
+      "Gambar": ""
+    },
+    {
+      "No": 37,
+      "Soal": "Dalam paleontologi, peristiwa kepunahan massal Permian-Trias sering dikaitkan dengan:",
+      "A": "Pendinginan global jangka panjang",
+      "B": "Aktivitas vulkanisme besar dan perubahan kimia laut",
+      "C": "Tumbukan meteorit kecil",
+      "D": "Fluktuasi pasang surut",
+      "E": "Perubahan rotasi bumi",
+      "Gambar": ""
+    },
+    {
+      "No": 38,
+      "Soal": "Metode penanggalan U-Pb pada zirkon sangat dihargai karena:",
+      "A": "Zirkon mudah mengalami alterasi kimia",
+      "B": "Zirkon dapat menginkorporasi Pb awal dalam jumlah besar",
+      "C": "Zirkon tahan terhadap pelapukan dan mempertahankan sistem isotop tertutup",
+      "D": "Waktu paruh U sangat pendek",
+      "E": "Tidak memerlukan asumsi apa pun",
+      "Gambar": ""
+    },
+    {
+      "No": 39,
+      "Soal": "Dalam interpretasi lingkungan pengendapan, struktur sedimen seperti cross-bedding paling kuat mengindikasikan:",
+      "A": "Lingkungan tanpa arus",
+      "B": "Transport sedimen oleh arus atau angin dengan arah dominan",
+      "C": "Aktivitas biologi saja",
+      "D": "Endapan kimia murni",
+      "E": "Proses metamorfisme",
+      "Gambar": ""
+    },
+    {
+      "No": 40,
+      "Soal": "Prinsip uniformitarianisme dalam geologi menyatakan bahwa:",
+      "A": "Semua proses masa lalu berbeda dari sekarang",
+      "B": "Hanya proses katastrofik yang membentuk bumi",
+      "C": "Proses geologi yang terjadi saat ini juga terjadi di masa lalu",
+      "D": "Waktu geologi sangat singkat",
+      "E": "Tidak ada perubahan lingkungan",
+      "Gambar": ""
+    },
+    {
+      "No": 41,
+      "Soal": "Seorang geolog menemukan batuan beku dengan tekstur porfiritik: fenokris besar tertanam dalam massa dasar halus. Riwayat pembekuan yang paling konsisten untuk menjelaskan tekstur ini adalah:",
+      "A": "Pendinginan cepat satu tahap di permukaan",
+      "B": "Pendinginan lambat seluruhnya di kedalaman",
+      "C": "Pendinginan dua tahap: awal lambat di kedalaman lalu cepat saat naik",
+      "D": "Kristalisasi ulang akibat metamorfisme regional",
+      "E": "Pelelehan parsial batuan sedimen",
+      "Gambar": ""
+    },
+    {
+      "No": 42,
+      "Soal": "Sampel granit menunjukkan komposisi kuarsa–feldspar alkali dominan dengan sedikit plagioklas. Jika dibandingkan dengan basal, interpretasi paling tepat terkait sumber magmanya adalah:",
+      "A": "Berasal dari mantel langsung tanpa diferensiasi",
+      "B": "Produk diferensiasi magma mafik atau peleburan kerak benua",
+      "C": "Terbentuk dari pendinginan sangat cepat di permukaan",
+      "D": "Tidak melibatkan proses fraksionasi",
+      "E": "Selalu berasosiasi dengan zona subduksi samudra",
+      "Gambar": ""
+    },
+    {
+      "No": 43,
+      "Soal": "Pada suatu penampang, ditemukan batuan sedimen klastik berbutir sangat halus dengan laminasi sejajar dan hampir tanpa struktur arus. Lingkungan pengendapan yang paling masuk akal adalah:",
+      "A": "Sungai berenergi tinggi",
+      "B": "Delta dengan arus kuat",
+      "C": "Lingkungan laut dalam yang tenang",
+      "D": "Gurun eolian",
+      "E": "Zona pantai berombak kuat",
+      "Gambar": ""
+    },
+    {
+      "No": 44,
+      "Soal": "Seorang peneliti mengamati batuan metamorf dengan foliasi kuat dan mineral mika terorientasi sejajar. Kondisi pembentukan yang paling mungkin adalah:",
+      "A": "Tekanan diferensial tinggi dengan deformasi plastis",
+      "B": "Pendinginan cepat tanpa tekanan",
+      "C": "Lingkungan kering tanpa fluida",
+      "D": "Tekanan isotropik tanpa deformasi",
+      "E": "Proses diagenesis biasa",
+      "Gambar": ""
+    },
+    {
+      "No": 45,
+      "Soal": "Dalam suatu erupsi eksplosif, endapan piroklastik menunjukkan ukuran fragmen sangat bervariasi dari abu hingga bom vulkanik. Mekanisme utama yang menjelaskan distribusi ukuran ini adalah:",
+      "A": "Pendinginan lambat lava",
+      "B": "Fragmentasi magma akibat ekspansi gas",
+      "C": "Pelapukan batuan setelah erupsi",
+      "D": "Transport air sungai",
+      "E": "Metamorfisme kontak",
+      "Gambar": ""
+    },
+    {
+      "No": 46,
+      "Soal": "Analisis petrografi menunjukkan tekstur vesikular pada batuan beku mafik. Interpretasi paling logis terkait kondisi pembentukannya adalah:",
+      "A": "Kristalisasi di tekanan tinggi tanpa gas",
+      "B": "Pelepasan gas terperangkap saat magma naik dan mendingin cepat",
+      "C": "Metamorfisme regional intensif",
+      "D": "Pelarutan mineral oleh fluida",
+      "E": "Rekristalisasi pada suhu rendah",
+      "Gambar": ""
+    },
+    {
+      "No": 47,
+      "Soal": "Pada batuan metamorf derajat tinggi ditemukan mineral garnet dan sillimanite. Kondisi tekanan–suhu yang paling sesuai adalah:",
+      "A": "Tekanan rendah, suhu rendah",
+      "B": "Tekanan tinggi, suhu rendah",
+      "C": "Suhu tinggi dengan tekanan menengah–tinggi",
+      "D": "Suhu rendah dengan fluida tinggi",
+      "E": "Tidak terkait kondisi P-T tertentu",
+      "Gambar": ""
+    },
+    {
+      "No": 48,
+      "Soal": "Seorang mahasiswa membandingkan batupasir kuarsa matang dengan batupasir arkosa. Perbedaan utama yang paling bermakna secara genetik adalah:",
+      "A": "Arkosa menunjukkan transport jauh lebih lama",
+      "B": "Kuarsa matang menunjukkan pelapukan dan transport intensif",
+      "C": "Arkosa terbentuk di laut dalam",
+      "D": "Kuarsa matang selalu berasal dari batuan beku",
+      "E": "Keduanya identik secara proses",
+      "Gambar": ""
+    },
+    {
+      "No": 49,
+      "Soal": "Endapan ignimbrit luas dengan struktur welding kuat mengindikasikan:",
+      "A": "Aliran lava efusif biasa",
+      "B": "Endapan jatuhan abu tipis",
+      "C": "Aliran piroklastik panas dengan deposisi cepat dan pemadatan",
+      "D": "Sedimentasi fluvial",
+      "E": "Metamorfisme regional",
+      "Gambar": ""
+    },
+    {
+      "No": 50,
+      "Soal": "Pada diagram Bowen, urutan kristalisasi mineral mafik hingga felsik mencerminkan:",
+      "A": "Penurunan suhu dan evolusi komposisi magma",
+      "B": "Peningkatan tekanan tanpa perubahan suhu",
+      "C": "Proses sedimentasi",
+      "D": "Metamorfisme kontak",
+      "E": "Pelapukan kimia",
+      "Gambar": ""
+    },
+    {
+      "No": 51,
+      "Soal": "Pada singkapan lipatan, bidang sumbu miring dengan kedua sayap memiliki sudut kemiringan berbeda signifikan. Selain geometri tersebut, indikator mana yang paling menguatkan interpretasi deformasi non-koaksial?",
+      "A": "Distribusi ketebalan lapisan konstan di kedua sayap",
+      "B": "Adanya cleavage yang tidak sejajar bidang sumbu lipatan",
+      "C": "Kehadiran lineation peregangan sejajar arah sumbu lipatan",
+      "D": "Ketidakhadiran rekahan sekunder",
+      "E": "Orientasi bedding horizontal",
+      "Gambar": ""
+    },
+    {
+      "No": 52,
+      "Soal": "Pengukuran menunjukkan strike N90°E dengan dip 30° ke selatan. Jika dibuat penampang tegak lurus strike, besar apparent dip yang terukur pada penampang tersebut adalah:",
+      "A": "Sama dengan true dip karena penampang tegak lurus strike",
+      "B": "Lebih kecil dari true dip karena efek proyeksi",
+      "C": "Lebih besar dari true dip karena deformasi",
+      "D": "Nol karena bedding planar",
+      "E": "Tidak dapat ditentukan tanpa data tambahan",
+      "Gambar": ""
+    },
+    {
+      "No": 53,
+      "Soal": "Offset kanal sungai menunjukkan pergeseran lateral kanan sejauh 50 m pada bidang sesar hampir vertikal. Jika komponen vertikal dapat diabaikan, parameter mana yang paling tepat menggambarkan kinematika sesar tersebut?",
+      "A": "Net slip dominan vertikal",
+      "B": "Strike-slip dekstral dengan rake mendekati 0°",
+      "C": "Sesar naik dengan kompresi maksimum",
+      "D": "Sesar normal dengan ekstensi maksimum",
+      "E": "Oblique-slip dengan komponen dip-slip dominan",
+      "Gambar": ""
+    },
+    {
+      "No": 54,
+      "Soal": "Suatu akuifer homogen memiliki K = 2×10⁻⁵ m/s dan gradien hidraulik 0,015. Jika porositas efektif 0,25, maka kecepatan aliran aktual (seepage velocity) adalah:",
+      "A": "3×10⁻⁷ m/s",
+      "B": "3×10⁻⁶ m/s",
+      "C": "1,2×10⁻⁶ m/s",
+      "D": "1,2×10⁻⁵ m/s",
+      "E": "7,5×10⁻⁷ m/s",
+      "Gambar": ""
+    },
+    {
+      "No": 55,
+      "Soal": "Pada sistem karst berkembang, jaringan aliran bawah tanah cenderung sangat anisotropik. Faktor utama yang mengontrol anisotropi tersebut adalah:",
+      "A": "Variasi tekanan atmosfer lokal",
+      "B": "Distribusi rekahan dan jalur pelarutan selektif",
+      "C": "Gradien suhu vertikal",
+      "D": "Komposisi mineral minor",
+      "E": "Fluktuasi musiman curah hujan saja",
+      "Gambar": ""
+    },
+    {
+      "No": 56,
+      "Soal": "Sebuah kipas aluvial menunjukkan gradasi ukuran dari kasar di proximal menjadi halus di distal. Mekanisme yang paling tepat menjelaskan pola ini adalah:",
+      "A": "Sorting akibat seleksi aerodinamik",
+      "B": "Penurunan energi aliran dan kapasitas transport",
+      "C": "Kristalisasi mineral selama transport",
+      "D": "Kompaksi diferensial",
+      "E": "Aktivitas bioturbasi",
+      "Gambar": ""
+    },
+    {
+      "No": 57,
+      "Soal": "Perbedaan head antara dua sumur adalah 15 m dengan jarak 300 m. Jika lapisan memiliki anisotropi sehingga K horizontal 10 kali K vertikal, implikasi utama terhadap arah aliran adalah:",
+      "A": "Aliran dominan vertikal",
+      "B": "Aliran tetap isotropik",
+      "C": "Aliran dominan mengikuti arah horizontal dengan deviasi minimal",
+      "D": "Tidak ada aliran karena anisotropi",
+      "E": "Gradien menjadi nol",
+      "Gambar": ""
+    },
+    {
+      "No": 58,
+      "Soal": "Lembah berbentuk U dengan overdeepening dan morena terminal teridentifikasi. Kombinasi proses yang paling konsisten adalah:",
+      "A": "Erosi fluvial dan deposisi delta",
+      "B": "Abrasi glasial dan transport material oleh es",
+      "C": "Pelapukan kimia intensif",
+      "D": "Erosi angin",
+      "E": "Aktivitas tektonik tanpa erosi",
+      "Gambar": ""
+    },
+    {
+      "No": 59,
+      "Soal": "Zona sesar memperlihatkan gouge halus dan breksi angular. Jika dihubungkan dengan kondisi tegasan, interpretasi paling tepat adalah:",
+      "A": "Deformasi pada suhu tinggi dengan rekristalisasi penuh",
+      "B": "Deformasi rapuh dengan strain terlokalisasi tinggi",
+      "C": "Deformasi plastis homogen",
+      "D": "Tidak ada hubungan dengan tegasan",
+      "E": "Pendinginan magma cepat",
+      "Gambar": ""
+    },
+    {
+      "No": 60,
+      "Soal": "Sebuah akuifer memiliki luas penampang efektif 80 m², K = 5×10⁻⁵ m/s, dan gradien 0,01. Debit aliran yang paling mendekati adalah:",
+      "A": "4×10⁻⁵ m³/s",
+      "B": "4×10⁻⁴ m³/s",
+      "C": "4×10⁻³ m³/s",
+      "D": "8×10⁻⁵ m³/s",
+      "E": "8×10⁻⁴ m³/s",
+      "Gambar": ""
+    },
+    {
+      "No": 61,
+      "Soal": "Angin zonal konstan bekerja cukup lama di laut terbuka (NH). Dengan asumsi viskositas eddy konstan, arah transport Ekman total adalah:",
+      "A": "~70–80° ke kanan dari angin akibat deviasi non-ideal",
+      "B": "Tepat 90° ke kanan hanya jika steady-state & homogen",
+      "C": "~45° ke kanan karena spiral Ekman dominan di permukaan",
+      "D": "Sejajar angin jika gradien tekanan nol",
+      "E": "Bergantung pada kedalaman termoklin",
+      "Gambar": ""
+    },
+    {
+      "No": 62,
+      "Soal": "Diberikan U = 1 m/s, L = 100 km, f = 10⁻⁴ s⁻¹. Jika mempertimbangkan ketidakpastian skala ±20%, Rossby number yang paling konsisten adalah:",
+      "A": "O(1) karena variasi L signifikan",
+      "B": "O(10⁻¹) dengan deviasi kecil dari geostrofik",
+      "C": "O(10⁻²) dengan dominasi Coriolis kuat",
+      "D": "O(10⁰) jika turbulensi dominan",
+      "E": "Tidak terdefinisi tanpa β-effect",
+      "Gambar": ""
+    },
+    {
+      "No": 63,
+      "Soal": "Dalam laut dengan gradien tekanan lateral konstan dan gesekan kecil, arus yang terbentuk cenderung:",
+      "A": "Mendekati geostrofik dengan deviasi kecil akibat friksi",
+      "B": "Sepenuhnya mengikuti arah gradien tekanan",
+      "C": "Didominasi oleh percepatan lokal",
+      "D": "Tidak stabil tanpa angin",
+      "E": "Mengarah ke tekanan tinggi",
+      "Gambar": ""
+    },
+    {
+      "No": 64,
+      "Soal": "Di SH, gradien tekanan meningkat ke utara. Dengan asumsi aliran geostrofik murni, arah arus:",
+      "A": "Barat dengan sedikit komponen meridional",
+      "B": "Timur jika efek β diabaikan",
+      "C": "Barat karena Coriolis membelokkan ke kiri",
+      "D": "Selatan karena tekanan meningkat",
+      "E": "Tidak unik tanpa densitas",
+      "Gambar": ""
+    },
+    {
+      "No": 65,
+      "Soal": "Lapisan dengan gradien suhu tajam sering berasosiasi dengan perubahan densitas. Namun, kondisi di mana termoklin ≠ piknoklin paling mungkin terjadi ketika:",
+      "A": "Variasi salinitas signifikan mengimbangi suhu",
+      "B": "Tekanan meningkat linear",
+      "C": "Tidak ada stratifikasi",
+      "D": "Suhu konstan",
+      "E": "Kedalaman dangkal",
+      "Gambar": ""
+    },
+    {
+      "No": 66,
+      "Soal": "Kecepatan gelombang internal bergantung pada reduced gravity (g’). Jika perbedaan densitas antar lapisan makin kecil, maka:",
+      "A": "g’ meningkat → kecepatan naik",
+      "B": "g’ menurun → kecepatan menurun",
+      "C": "g’ tetap → kecepatan tetap",
+      "D": "Tidak bergantung pada densitas",
+      "E": "Gelombang hilang",
+      "Gambar": ""
+    },
+    {
+      "No": 67,
+      "Soal": "Ketebalan Ekman δ ~ √(2ν/f). Jika kecepatan angin meningkat tetapi ν efektif juga meningkat akibat turbulensi, maka δ:",
+      "A": "Pasti konstan",
+      "B": "Cenderung meningkat meski tidak linear",
+      "C": "Menurun karena f dominan",
+      "D": "Tidak berubah tanpa perubahan f",
+      "E": "Bergantung langsung pada U saja",
+      "Gambar": ""
+    },
+    {
+      "No": 68,
+      "Soal": "Western boundary current terbentuk karena intensifikasi barat akibat β-effect. Jika β → 0 (tanpa variasi Coriolis), maka:",
+      "A": "Arus tetap terfokus di barat",
+      "B": "Intensifikasi berpindah ke timur",
+      "C": "Tidak ada intensifikasi batas",
+      "D": "Arus menghilang total",
+      "E": "Terjadi simetri sempurna tanpa batas dominan",
+      "Gambar": ""
+    },
+    {
+      "No": 69,
+      "Soal": "Upwelling pesisir (NH) terjadi ketika transport Ekman menyebabkan divergensi. Namun kondisi ini bisa melemah jika:",
+      "A": "Angin sejajar pantai tetap kuat",
+      "B": "Stratifikasi sangat lemah",
+      "C": "Arah angin berubah sedikit offshore → onshore",
+      "D": "f meningkat",
+      "E": "Gradien tekanan meningkat",
+      "Gambar": ""
+    },
+    {
+      "No": 70,
+      "Soal": "Frekuensi Brunt–Väisälä: N² ∝ -(g/ρ)(dρ/dz). Dalam sistem stabil, peningkatan N paling sensitif terhadap:",
+      "A": "Perubahan kecil pada gradien densitas tajam",
+      "B": "Variasi tekanan absolut",
+      "C": "Kedalaman total",
+      "D": "Variasi suhu permukaan saja",
+      "E": "Kecepatan angin",
+      "Gambar": ""
+    },
+    {
+      "No": 71,
+      "Soal": "Dalam sistem karbon laut, jika pCO₂ atmosfer meningkat tanpa perubahan alkalinitas total, respons awal air laut permukaan yang paling konsisten adalah:",
+      "A": "Penurunan pH dan peningkatan DIC dengan rasio tidak linier",
+      "B": "Penurunan DIC karena outgassing",
+      "C": "Peningkatan pH akibat buffering karbonat",
+      "D": "Alkalinitas meningkat signifikan",
+      "E": "CO₂ terlarut tidak berubah",
+      "Gambar": ""
+    },
+    {
+      "No": 72,
+      "Soal": "Pada titrasi alkalinitas Gran plot, deviasi linearitas di pH rendah paling sering mengindikasikan:",
+      "A": "Kesalahan kalibrasi suhu saja",
+      "B": "Kehadiran asam lemah non-karbonat atau borat",
+      "C": "Tidak adanya CO₂ terlarut",
+      "D": "Kesalahan volumetrik kecil",
+      "E": "Efek tekanan hidrostatik",
+      "Gambar": ""
+    },
+    {
+      "No": 73,
+      "Soal": "Sensor CTD menunjukkan spike konduktivitas pada kedalaman tertentu tanpa perubahan temperatur. Interpretasi paling mungkin adalah:",
+      "A": "Noise elektronik acak",
+      "B": "Intrusi massa air dengan salinitas berbeda",
+      "C": "Kesalahan tekanan",
+      "D": "Drift sensor suhu",
+      "E": "Tidak signifikan",
+      "Gambar": ""
+    },
+    {
+      "No": 74,
+      "Soal": "Dalam diagram T–S, garis lurus antara dua massa air menunjukkan:",
+      "A": "Reaksi kimia aktif",
+      "B": "Mixing konservatif tanpa sumber/sink signifikan",
+      "C": "Difusi molekuler dominan",
+      "D": "Ketidakseimbangan termal",
+      "E": "Kesalahan pengukuran",
+      "Gambar": ""
+    },
+    {
+      "No": 75,
+      "Soal": "Konsentrasi oksigen terlarut maksimum di permukaan laut dingin terutama dikontrol oleh:",
+      "A": "Aktivitas biologis saja",
+      "B": "Solubilitas gas yang meningkat pada suhu rendah",
+      "C": "Tekanan parsial CO₂",
+      "D": "Salinitas tinggi",
+      "E": "Arus laut",
+      "Gambar": ""
+    },
+    {
+      "No": 76,
+      "Soal": "Jika sensor oksigen optode menunjukkan lag terhadap perubahan cepat, penyebab utama biasanya:",
+      "A": "Kesalahan tekanan",
+      "B": "Difusi membran dan waktu respons sensor",
+      "C": "Fluktuasi arus",
+      "D": "Variasi pH",
+      "E": "Noise listrik",
+      "Gambar": ""
+    },
+    {
+      "No": 77,
+      "Soal": "Dalam pengukuran nutrien (nitrat) menggunakan spektrofotometri, interferensi utama yang sering muncul adalah:",
+      "A": "Variasi tekanan",
+      "B": "Kehadiran nitrit dan bahan organik terlarut",
+      "C": "Suhu air",
+      "D": "Kedalaman",
+      "E": "Arus laut",
+      "Gambar": ""
+    },
+    {
+      "No": 78,
+      "Soal": "Jika alkalinitas total tetap tetapi DIC meningkat, maka sistem karbon akan bergeser menuju:",
+      "A": "Dominasi CO₃²⁻",
+      "B": "Dominasi HCO₃⁻ dan CO₂(aq)",
+      "C": "Tidak berubah",
+      "D": "Semua spesies menurun",
+      "E": "Dominasi OH⁻",
+      "Gambar": ""
+    },
+    {
+      "No": 79,
+      "Soal": "Drift jangka panjang pada sensor pH in-situ paling sering disebabkan oleh:",
+      "A": "Variasi arus",
+      "B": "Degradasi elektroda atau dye optik",
+      "C": "Perubahan tekanan",
+      "D": "Fluktuasi suhu sesaat",
+      "E": "Noise data logger",
+      "Gambar": ""
+    },
+    {
+      "No": 80,
+      "Soal": "Dalam kalibrasi CTD, bottle sample (Niskin) digunakan terutama untuk:",
+      "A": "Mengukur arus",
+      "B": "Validasi parameter kimia seperti salinitas dan oksigen",
+      "C": "Mengukur tekanan",
+      "D": "Menentukan kedalaman",
+      "E": "Mengukur suhu saja",
+      "Gambar": ""
+    },
+    {
+      "No": 81,
+      "Soal": "Satelit di orbit elips dengan (a) tetap mengalami impuls kecil radial di titik sembarang. Pernyataan benar:",
+      "A": "Energi berubah, momentum sudut tetap",
+      "B": "Energi tetap, momentum sudut berubah",
+      "C": "Keduanya berubah",
+      "D": "Keduanya tetap",
+      "E": "Hanya eksentrisitas berubah",
+      "Gambar": ""
+    },
+    {
+      "No": 82,
+      "Soal": "Dua orbit memiliki energi spesifik sama, tetapi eksentrisitas berbeda. Maka:",
+      "A": "Semi-major axis sama, bentuk orbit beda",
+      "B": "Periode berbeda",
+      "C": "Kecepatan rata-rata berbeda",
+      "D": "Momentum sudut sama",
+      "E": "Orbit identik",
+      "Gambar": ""
+    },
+    {
+      "No": 83,
+      "Soal": "Pada transfer Hohmann dari (r_1) ke (r_2 = 4r_1), rasio kecepatan di perigee transfer terhadap kecepatan sirkular di (r_1):",
+      "A": ">1 dan mendekati √2",
+      "B": "1",
+      "C": "<1",
+      "D": "2",
+      "E": "Bergantung massa satelit",
+      "Gambar": ""
+    },
+    {
+      "No": 84,
+      "Soal": "Dalam vis-viva, jika (r = a) (titik tertentu pada elips):",
+      "A": "v maksimum",
+      "B": "v minimum",
+      "C": "v = kecepatan sirkular di a",
+      "D": "v = 0",
+      "E": "Tidak mungkin terjadi",
+      "Gambar": ""
+    },
+    {
+      "No": 85,
+      "Soal": "Sistem teleskop dengan aperture besar tetapi pixel CCD terlalu besar akan menghasilkan:",
+      "A": "Resolusi meningkat tanpa batas",
+      "B": "Under-sampling (aliasing spasial)",
+      "C": "Over-sampling tanpa efek",
+      "D": "Difraksi hilang",
+      "E": "Noise nol",
+      "Gambar": ""
+    },
+    {
+      "No": 86,
+      "Soal": "Pada kondisi seeing atmosfer dominan (~1 arcsec), meningkatkan diameter teleskop dari 1 m ke 10 m akan:",
+      "A": "Resolusi meningkat 10×",
+      "B": "Resolusi tetap ~seeing limit",
+      "C": "Difraksi mendominasi",
+      "D": "Tidak memengaruhi apapun",
+      "E": "Menurunkan resolusi",
+      "Gambar": ""
+    },
+    {
+      "No": 87,
+      "Soal": "Aberasi koma paling signifikan terjadi pada:",
+      "A": "Sumbu optik",
+      "B": "Titik fokus",
+      "C": "Off-axis field",
+      "D": "Semua posisi sama",
+      "E": "Hanya pada lensa",
+      "Gambar": ""
+    },
+    {
+      "No": 88,
+      "Soal": "Untuk sistem optik, memperkecil f/# (lebih “cepat”) dengan aperture tetap akan:",
+      "A": "Mengubah resolusi difraksi",
+      "B": "Meningkatkan iluminasi per area detektor",
+      "C": "Mengurangi panjang gelombang efektif",
+      "D": "Menghilangkan aberasi",
+      "E": "Mengubah limit Rayleigh",
+      "Gambar": ""
+    },
+    {
+      "No": 89,
+      "Soal": "Pada orbit elips, kecepatan rata-rata sepanjang lintasan dibanding kecepatan sirkular di a adalah:",
+      "A": "Lebih besar",
+      "B": "Lebih kecil",
+      "C": "Sama",
+      "D": "Nol",
+      "E": "Tak terdefinisi",
+      "Gambar": ""
+    },
+    {
+      "No": 90,
+      "Soal": "Jika dua teleskop memiliki aperture sama, tetapi satu memiliki kualitas optik buruk (wavefront error tinggi), maka:",
+      "A": "Resolusi tetap ideal",
+      "B": "Airy disk tetap sama",
+      "C": "PSF melebar → resolusi efektif turun",
+      "D": "Tidak ada efek",
+      "E": "Hanya brightness terpengaruh",
+      "Gambar": ""
+    },
+    {
+      "No": 91,
+      "Soal": "Untuk medium LTE dengan albedo hamburan ( \\omega=\\sigma_\\nu/(\\kappa_\\nu+\\sigma_\\nu)). Pada limit ( \\omega \\to 1) dan optical depth besar, perilaku emergent intensity paling tepat:",
+      "A": "Mendekati (B_\\nu(T)) karena banyak tumbukan",
+      "B": "Mendekati (J_\\nu) dan gagal termalisasi penuh",
+      "C": "Nol karena absorpsi kecil",
+      "D": "Divergen",
+      "E": "Identik dengan kasus optik tipis",
+      "Gambar": ""
+    },
+    {
+      "No": 92,
+      "Soal": "Reddening mengikuti hukum (A_\\lambda \\propto \\lambda^{-1}). Untuk dua filter sempit di (\\lambda_1<\\lambda_2), perubahan color index (\\Delta(m_1-m_2)) skala pertama terhadap (A_V):",
+      "A": "(\\propto A_V(\\lambda_1/\\lambda_2))",
+      "B": "(\\propto A_V(1/\\lambda_1-1/\\lambda_2))",
+      "C": "(\\propto A_V(\\lambda_2-\\lambda_1))",
+      "D": "Nol",
+      "E": "(\\propto A_V^2)",
+      "Gambar": ""
+    },
+    {
+      "No": 93,
+      "Soal": "Dari (m=-2.5\\log_{10}F), galat kecil memberi (\\delta m). Untuk SNR tinggi, bentuk tepat orde pertama:",
+      "A": "(\\delta m=\\ln 10,\\delta F/F)",
+      "B": "(\\delta m\\approx 1.086,\\delta F/F)",
+      "C": "(\\delta m\\approx 2.5,\\delta F/F)",
+      "D": "(\\delta m\\approx 0.4,\\delta F/F)",
+      "E": "(\\delta m\\approx (\\delta F/F)^2)",
+      "Gambar": ""
+    },
+    {
+      "No": 94,
+      "Soal": "Spektrograf dengan PSF garis Gaussian (\\sigma_\\lambda). Jika sampling piksel (>!2\\sigma_\\lambda) (undersampled), efek paling kritis:",
+      "A": "Resolusi efektif naik",
+      "B": "Bias posisi garis (centroid) & aliasing frekuensi tinggi",
+      "C": "Hanya SNR turun",
+      "D": "Lebar garis terukur menyempit",
+      "E": "Tidak ada dampak jika SNR tinggi",
+      "Gambar": ""
+    },
+    {
+      "No": 95,
+      "Soal": "Degenerasi (T_{\\rm eff})–(E(B!-!V)) pada SED broadband paling kuat karena:",
+      "A": "Keduanya mengubah slope log-flux vs log-λ secara hampir kolinear pada rentang terbatas",
+      "B": "Keduanya hanya memengaruhi UV",
+      "C": "Keduanya hanya memengaruhi garis",
+      "D": "Keduanya ortogonal di ruang warna",
+      "E": "Tidak ada degenerasi jika ≥2 band",
+      "Gambar": ""
+    },
+    {
+      "No": 96,
+      "Soal": "Total noise: ( \\sigma^2 = S + n_{\\rm pix}(B + \\sigma_r^2)). Untuk sumber redup (B dominan), scaling SNR terhadap waktu t:",
+      "A": "( \\propto t)",
+      "B": "( \\propto \\sqrt{t}) dengan koefisien dibatasi B",
+      "C": "Independen t",
+      "D": "( \\propto t^{3/2})",
+      "E": "Menurun saat t besar",
+      "Gambar": ""
+    },
+    {
+      "No": 97,
+      "Soal": "Doppler relativistik 1D: (1+z=\\gamma(1+\\beta)). Untuk (\\beta\\ll1), ekspansi hingga orde kedua memberi:",
+      "A": "(z\\approx \\beta + \\beta^2)",
+      "B": "(z\\approx \\beta + \\tfrac{1}{2}\\beta^2)",
+      "C": "(z\\approx \\beta) saja",
+      "D": "(z\\approx \\tfrac{1}{2}\\beta)",
+      "E": "(z\\approx \\beta - \\tfrac{1}{2}\\beta^2)",
+      "Gambar": ""
+    },
+    {
+      "No": 98,
+      "Soal": "Flat-field yang salah normalisasi (skala global salah) namun pola spasial benar akan:",
+      "A": "Mengganggu fotometri relatif",
+      "B": "Mengganggu fotometri absolut saja",
+      "C": "Menggeser panjang gelombang",
+      "D": "Mengubah PSF",
+      "E": "Mengubah EW garis",
+      "Gambar": ""
+    },
+    {
+      "No": 99,
+      "Soal": "EW (= \\int (1 - F_\\lambda/F_c),d\\lambda). Jika seluruh spektrum dikalikan faktor konstan k, maka:",
+      "A": "EW berubah ∝ k",
+      "B": "EW tak berubah",
+      "C": "EW berubah ∝ 1/k",
+      "D": "EW nol",
+      "E": "EW bergantung resolusi saja",
+      "Gambar": ""
+    },
+    {
+      "No": 100,
+      "Soal": "Sistem AB: (m_{\\rm AB}=-2.5\\log f_\\nu - 48.6). Jika spektrum (f_\\nu \\propto \\nu^\\alpha), perubahan warna antara dua band sempit berpusat (\\nu_1,\\nu_2):",
+      "A": "(\\propto \\alpha(\\nu_1-\\nu_2))",
+      "B": "(\\propto \\alpha\\log(\\nu_1/\\nu_2))",
+      "C": "Independen (\\alpha)",
+      "D": "(\\propto \\alpha^2)",
+      "E": "(\\propto \\nu_1/\\nu_2)",
+      "Gambar": ""
+    }
+  ]
+}
