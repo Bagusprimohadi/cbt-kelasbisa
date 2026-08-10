@@ -1,5 +1,5 @@
 // ==========================================================
-// CBT-KIBI Versi 1.1 - Core Engine (Mobile Touch Fixed)
+// CBT-KIBI Versi 1.1 - Core Engine (Mobile Touch & MathJax Fixed)
 // ==========================================================
 
 // Variable Global
@@ -226,7 +226,7 @@ function prosesPeringatanKecurangan() {
 }
 
 // ==========================================================
-// 4. RENDER SOAL & NAVIGASI (FIXED UNTUK MOBILE)
+// 4. RENDER SOAL & NAVIGASI (FIXED UNTUK MOBILE & MATHJAX)
 // ==========================================================
 function loadQuestion(index) {
   const q = questionsData[index];
@@ -252,18 +252,16 @@ function loadQuestion(index) {
     if (q[key] && String(q[key]).trim() !== "") {
       const isSelected = userAnswers[q.No] === key;
       
-      // PERBAIKAN: Menggunakan tag <div> (bukan <label>) agar aman di browser HP
+      // Menggunakan tag <div> agar aman di browser HP
       const optionRow = document.createElement("div"); 
       optionRow.className = `option-row ${isSelected ? 'selected' : ''}`;
       
-      // PERBAIKAN: Tambahkan pointer-events: none pada input radio
       optionRow.innerHTML = `
         <input type="radio" name="option_${q.No}" value="${key}" ${isSelected ? 'checked' : ''} style="pointer-events: none;">
         <span class="opt-key">${key}.</span>
         <span class="opt-val">${q[key]}</span>
       `;
 
-      // PERBAIKAN: Gunakan onclick langsung ke container barisnya
       optionRow.onclick = function() {
         pilihJawaban(q.No, key);
       };
@@ -272,9 +270,12 @@ function loadQuestion(index) {
     }
   });
 
-  // Re-render MathJax
-  if (window.MathJax) {
-    MathJax.typesetPromise();
+  // Re-render MathJax Khusus Elemen Soal dan Opsi Jawaban
+  if (window.MathJax && window.MathJax.typesetPromise) {
+    MathJax.typesetPromise([
+      document.getElementById("q-text"),
+      document.getElementById("options-box")
+    ]).catch(err => console.error("MathJax error:", err));
   }
 
   // Update Status Navigasi
