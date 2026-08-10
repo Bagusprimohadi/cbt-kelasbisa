@@ -1,0 +1,330 @@
+{
+  "kode_ujian": "KEB002",
+  "token": "TOSFKEB01",
+  "timer_menit": 40,
+  "lembaga": "KELAS BISA by BRISKA CORP",
+  "sub_lembaga": "Latihan Soal OSN Kebumian Semifinal",
+  "logo": "https://lh3.googleusercontent.com/d/1TYEl9QOZV3EU5p3peLGaaUZcjrOISSSz",
+  "questions": [
+    {
+      "No": 1,
+      "Soal": "Pengamatan terhadap fenomena badai tropis di belahan bumi utara menunjukkan pergerakan massa udara yang berputar mengelilingi pusat tekanan rendah. Berdasarkan prinsip gaya Gradien Tekanan dan Coriolis, bagaimana arah belok angin permukaan relatif terhadap Isobar serta kondisi stabilitas udara di sekitar mata badai?",
+      "A": "Berlawanan arah jarum jam memotong isobar ke dalam; udara di dinding mata badai sangat tidak stabil akibat konveksi kuat",
+      "B": "Berlawanan arah jarum jam sejajar isobar; udara di pusat mata badai sangat stabil akibat subsidence",
+      "C": "Searah jarum jam memotong isobar ke luar; udara di dinding mata badai sangat stabil akibat perawanan masif",
+      "D": "Searah jarum jam sejajar isobar; udara di pusat mata badai sangat tidak stabil akibat uplift kuat",
+      "E": "Berlawanan arah jarum jam memotong isobar ke luar; udara di pusat mata badai tidak stabil akibat konvergensi",
+      "Gambar": "-"
+    },
+    {
+      "No": 2,
+      "Soal": "Stasiun pengamat cuaca mencatat terjadinya penurunan temperatur lingkungan ($T_{env}$) sebesar $8^\\circ\\text{C}$ setiap kenaikan ketinggian $1\\text{ km}$. Jika parsel udara kering terangkat secara adiabatik tanpa kondensasi ($DALR \\approx 9,8^\\circ\\text{C/km}$), bagaimana status stabilitas atmosfer tersebut serta potensi pertumbuhan awan konvektif yang dapat terbentuk?",
+      "A": "Atmosfer bersifat mutlak stabil; pertumbuhan awan konvektif terhambat total karena parsel udara lebih dingin dari lingkungan",
+      "B": "Atmosfer bersifat mutlak tidak stabil; pertumbuhan awan Cumulonimbus sangat masif karena parsel udara terus naik",
+      "C": "Atmosfer bersifat kondisional tidak stabil; pembentukan awan tergantung pada tingkat kelembapan relatif parsial",
+      "D": "Atmosfer bersifat mutlak stabil; hanya memungkinkan pembentukan awan lapisan tipis seperti Stratus jika ada paksaan orografi",
+      "E": "Atmosfer bersifat netral; parsel udara berhenti melayang dan tidak membentuk awan jenis apa pun",
+      "Gambar": "-"
+    },
+    {
+      "No": 3,
+      "Soal": "Pada siklus diurnal di area pesisir, perbedaan kapasitas kalor spesifik antara daratan dan lautan memicu perbedaan tekanan lokal pada siang hari. Bagaimana arah embusan angin lokal yang terbentuk pada siang hari beserta mekanisme perubahan kerapatan udaranya?",
+      "A": "Angin laut bertiup dari laut ke darat; terjadi ekspansi termal di atas daratan sehingga massa udara memuai dan meregang",
+      "B": "Angin darat bertiup dari darat ke laut; terjadi penumpukan massa udara di daratan akibat pendinginan radiatif cepat",
+      "C": "Angin laut bertiup dari darat ke laut; massa udara di atas laut memuai lebih cepat dibanding daratan",
+      "D": "Angin lembah bertiup dari laut ke darat; terjadi pemampatan massa udara di atas permukaan air laut",
+      "E": "Angin darat bertiup dari laut ke darat; massa udara di atas daratan menjadi lebih padat dan berat",
+      "Gambar": "-"
+    },
+    {
+      "No": 4,
+      "Soal": "Sebuah stasiun meteorologi mencatat kenaikan signifikan nilai Kelembapan Relatif (RH) pada malam hari meskipun jumlah massa uap air di udara tetap konstan. Mengapa fenomena tersebut terjadi dan bagaimana dampaknya terhadap jarak titik embun (dew point spread)?",
+      "A": "Kenaikan RH disebabkan oleh penurunan suhu udara malam hari; jarak antara suhu udara dan titik embun makin menyempit",
+      "B": "Kenaikan RH disebabkan oleh peningkatan tekanan udara permukaan; jarak antara suhu udara dan titik embun makin melebar",
+      "C": "Kenaikan RH disebabkan oleh pembentukan awan rendah; jarak antara suhu udara dan titik embun tidak mengalami perubahan",
+      "D": "Kenaikan RH disebabkan oleh penurunan nilai rasio pencampuran jenuh; jarak antara suhu udara dan titik embun makin menjauh",
+      "E": "Kenaikan RH disebabkan oleh penurunan tekanan uap jenuh; jarak antara suhu udara dan titik embun menjadi tak terhingga",
+      "Gambar": "-"
+    },
+    {
+      "No": 5,
+      "Soal": "Fenomena angin Fohn (angin jatuh yang kering dan panas) sering teramati di lereng bawah bagian belakang gunung (leeward side). Apa penyebab utama kenaikan suhu dan penurunan kelembapan pada massa udara yang melintasi lereng tersebut?",
+      "A": "Pelepasan panas laten saat kondensasi di lereng depan ($windward$) dan pemanasan adiabatik basah saat massa udara turun",
+      "B": "Pelepasan panas laten saat kondensasi di lereng depan ($windward$) dan pemanasan adiabatik kering saat massa udara turun",
+      "C": "Penyerapan radiasi matahari langsung di puncak gunung dan laju penurunan suhu adiabatik basah saat udara turun",
+      "D": "Efek gesekan permukaan lereng yang ekstrem dan evaporasi mendadak dari tutupan vegetasi di lereng belakang",
+      "E": "Penurunan tekanan udara secara drastis di puncak dan pendinginan adiabatik cepat saat massa udara menabrak lereng",
+      "Gambar": "-"
+    },
+    {
+      "No": 6,
+      "Soal": "Sebuah sistem tekanan rendah (siklonik) lingkaran di Belahan Bumi Utara pada lintang $30^\\circ\\text{N}$ ($\\sin 30^\\circ = 0{,}5$) memiliki jari-jari kelengkungan isobar $R = 500\\text{ km}$ ($5 \\times 10^5\\text{ m}$). Diketahui parameter Coriolis $f \\approx 7{,}29 \\times 10^{-5}\\text{ s}^{-1}$ dan gradien gaya tekanan $P_g = -\\frac{1}{\\rho}\\frac{\\partial p}{\\partial n} = 1{,}5 \\times 10^{-3}\\text{ m/s}^2$. Berdasarkan persamaan Angin Gradien $V_g^2/R + f V_g - P_g = 0$, berapa kecepatan angin gradien ($V_g$) tersebut dan bagaimana evaluasinya dibanding nilai Angin Geostropik ($V_g' = P_g / f$)?",
+      "A": "$V_g = 15{,}0\\text{ m/s}$; kecepatan angin gradien bersifat sub-geostropik karena gaya sentrifugal memperkuat gaya Coriolis dalam mengimbangi gradien tekanan",
+      "B": "$V_g = 14{,}2\\text{ m/s}$; kecepatan angin gradien bersifat sub-geostropik karena gaya sentrifugal bekerja searah gaya Coriolis untuk mengimbangi gradien tekanan",
+      "C": "$V_g = 20{,}6\\text{ m/s}$; kecepatan angin gradien bersifat super-geostropik karena gaya sentrifugal bekerja searah gaya gradien tekanan",
+      "D": "$V_g = 25{,}4\\text{ m/s}$; kecepatan angin gradien bersifat super-geostropik karena lintasan aliran massa udara melengkung ke luar",
+      "E": "$V_g = 30{,}0\\text{ m/s}$; kecepatan angin gradien sama dengan nilai geostropik karena efek lengkungan isobar dapat diabaikan",
+      "Gambar": "-"
+    },
+    {
+      "No": 7,
+      "Soal": "Sampel udara kering pada lapisan troposfer tengah bertekanan $p = 500\\text{ hPa}$ ($50.000\\text{ Pa}$) memiliki temperatur $T = -13^\\circ\\text{C}$ ($260\\text{ K}$). Diketahui konstanta gas spesifik untuk udara kering $R_d = 287\\text{ J/(kg}\\cdot\\text{K)}$. Menggunakan persamaan Hukum Gas Ideal Atmosfer ($p = \\rho R_d T$), berapakah kerapatan ($massa\\ jenis/\\rho$) udara tersebut dan bagaimana evaluasi dampaknya terhadap gaya apung (buoyancy) jika sampel massa udara sekitarnya memiliki suhu lebih dingin ($250\\text{ K}$)?",
+      "A": "$\\rho = 0{,}67\\text{ kg/m}^3$; sampel udara lebih rapat dibanding lingkungan sehingga mengalami gaya apung negatif (tenggelam)",
+      "B": "$\\rho = 0{,}72\\text{ kg/m}^3$; sampel udara kurang rapat dibanding lingkungan ($\\rho_{env} = 0{,}70\\text{ kg/m}^3$) sehingga melayang netral",
+      "C": "$\\rho = 0{,}67\\text{ kg/m}^3$; sampel udara kurang rapat dibanding lingkungan ($\\rho_{env} = 0{,}70\\text{ kg/m}^3$) sehingga mengalami gaya apung positif (terangkat naik)",
+      "D": "$\\rho = 0{,}81\\text{ kg/m}^3$; sampel udara lebih rapat dibanding lingkungan sehingga mengalami percepatan konveksi ke atas",
+      "E": "$\\rho = 0{,}95\\text{ kg/m}^3$; sampel udara berada dalam kesetimbangan hidrostatis tanpa ada gaya apung",
+      "Gambar": "-"
+    },
+    {
+      "No": 8,
+      "Soal": "Dalam studi paleontologi, fosil jejak (trace fossil) berupa cetakan perhentian organisme (resting trace) terbentuk melalui beberapa tahapan pengendapan dan litifikasi berikut: (1) Organisme hinggap dan diam di atas lapisan sedimen lunak. (2) Sedimen baru terendapkan secara perlahan menutupi bekas jejak. (3) Organisme bergerak pergi meninggalkan lekukan pada permukaan sedimen. (4) Seluruh lapisan mengalami pemadatan dan litifikasi menjadi batuan sedimen. Urutan tahapan pembentukan fosil jejak yang paling tepat adalah...",
+      "A": "1 – 3 – 2 – 4",
+      "B": "1 – 2 – 3 – 4",
+      "C": "3 – 1 – 2 – 4",
+      "D": "1 – 3 – 4 – 2",
+      "E": "2 – 1 – 3 – 4",
+      "Gambar": "-"
+    },
+    {
+      "No": 9,
+      "Soal": "Seorang geolog mengamati hubungan kontak antarbatuan pada suatu singkapan stratigrafi dengan rincian fenomena berikut: (P) Lapisan sedimen horizontal yang memotong perlapisan miring di bawahnya. (Q) Dike basal yang memotong perlapisan batu pasir. (R) Fragmen granit tertanam di dalam lapisan konglomerat. Pasangkan fenomena tersebut dengan hukum dasar stratigrafi yang paling tepat: (1) Original Horizontality / Unconformity, (2) Cross-Cutting Relationships, (3) Principle of Inclusions. Pasangan hubungan hukum stratigrafi yang benar adalah...",
+      "A": "P–1, Q–2, R–3",
+      "B": "P–2, Q–1, R–3",
+      "C": "P–3, Q–2, R–1",
+      "D": "P–1, Q–3, R–2",
+      "E": "P–2, Q–3, R–1",
+      "Gambar": "-"
+    },
+    {
+      "No": 10,
+      "Soal": "Analisis geokimia organik pada sampel batuan induk (source rock) dari Formasi X menunjukkan kandungan alga lacustrine yang sangat kaya akan senyawa rantai hidrokarbon alifatik (alifatik polimerik). Sampel diambil pada kedalaman dengan temperatur pembentukan berkisar antara 90°C – 120°C dan nilai reflektansi vitrinit (Ro) sebesar 0,8%. Berdasarkan data geokimia tersebut, penentuan tipe kerogen beserta fase pematangan (thermal maturity) dan produk utama hidrokarbon yang dihasilkan Formasi X adalah...",
+      "A": "Kerogen Tipe I, berada pada jendela minyak (oil window), memproduksi dominan minyak bumi cair.",
+      "B": "Kerogen Tipe III, berada pada jendela gas (gas window), memproduksi dominan gas alam kering.",
+      "C": "Kerogen Tipe II, berada pada fase imatur (immature), memproduksi dominan gas basah.",
+      "D": "Kerogen Tipe IV, berada pada fase matang lanjut (overmature), memproduksi dominan residu karbon.",
+      "E": "Kerogen Tipe I, berada pada fase imatur (immature), memproduksi dominan kondensat.",
+      "Gambar": "-"
+    },
+    {
+      "No": 11,
+      "Soal": "Tim geologi mengamati kompleks intrusi magmatik di zona busur kepulauan yang menunjukkan variasi batuan dari gabro, diorit, hingga granit. Analisis geokimia menunjukkan adanya penurunan kadar MgO dan FeO total yang sangat tajam seiring meningkatnya kandungan SiO2, serta ditemukannya inklusi xenolit batuan samping bersuhu tinggi di bagian tepi intrusi. Jika tim diminta menilai mekanisme utama pembentukan variasi magmatik tersebut untuk mengevaluasi evolusi magma di zona tersebut, penilaian dan alasan yang paling tepat adalah...",
+      "A": "Mekanisme pembentukan didominasi oleh kristalisasi terfraksi murni, karena penurunan MgO dan FeO secara konsisten mencerminkan pemisahan mineral mafik seperti olivin dan piroksen tanpa keterlibatan batuan samping.",
+      "B": "Mekanisme pembentukan didominasi oleh kombinasi kristalisasi terfraksi dan asimilasi (AFC), karena tren geokimia diferensiasi magma didukung oleh bukti fisik leburan batuan samping berupa xenolit.",
+      "C": "Mekanisme pembentukan didominasi oleh magma mixing antara magma basaltik dan riolitik, karena xenolit merupakan bukti langsung bertemunya dua jenis magma yang berbeda sifat fisik secara mendadak.",
+      "D": "Mekanisme pembentukan didominasi oleh peleburan parsial tingkat tinggi dari batuan kerak benua, karena keberadaan granit hanya bisa dihasilkan jika seluruh batuan samping meleleh sempurna.",
+      "E": "Mekanisme pembentukan didominasi oleh diferensiasi gravitasional sederhana di dalam kamar magma, karena penumpukan mineral berat di dasar kamar magma merupakan satu-satunya penentu perubahan SiO2.",
+      "Gambar": "-"
+    },
+    {
+      "No": 12,
+      "Soal": "Pada suatu pengukuran singkapan di lapangan, ditemukan kedudukan perlapisan batu pasir yang memiliki kedudukan jurus dan kemiringan sebenarnya (true dip) sebesar N 0° E / 30° E. Seorang geolog ingin membuat penampang geologi yang memotong tegak lurus lintasan pengukuran dengan arah jurus penampang N 60° E (sehingga terbentuk sudut antara jurus perlapisan dan arah penampang sebesar 60°). Berdasarkan hubungan trigonometri kemiringan semu (apparent dip), besar kemiringan semu perlapisan batuan pada penampang tersebut dan persamaan kalkulasi yang digunakan adalah...",
+      "A": "Kemiringan semu sebesar 26,6°, dihitung menggunakan persamaan tan (semuk) = tan (30°) × sin (60°).",
+      "B": "Kemiringan semu sebesar 15,0°, dihitung menggunakan persamaan tan (semuk) = tan (30°) × cos (60°).",
+      "C": "Kemiringan semu sebesar 30,0°, dihitung menggunakan persamaan tan (semuk) = tan (30°) / sin (60°).",
+      "D": "Kemiringan semu sebesar 45,0°, dihitung menggunakan persamaan tan (semuk) = tan (60°) × sin (30°).",
+      "E": "Kemiringan semu sebesar 20,0°, dihitung menggunakan persamaan tan (semuk) = tan (30°) × sin (30°).",
+      "Gambar": "-"
+    },
+    {
+      "No": 13,
+      "Soal": "Pengujian hidrogeologi pada akuifer tertekan menggunakan permeameter dinding kaku. Sampel tanah silindris memiliki panjang (L) 20 cm dan diameter (d) 10 cm. Beda tinggi tekan hidrolik (Δh) dijaga konstan sebesar 40 cm. Volume air yang terekstraksi melalui sampel selama 5 menit adalah 235,5 mL. (Gunakan nilai π ≈ 3,14). Pasangkanlah variabel hidrogeologi berikut dengan nilai kalkulasi kuantitatif yang paling tepat: (P) Debit aliran air (Q) dalam cm³/detik, (Q) Luas penampang sampel (A) dalam cm², (R) Konduktivitas hidrolik akuifer (K) dalam cm/detik. Pilihan nilai: (1) 0,01, (2) 0,785, (3) 78,5. Pasangan variabel dan nilai yang benar berdasarkan Hukum Darcy adalah...",
+      "A": "P–1, Q–2, R–3",
+      "B": "P–2, Q–3, R–1",
+      "C": "P–3, Q–2, R–1",
+      "D": "P–2, Q–1, R–3",
+      "E": "P–3, Q–1, R–2",
+      "Gambar": "-"
+    },
+    {
+      "No": 14,
+      "Soal": "Seorang geokimiawan mereaksikan sampel murni mineral olivin jenis forsterit ($\\text{Mg}_2\\text{SiO}_4$, massa molar = 140,7 g/mol) dengan larutan asam untuk menguji laju pelapukan kimiawi. Reaksi pelarutan sempurna berlangsung sesuai persamaan: $\\text{Mg}_2\\text{SiO}_4(\\text{s}) + 4\\text{H}^+(\\text{aq}) arrow 2\\text{Mg}^{2+}(\\text{aq}) + \\text{H}_4\\text{SiO}_4(\\text{aq})$. Jika sebanyak 14,07 gram forsterit habis bereaksi secara stoikiometris, hitunglah jumlah ion $\\text{H}^+$ yang dikonsumsi dan tentukan nilai massa magnesium ($\\text{Mg}^{2+}$, $A_r = 24,3 \\text{ g/mol}$) terlarut yang dihasilkan secara teoritis. Penilaian kuantitatif yang paling tepat untuk mengevaluasi hasil eksperimen tersebut adalah...",
+      "A": "0,1 mol $\\text{H}^+$ dan 2,43 gram $\\text{Mg}^{2+}$",
+      "B": "0,2 mol $\\text{H}^+$ dan 4,86 gram $\\text{Mg}^{2+}$",
+      "C": "0,4 mol $\\text{H}^+$ dan 4,86 gram $\\text{Mg}^{2+}$",
+      "D": "0,4 mol $\\text{H}^+$ dan 2,43 gram $\\text{Mg}^{2+}$",
+      "E": "0,8 mol $\\text{H}^+$ dan 9,72 gram $\\text{Mg}^{2+}$",
+      "Gambar": "-"
+    },
+    {
+      "No": 15,
+      "Soal": "Pengamatan profil kolom laut di wilayah kutub menunjukkan bahwa massa air permukaan yang bersuhu sangat dingin dan memiliki salinitas tinggi akan tenggelam membentuk arus laut dalam (Great Ocean Conveyor Belt). Alasan mendasar yang menyebabkan terjadinya pergerakan massa air secara vertikal tersebut adalah...",
+      "A": "Peningkatan densitas air laut yang dipicu oleh kombinasi penurunan suhu ekstrem dan pelepasan garam saat pembentukan es laut.",
+      "B": "Penurunan tekanan hidrostatik di dasar samudra yang menarik massa air dingin untuk mengisi kekosongan ruang.",
+      "C": "Peningkatan gaya Coriolis di lintang tinggi yang memutar massa air permukaan ke arah dasar samudra.",
+      "D": "Penurunan kekentalan (viskositas) air laut akibat suhu dingin sehingga air bergerak lebih cepat menembus lapisan di bawahnya.",
+      "E": "Peningkatan penyerapan radiasi matahari oleh garam terlarut yang mendorong massa air turun secara konvektif.",
+      "Gambar": "-"
+    },
+    {
+      "No": 16,
+      "Soal": "Seorang peneliti oseanografi mengukur tingkat kecerahan air di perairan muara sungai menggunakan Secchi Disk. Pada siang hari yang cerah, piringan Secchi diturunkan ke dalam air hingga pola hitam-putihnya tepat tidak lagi terlihat pada kedalaman 1,5 meter. Penerapan prosedur pengukuran kecerahan air dengan instrumen tersebut akan menghasilkan...",
+      "A": "Nilai estimasi kedalaman penetrasi cahaya (zona fotik) perairan sebesar 4,5 meter berdasarkan perkalian tiga kali kedalaman Secchi.",
+      "B": "Nilai batas kedalaman zona fotik perairan sebesar 1,5 meter yang menjadi batas akhir aktivitas fotosintesis fitoplankton.",
+      "C": "Nilai kedalaman kompensasi cahaya (zona fotik) sekitar 3,0 meter yang diperoleh dari dua kali kedalaman hilangnya piringan Secchi.",
+      "D": "Nilai salinitas air laut permukaan yang berbanding lurus dengan tingkat kekeruhan sedimen tersuspensi di muara.",
+      "E": "Nilai koefisien pemantulan dasar laut yang menentukan besarnya energi gelombang di wilayah pesisir.",
+      "Gambar": "-"
+    },
+    {
+      "No": 17,
+      "Soal": "Analisis pemetaan batimetri resolusi tinggi di lereng benua (continental slope) menunjukkan adanya jejak longsoran bawah laut (submarine landslide) yang dipicu oleh gempabumi lokal. Dampak langsung serta endapan khas yang terbentuk pada dasar laut akibat peristiwa longsoran massa sedimen tersebut adalah...",
+      "A": "Memicu aliran turbidit (turbidity current) yang membentuk perlapisan bersusun (graded bedding) pada endapan kipas bawah laut.",
+      "B": "Memicu gelombang pasang surut mikro yang membentuk struktur riak gelombang (wave ripples) seragam di sepanjang paparan benua.",
+      "C": "Memicu proses penjelukan (upwelling) masif yang membentuk endapan lumpur fosfat tebal di zona abisal.",
+      "D": "Memicu pembentukan terumbu karang baru yang tumbuh di atas bongkahan batu gamping terumbu yang terlempar.",
+      "E": "Memicu pengenapan sedimen pelagik halus yang membentuk struktur laminasi sejajar tanpa gangguan di dataran abisal.",
+      "Gambar": "-"
+    },
+    {
+      "No": 18,
+      "Soal": "Pengamatan gelombang yang bergerak dari laut lepas menuju pantai landai menunjukkan perubahan karakteristik fisik saat memasuki zona laut dangkal (shoaling). Panjang gelombang mendadak memendek, tinggi gelombang meningkat pesat, dan puncak gelombang akhirnya menggulung pecah. Analisis hubungan antara perubahan kedalaman laut dan mekanisme fisik yang memicu gelombang pecah (breaker) pada zona tersebut adalah...",
+      "A": "Penurunan kedalaman laut memicu gesekan dengan dasar perairan, yang memperlambat kecepatan rambat gelombang ($C$) dan memperpendek panjang gelombang ($\\lambda$), sehingga energi terakumulasi meningkatkan tinggi gelombang ($H$) hingga rasio kecuraman $H/\\lambda$ melampaui batas kritis $1/7$.",
+      "B": "Penurunan kedalaman laut meningkatkan kecepatan rambat gelombang ($C$) akibat dorongan gravitasi dasar laut, sehingga panjang gelombang ($\\lambda$) melebar dan puncak gelombang pecah karena kehilangan keseimbangan massa.",
+      "C": "Gesekan dasar laut meningkatkan periode gelombang ($T$) secara signifikan, yang memaksa puncak gelombang bergerak lebih cepat dibanding bagian dasarnya hingga rasio kecuraman $H/\\lambda$ melampaui batas $1/2$.",
+      "D": "Penurunan kedalaman laut mengurangi tinggi gelombang ($H$) akibat hilangnya energi termal, sementara panjang gelombang ($\\lambda$) melipat ganda hingga gelombang pecah akibat tekanan angin permukaan.",
+      "E": "Kecepatan molekul air di dasar gelombang menjadi lebih cepat daripada molekul air di puncak gelombang akibat efek refraction, yang menyebabkan puncak gelombang tertinggal dan akhirnya pecah perlahan.",
+      "Gambar": "-"
+    },
+    {
+      "No": 19,
+      "Soal": "Pengukuran suhu permukaan laut (SPL) di suatu wilayah perairan pesisir selama periode musim panas menunjukkan lonjakan suhu sebesar 3,5°C di atas rata-rata klimatologis historis. Kondisi anomali panas ekstrem ini bertahan secara kontinu selama lebih dari dua minggu berturut-turut. Berdasarkan parameter oseanografi tersebut, kesimpulan paling tepat mengenai fenomena yang terjadi dan kriteria identifikasinya adalah...",
+      "A": "Fenomena tersebut merupakan marine heatwave (gelombang panas laut), karena terjadi anomali suhu permukaan laut yang melampaui ambang batas ekstrem (persentil ke-90) dan berlangsung setidaknya selama 5 hari berturut-turut.",
+      "B": "Fenomena tersebut merupakan kondisi upwelling normal, karena kenaikan suhu permukaan laut yang bertahan dua minggu merupakan respon alami terhadap pengadukan massa air dalam.",
+      "C": "Fenomena tersebut merupakan indikasi awal gelombang pasang (storm surge), karena kenaikan suhu ekstrem secara konsisten selalu diikuti oleh pemuaian volume air laut secara mendadak.",
+      "D": "Fenomena tersebut merupakan fenomena thermohaline inversion, karena peningkatan suhu permukaan laut selama lebih dari 5 hari secara otomatis meningkatkan salinitas dasar laut.",
+      "E": "Fenomena tersebut merupakan efek El Niño lokal, yang hanya dapat dikategorikan jika kenaikan suhu berlangsung sekurang-kurangnya selama 6 bulan berturut-turut.",
+      "Gambar": "-"
+    },
+    {
+      "No": 20,
+      "Soal": "Pengamatan gelombang laut dangkal-transisi di dekat pantai menunjukkan periode gelombang ($T$) sebesar 8 detik dan kedalaman perairan ($d$) sebesar 5 meter. Persamaan dispersi penuh untuk gelombang transisi diberikan oleh $L = \\frac{g T^2}{2\\pi} \\tanh(\\frac{2\\pi d}{L})$. Dengan percepatan gravitasi $g = 9,8\\text{ m/s}^2$ dan $\\pi \\approx 3,14$, panjang gelombang laut dalam teoritis adalah $L_0 \\approx 100\\text{ meter}$. Mengingat persamaan ini bersifat implisit, lakukan estimasi/iterasi awal untuk menentukan nilai panjang gelombang ($L$) yang paling presisi di kedalaman tersebut guna menilai perubahan sifat fisik gelombang saat mendekati pantai.",
+      "A": "$L \\approx 32,5\\text{ meter}$",
+      "B": "$L \\approx 54,8\\text{ meter}$",
+      "C": "$L \\approx 72,1\\text{ meter}$",
+      "D": "$L \\approx 88,4\\text{ meter}$",
+      "E": "$L \\approx 100,0\\text{ meter}$",
+      "Gambar": "-"
+    },
+    {
+      "No": 21,
+      "Soal": "Sampel air laut permukaan di daerah tropis memiliki konsentrasi ion kalsium [Ca2+] = 1,0 x 10^-2 M dan konsentrasi ion karbonat [CO3 2-] = 2,0 x 10^-4 M. Diketahui produk kelarutan stoikiometris untuk mineral aragonit pada kondisi suhu dan salinitas perairan tersebut adalah Ksp' = 1,0 x 10^-6. Guna mengevaluasi potensi presipitasi kalsium karbonat pada ekosistem terumbu karang, lakukan kalkulasi tingkat kejenuhan aragonit (Omega_arag = [Ca2+][CO3 2-] / Ksp') dan pasangkan variabel kimia laut berikut dengan nilai/kondisi yang paling tepat: (P) Produk ionik (Qsp = [Ca2+][CO3 2-]), (Q) Derajat kejenuhan aragonit (Omega_arag), (R) Status kondisi kelarutan air laut terhadap aragonit. Pilihan nilai/kondisi: (1) 2,0 x 10^-6, (2) 2,0 (Terlewat jenuh / supersaturated), (3) 0,5 (Jenuh sebagian / undersaturated). Pasangan variabel, nilai, dan status kelarutan yang benar adalah...",
+      "A": "P–1, Q–2, R–2",
+      "B": "P–1, Q–3, R–3",
+      "C": "P–2, Q–1, R–2",
+      "D": "P–2, Q–3, R–3",
+      "E": "P–3, Q–2, R–2",
+      "Gambar": "-"
+    },
+    {
+      "No": 22,
+      "Soal": "Sebuah planet bergerak mengelilingi Bintang X dalam orbit elips dengan eksentrisitas cukup tinggi ($e = 0,6$). Pengamat ingin menentukan posisi spasial planet tersebut berdasarkan persamaan Kepler $M = E - e \\sin E$, di mana $M$ adalah anomali rata-rata dan $E$ adalah anomali eksentrik. Berdasarkan hubungan geometri pada orbit Keplerian, pernyataan yang paling tepat mengenai peran anomali eksentrik ($E$) dalam analisis posisi planet adalah...",
+      "A": "Anomali eksentrik ($E$) menghubungkan gerak sudut linier imajiner pada lingkaran penolong (auxiliary circle) dengan posisi sudut nyata planet terhadap fokus utama orbit.",
+      "B": "Anomali eksentrik ($E$) mengukur sudut nyata antara posisi perihelion dan planet jika dilihat langsung dari fokus tempat bintang berada.",
+      "C": "Anomali eksentrik ($E$) nilainya selalu tepat sama dengan anomali rata-rata ($M$) pada seluruh titik sepanjang lintasan orbit elips.",
+      "D": "Anomali eksentrik ($E$) digunakan untuk menghitung luas juring elips tanpa perlu mempertimbangkan eksentrisitas orbit planet.",
+      "E": "Anomali eksentrik ($E$) menyatakan waktu yang dibutuhkan planet untuk berpindah dari aphelion menuju titik kulminasi atas.",
+      "Gambar": "-"
+    },
+    {
+      "No": 23,
+      "Soal": "Pengamat di Kota Y (bujur $105^\\circ\\text{ BT}$) mencatat waktu matahari sejati (Apparent Solar Time) menunjukkan pukul 12.00 tepat saat matahari berada di meridian lokal. Namun, jam dinding berbasis Waktu Standar Lokal (WIB, bujur acuan $105^\\circ\\text{ BT}$) menunjukkan pukul 12.14. Faktor astronomis utama yang menyebabkan selisih antara waktu matahari sejati dan waktu standar tersebut adalah...",
+      "A": "Persamaan waktu (Equation of Time) akibat kombinasi kemiringan sumbu rotasi Bumi dan eksentrisitas orbit Bumi mengelilingi Matahari.",
+      "B": "Perbedaan bujur lokal pengamat yang signifikan terhadap bujur acuan zona waktu standar yang digunakan.",
+      "C": "Presei presisi sumbu rotasi Bumi yang mengubah posisi titik Aries terhadap meridian pengamat setiap jam.",
+      "D": "Efek pembiasan atmosfer (refraksi) yang membuat Matahari terlihat lebih lambat mencapai meridian lokal.",
+      "E": "Perubahan kecepatan rotasi internal Bumi yang dipengaruhi oleh gaya pasang surut Bulan secara harian.",
+      "Gambar": "-"
+    },
+    {
+      "No": 24,
+      "Soal": "Sebuah tim astronom berencana mengamati galaksi redup di latar belakang menggunakan teleskop optik berbasis CCD. Hasil pengamatan awal menunjukkan bahwa sinyal galaksi masih tertutup oleh noise pembacaan instrumen dan noise latar belakang langit (sky background noise), sehingga nilai Signal-to-Noise Ratio (SNR) tergolong rendah. Strategi optimasi pengamatan yang paling efektif untuk meningkatkan nilai SNR agar struktur galaksi terlihat jelas adalah...",
+      "A": "Meningkatkan total waktu integrasi (eksposur) atau melakukan penggabungan (stacking) beberapa bingkai citra pengamatan.",
+      "B": "Mengurangi aperture teleskop agar fokus cahaya yang masuk ke sensor CCD menjadi lebih tajam.",
+      "C": "Menggunakan filter dengan lebar pita (bandwidth) yang jauh lebih sempit untuk menahan sebagian besar sinyal photon galaksi.",
+      "D": "Menaikkan suhu operasional sensor CCD agar sensitivitas piksel terhadap foton meningkat secara drastis.",
+      "E": "Mempercepat kecepatan pembacaan (readout speed) CCD untuk meminimalkan akumulasi muatan listrik.",
+      "Gambar": "-"
+    },
+    {
+      "No": 25,
+      "Soal": "Seorang astronom di belahan bumi utara ingin mengarahkan teleskopnya ke Bintang Z yang memiliki koordinat ekuatorial asensio rekta ($\\alpha$) dan deklinasi ($\\delta$). Untuk mengubah koordinat ekuatorial tersebut menjadi sistem koordinat horisontal—yaitu sudut ketinggian/altitudo ($a$) dan azimut ($A$) pada suatu Waktu Sideris Lokal (LST) tertentu—langkah alur transformasi koordinat bola langit yang tepat adalah...",
+      "A": "Menghitung Sudut Jam / Hour Angle ($HA = \\text{LST} - \\alpha$), lalu menerapkan aturan segitiga bola (hukum kosinus dan sinus) yang melibatkan lintang pengamat ($\\phi$), $HA$, dan $\\delta$.",
+      "B": "Mengalikan nilai deklinasi ($\\delta$) secara langsung dengan lintang pengamat ($\\phi$), kemudian mengurangi hasilnya dengan nilai Waktu Sideris Lokal (LST).",
+      "C": "Menghitung deklinasi tampak dengan mengabaikan pengaruh lintang pengamat ($\\phi$), lalu mengonversi langsung nilai asensio rekta ($\\alpha$) menjadi derajat altitudo.",
+      "D": "Menjumlahkan asensio rekta ($\\alpha$) dengan lintang pengamat ($\\phi$), kemudian membagi hasilnya dengan deklinasi ($\\delta$) untuk memperoleh azimut $A$.",
+      "E": "Memutar sumbu optik teleskop sebesar $90^\\circ$ dari garis meridian lokal tanpa perlu memperhitungkan Sudut Jam ($HA$) maupun deklinasi ($\\delta$).",
+      "Gambar": "-"
+    },
+    {
+      "No": 26,
+      "Soal": "Pengamatan fotometri dua buah bintang menunjukkan bahwa Bintang Alpha memiliki magnitudo tampak $m_A = 2,0$ dan Bintang Beta memiliki $m_B = 7,0$. Ketika astronom menilai perbandingan fluks cahaya yang diterima di Bumi dari kedua bintang tersebut, alasan utama yang menjelaskan bahwa Bintang Alpha terlihat jauh lebih terang daripada Bintang Beta adalah...",
+      "A": "Skala magnitudo bersifat logaritmik terbalik dengan basis $100^{1/5} \\approx 2,512$, sehingga selisih 5 magnitudo menandakan Bintang Alpha memancarkan fluks cahaya $100$ kali lebih besar ke Bumi dibanding Bintang Beta.",
+      "B": "Skala magnitudo bersifat linier, di mana setiap penurunan 1 angka magnitudo menunjukkan peningkatan fluks cahaya bintang sebesar $50\\%$ secara konstan.",
+      "C": "Bintang Alpha dipastikan memiliki magnitudo mutlak ($M$) yang jauh lebih kecil dibanding Bintang Beta tanpa dipengaruhi oleh jarak kedua bintang ke Bumi.",
+      "D": "Pengaruh serapan debu antarbintang (extinction) hanya berdampak pada bintang bermagnitudo lebih besar dari 5,0 sehingga fluks Bintang Beta merosot tajam.",
+      "E": "Bintang Beta memancarkan gelombang cahaya pada panjang gelombang inframerah yang tidak dapat direkam sama sekali oleh sensor fotometer optik.",
+      "Gambar": "-"
+    },
+    {
+      "No": 27,
+      "Soal": "Sebuah satelit buatan mengorbit Bumi dalam lintasan elips dengan jarak perigee $r_p = 7.000\\text{ km}$ dan jarak apogee $r_a = 10.500\\text{ km}$ dari pusat Bumi. Berdasarkan Hukum II Kepler tentang kekekalan momentum sudut spesifik ($h = r_p \\cdot v_p = r_a \\cdot v_a$) serta Persamaan Vis-Viva $v^2 = G M (\\frac{2}{r} - \\frac{1}{a})$, lakukan kalkulasi rasio kecepatan satelit saat berada di titik perigee dibanding saat di apogee ($v_p / v_a$) serta tentukan nilai kelajuan radialnya ($v_r$) tepat di titik perigee tersebut. Evaluasi kuantitatif yang paling tepat adalah...",
+      "A": "$v_p / v_a = 1,50$ dan $v_r = 0\\text{ km/s}$",
+      "B": "$v_p / v_a = 1,50$ dan $v_r = 2,5\\text{ km/s}$",
+      "C": "$v_p / v_a = 2,25$ dan $v_r = 0\\text{ km/s}$",
+      "D": "$v_p / v_a = 0,67$ dan $v_r = 1,2\\text{ km/s}$",
+      "E": "$v_p / v_a = 1,22$ dan $v_r = 0\\text{ km/s}$",
+      "Gambar": "-"
+    },
+    {
+      "No": 28,
+      "Soal": "Pengamatan spektroskopi pada Bintang X yang bergerak mendekati pengamat menunjukkan pergeseran garis absorbsi $H\\alpha$ ($\\lambda_0 = 656,30\\text{ nm}$) menjadi $\\lambda = 655,86\\text{ nm}$. Pada saat bersamaan, analisis profil garis menunjukkan adanya efek Doppler broadening yang signifikan di samping pelebaran akibat tekanan (pressure broadening). Jika tim penilai diminta mengevaluasi dinamika dan kondisi fisik atmosfer Bintang X berdasarkan data spektrum tersebut, penilaian beserta dasar alasan fisika yang paling tepat adalah...",
+      "A": "Bintang X bergerak mendekati pengamat dengan kecepatan radial $\\approx 201\\text{ km/s}$ (mengalami blueshift), dan pelebaran garis terutama mencerminkan rotasi cepat bintang atau tingginya temperatur atmosfer yang meningkatkan gerak termal acak atom.",
+      "B": "Bintang X bergerak menjauhi pengamat dengan kecepatan radial $\\approx 201\\text{ km/s}$ (mengalami redshift), dan pelebaran garis membuktikan bahwa bintang tersebut dikelilingi oleh piringan akresi yang sangat dingin.",
+      "C": "Bintang X bergerak mendekati pengamat dengan kecepatan radial $\\approx 402\\text{ km/s}$ (mengalami blueshift), dan pelebaran garis terjadi akibat efek medan magnet antarbintang yang sangat kuat (Zeeman effect).",
+      "D": "Bintang X dalam kondisi diam terhadap pengamat ($v_r = 0\\text{ km/s}$), dan pergeseran panjang gelombang murni disebabkan oleh tarikan gravitasi permukaan bintang (gravitational redshift).",
+      "E": "Bintang X bergerak menjauhi pengamat dengan kecepatan radial $\\approx 100\\text{ km/s}$ (mengalami redshift), dan pelebaran garis disebabkan oleh serapan debu medium antarbintang yang tebal di sepanjang garis penglihatan.",
+      "Gambar": "-"
+    },
+    {
+      "No": 29,
+      "Soal": "Aktivitas matahari yang ditandai oleh dinamika sunspot (bintik matahari) memiliki siklus berkala yang memengaruhi intensitas radiasi termal ke Bumi. Meskipun fluktuasi radiasi ini relatif kecil, beberapa penelitian menunjukkan bahwa perubahan tersebut dapat memicu variabilitas iklim global. Pada skala tertentu, interaksi ini berkorelasi dengan pemanasan berkala di Samudra Pasifik tropis yang dikenal sebagai fenomena El Niño. Perubahan tekanan atmosfer dan suhu permukaan laut selama fase ini secara signifikan [1........] sirkulasi angin pasat dan distribusi curah hujan global.Dampak El Niño sangat terasa di kawasan pesisir melalui gangguan pada mekanisme coastal upwelling. Dalam kondisi normal, angin pasat mendorong air permukaan yang hangat ke arah barat, sehingga air laut dalam yang dingin dan kaya nutrisi dapat naik ke permukaan pesisir. Namun, saat El Niño terjadi, pelemahan angin pasat mengakibatkan penurunan intensitas upwelling. Hal ini menyebabkan berkurangnya pasokan nutrisi ke lapisan atas, yang pada akhirnya [2........] produktivitas primer fitoplankton serta kelimpahan biota laut setempat.Perubahan suhu dan kimia air laut selama periode iklim ini turut memengaruhi pengendapan kalsium karbonat ($CaCO_3$) dalam bentuk endapan aragonit. Aragonit yang membentuk struktur terumbu karang sangat sensitif terhadap perubahan suhu dan kejenuhan karbonat air laut. Penurunan kejenuhan karbonat selama kondisi ekstrem dapat [3.......] proses kalsifikasi dan presipitasi mineral aragonit pada karang. Kendati demikian, rekaman komposisi isotop pada lapisan aragonit purba ini bertindak sebagai [4........] alami yang andal bagi para ilmuwan untuk merekonstruksi riwayat El Niño dan aktivitas matahari di masa lalu.. Kata yang tepat untuk mengisi rumpang [1] adalah...",
+      "A": "mengubah",
+      "B": "menstabilkan",
+      "C": "memulihkan",
+      "D": "membekukan",
+      "E": "melestarikan",
+      "Gambar": "-"
+    },
+    {
+      "No": 30,
+      "Soal": "Aktivitas matahari yang ditandai oleh dinamika sunspot (bintik matahari) memiliki siklus berkala yang memengaruhi intensitas radiasi termal ke Bumi. Meskipun fluktuasi radiasi ini relatif kecil, beberapa penelitian menunjukkan bahwa perubahan tersebut dapat memicu variabilitas iklim global. Pada skala tertentu, interaksi ini berkorelasi dengan pemanasan berkala di Samudra Pasifik tropis yang dikenal sebagai fenomena El Niño. Perubahan tekanan atmosfer dan suhu permukaan laut selama fase ini secara signifikan [1........] sirkulasi angin pasat dan distribusi curah hujan global.Dampak El Niño sangat terasa di kawasan pesisir melalui gangguan pada mekanisme coastal upwelling. Dalam kondisi normal, angin pasat mendorong air permukaan yang hangat ke arah barat, sehingga air laut dalam yang dingin dan kaya nutrisi dapat naik ke permukaan pesisir. Namun, saat El Niño terjadi, pelemahan angin pasat mengakibatkan penurunan intensitas upwelling. Hal ini menyebabkan berkurangnya pasokan nutrisi ke lapisan atas, yang pada akhirnya [2........] produktivitas primer fitoplankton serta kelimpahan biota laut setempat.Perubahan suhu dan kimia air laut selama periode iklim ini turut memengaruhi pengendapan kalsium karbonat ($CaCO_3$) dalam bentuk endapan aragonit. Aragonit yang membentuk struktur terumbu karang sangat sensitif terhadap perubahan suhu dan kejenuhan karbonat air laut. Penurunan kejenuhan karbonat selama kondisi ekstrem dapat [3.......] proses kalsifikasi dan presipitasi mineral aragonit pada karang. Kendati demikian, rekaman komposisi isotop pada lapisan aragonit purba ini bertindak sebagai [4........] alami yang andal bagi para ilmuwan untuk merekonstruksi riwayat El Niño dan aktivitas matahari di masa lalu.. Kata yang tepat untuk mengisi rumpang [2] adalah...",
+      "A": "melipatgandakan",
+      "B": "menurunkan",
+      "C": "menaikkan",
+      "D": "mempercepat",
+      "E": "memperkuat",
+      "Gambar": "-"
+    },
+    {
+      "No": 31,
+      "Soal": "Aktivitas matahari yang ditandai oleh dinamika sunspot (bintik matahari) memiliki siklus berkala yang memengaruhi intensitas radiasi termal ke Bumi. Meskipun fluktuasi radiasi ini relatif kecil, beberapa penelitian menunjukkan bahwa perubahan tersebut dapat memicu variabilitas iklim global. Pada skala tertentu, interaksi ini berkorelasi dengan pemanasan berkala di Samudra Pasifik tropis yang dikenal sebagai fenomena El Niño. Perubahan tekanan atmosfer dan suhu permukaan laut selama fase ini secara signifikan [1........] sirkulasi angin pasat dan distribusi curah hujan global.Dampak El Niño sangat terasa di kawasan pesisir melalui gangguan pada mekanisme coastal upwelling. Dalam kondisi normal, angin pasat mendorong air permukaan yang hangat ke arah barat, sehingga air laut dalam yang dingin dan kaya nutrisi dapat naik ke permukaan pesisir. Namun, saat El Niño terjadi, pelemahan angin pasat mengakibatkan penurunan intensitas upwelling. Hal ini menyebabkan berkurangnya pasokan nutrisi ke lapisan atas, yang pada akhirnya [2........] produktivitas primer fitoplankton serta kelimpahan biota laut setempat.Perubahan suhu dan kimia air laut selama periode iklim ini turut memengaruhi pengendapan kalsium karbonat ($CaCO_3$) dalam bentuk endapan aragonit. Aragonit yang membentuk struktur terumbu karang sangat sensitif terhadap perubahan suhu dan kejenuhan karbonat air laut. Penurunan kejenuhan karbonat selama kondisi ekstrem dapat [3.......] proses kalsifikasi dan presipitasi mineral aragonit pada karang. Kendati demikian, rekaman komposisi isotop pada lapisan aragonit purba ini bertindak sebagai [4........] alami yang andal bagi para ilmuwan untuk merekonstruksi riwayat El Niño dan aktivitas matahari di masa lalu.. . Kata yang tepat untuk mengisi rumpang [3] adalah...",
+      "A": "memicu",
+      "B": "merangsang",
+      "C": "menghambat",
+      "D": "mendampingi",
+      "E": "melipatgandakan",
+      "Gambar": "-"
+    },
+    {
+      "No": 32,
+      "Soal": "Aktivitas matahari yang ditandai oleh dinamika sunspot (bintik matahari) memiliki siklus berkala yang memengaruhi intensitas radiasi termal ke Bumi. Meskipun fluktuasi radiasi ini relatif kecil, beberapa penelitian menunjukkan bahwa perubahan tersebut dapat memicu variabilitas iklim global. Pada skala tertentu, interaksi ini berkorelasi dengan pemanasan berkala di Samudra Pasifik tropis yang dikenal sebagai fenomena El Niño. Perubahan tekanan atmosfer dan suhu permukaan laut selama fase ini secara signifikan [1........] sirkulasi angin pasat dan distribusi curah hujan global.Dampak El Niño sangat terasa di kawasan pesisir melalui gangguan pada mekanisme coastal upwelling. Dalam kondisi normal, angin pasat mendorong air permukaan yang hangat ke arah barat, sehingga air laut dalam yang dingin dan kaya nutrisi dapat naik ke permukaan pesisir. Namun, saat El Niño terjadi, pelemahan angin pasat mengakibatkan penurunan intensitas upwelling. Hal ini menyebabkan berkurangnya pasokan nutrisi ke lapisan atas, yang pada akhirnya [2........] produktivitas primer fitoplankton serta kelimpahan biota laut setempat.Perubahan suhu dan kimia air laut selama periode iklim ini turut memengaruhi pengendapan kalsium karbonat ($CaCO_3$) dalam bentuk endapan aragonit. Aragonit yang membentuk struktur terumbu karang sangat sensitif terhadap perubahan suhu dan kejenuhan karbonat air laut. Penurunan kejenuhan karbonat selama kondisi ekstrem dapat [3.......] proses kalsifikasi dan presipitasi mineral aragonit pada karang. Kendati demikian, rekaman komposisi isotop pada lapisan aragonit purba ini bertindak sebagai [4........] alami yang andal bagi para ilmuwan untuk merekonstruksi riwayat El Niño dan aktivitas matahari di masa lalu.. . Istilah yang tepat untuk mengisi rumpang [4] adalah...",
+      "A": "indikasi",
+      "B": "katalis",
+      "C": "vegetasi",
+      "D": "proksi",
+      "E": "komoditas",
+      "Gambar": "-"
+    }
+  ]
+}
