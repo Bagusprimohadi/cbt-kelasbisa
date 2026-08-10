@@ -6,16 +6,21 @@
   <title>CBT/CAT Online - Kelas Bisa Exam System v1.1</title>
   <link rel="stylesheet" href="style.css">
 
+  <!-- Konfigurasi MathJax v3 -->
   <script>
     window.MathJax = {
       tex: {
-        inlineMath: [['\\(', '\\)'], ['$', '$'], ['(', ')']],
-        displayMath: [['\\[', '\\]'], ['$$', '$$']]
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       },
       svg: { fontCache: 'global' }
     };
   </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 
@@ -61,7 +66,7 @@
           <input type="text" id="token-input" required placeholder="Masukkan Token">
         </div>
       </div>
-      
+
       <button type="submit" id="btn-lanjut-info" class="btn-primary">Verifikasi & Lanjut ke Petunjuk &gt;&gt;</button>
     </form>
 
@@ -117,7 +122,7 @@
           <li class="warning-rule">
             <strong>SISTEM KEAMANAN ANTI-KECURANGAN (PENTING):</strong>
             <ul>
-              <li>Dilarang membuka tab baru, berpindah aplikasi, split screen, atau meminimalkan (*minimize*) jendela browser saat ujian aktif.</li>
+              <li>Dilarang membuka tab baru, berpindah aplikasi, split screen, atau meminimalkan (<em>minimize</em>) jendela browser saat ujian aktif.</li>
               <li>Sistem mencatat setiap aktivitas keluar dari layar ujian secara otomatis.</li>
               <li>Jika terdeteksi <strong>3 KALI</strong> keluar dari layar ujian, sistem akan <strong>MENGUNCI UJIAN DAN MELAKUKAN SUBMIT OTOMATIS</strong> atas jawaban yang telah tersimpan.</li>
             </ul>
@@ -147,7 +152,7 @@
   <!-- PAGE 3: ARENA SOAL CBT -->
   <!-- ========================================== -->
   <div id="page-cbt" class="cbt-layout hidden">
-    
+
     <!-- HEADER ATAS -->
     <header class="top-bar">
       <div class="header-left">
@@ -169,7 +174,7 @@
 
     <!-- WORKSPACE CBT -->
     <div class="cbt-body">
-      
+
       <!-- AREA UTAMA (SOAL & OPSI) -->
       <main class="question-area">
         <div class="sub-header">
@@ -182,7 +187,7 @@
         <div class="question-content">
           <div id="q-image-container" class="img-box"></div>
           <div id="q-text" class="q-text">Memuat soal...</div>
-          
+
           <div id="options-box" class="options-group"></div>
         </div>
       </main>
@@ -210,6 +215,6 @@
 
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
