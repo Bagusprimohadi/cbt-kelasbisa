@@ -469,11 +469,14 @@ body {
   border: 1px solid var(--bg-panel);
 }
 
+/* PERBAIKAN: Format Teks Soal & Enter */
 .q-text {
   font-size: 1.05rem;
   line-height: 1.6;
   color: var(--text-dark);
   margin-bottom: 25px;
+  white-space: pre-line; /* Membaca karakter enter \n dari JSON agar soal terpisah vertikal */
+  word-break: break-word; /* Mencegah teks meluap dari container */
 }
 
 /* Opsi Pilihan Ganda AI Modern */
@@ -485,10 +488,10 @@ body {
   z-index: 10;
 }
 
-/* FIXED MOBILE TOUCH: Tambahkan touch-action dan user-select */
+/* FIXED MOBILE TOUCH & ALIGNMENT OPSI MULTI-BARIS */
 .option-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Mengatur item ke atas agar radio button sejajar baris pertama */
   padding: 12px 18px;
   background: var(--bg-main);
   border: 1px solid rgba(212, 163, 115, 0.2);
@@ -515,6 +518,7 @@ body {
 
 .option-row input[type="radio"] {
   margin-right: 15px;
+  margin-top: 4px; /* Penyesuaian presisi posisi radio button dengan teks */
   accent-color: var(--accent-warm);
   transform: scale(1.2);
 }
@@ -523,10 +527,25 @@ body {
   font-weight: 700;
   margin-right: 8px;
   color: var(--brand-purple);
+  line-height: 1.5;
 }
 
 .opt-val {
   font-size: 0.95rem;
+  line-height: 1.5;
+  white-space: pre-line; /* Penanganan enter pada opsi jawaban */
+  word-break: break-word;
+}
+
+/* PERBAIKAN: Dukungan MathJax / KaTeX agar rumus matematika rapi dan tidak meluap */
+.q-text .mjx-chtml, .opt-val .mjx-chtml,
+.q-text .MathJax, .opt-val .MathJax,
+.q-text .katex, .opt-val .katex {
+  font-size: 105% !important;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
 }
 
 /* Sidebar Navigasi Bulatan (Kanan) */
