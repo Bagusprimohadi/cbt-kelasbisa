@@ -449,7 +449,7 @@ body {
   box-shadow: var(--shadow-glass);
 }
 
-/* FIXED MOBILE TOUCH: Tambahkan z-index agar tidak terhalang layer lain */
+/* Mobile Touch Fix: Z-index layer */
 .question-content {
   background: #ffffff;
   padding: 25px;
@@ -469,17 +469,17 @@ body {
   border: 1px solid var(--bg-panel);
 }
 
-/* PERBAIKAN: Format Teks Soal & Enter */
+/* Teks Soal & Format Baris Baru */
 .q-text {
   font-size: 1.05rem;
   line-height: 1.6;
   color: var(--text-dark);
   margin-bottom: 25px;
-  white-space: pre-line; /* Membaca karakter enter \n dari JSON agar soal terpisah vertikal */
-  word-break: break-word; /* Mencegah teks meluap dari container */
+  white-space: pre-line;
+  word-break: break-word;
 }
 
-/* Opsi Pilihan Ganda AI Modern */
+/* Opsi Pilihan Ganda */
 .options-group {
   display: flex;
   flex-direction: column;
@@ -488,10 +488,10 @@ body {
   z-index: 10;
 }
 
-/* FIXED MOBILE TOUCH & ALIGNMENT OPSI MULTI-BARIS */
+/* Touch area & Alignment opsi multi-baris */
 .option-row {
   display: flex;
-  align-items: flex-start; /* Mengatur item ke atas agar radio button sejajar baris pertama */
+  align-items: flex-start;
   padding: 12px 18px;
   background: var(--bg-main);
   border: 1px solid rgba(212, 163, 115, 0.2);
@@ -499,9 +499,9 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   
-  touch-action: manipulation; /* Hilangkan delay tap 300ms di HP */
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05); /* Feedback visual saat jari menyentuh layar */
-  user-select: none; /* Mencegah teks terblokir secara tidak sengaja saat pengguna menekan agak lama */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
+  user-select: none;
 }
 
 .option-row:hover {
@@ -518,7 +518,7 @@ body {
 
 .option-row input[type="radio"] {
   margin-right: 15px;
-  margin-top: 4px; /* Penyesuaian presisi posisi radio button dengan teks */
+  margin-top: 4px;
   accent-color: var(--accent-warm);
   transform: scale(1.2);
 }
@@ -533,11 +533,11 @@ body {
 .opt-val {
   font-size: 0.95rem;
   line-height: 1.5;
-  white-space: pre-line; /* Penanganan enter pada opsi jawaban */
+  white-space: pre-line;
   word-break: break-word;
 }
 
-/* PERBAIKAN: Dukungan MathJax / KaTeX agar rumus matematika rapi dan tidak meluap */
+/* MathJax / KaTeX Styling */
 .q-text .mjx-chtml, .opt-val .mjx-chtml,
 .q-text .MathJax, .opt-val .MathJax,
 .q-text .katex, .opt-val .katex {
