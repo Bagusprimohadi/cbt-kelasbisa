@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TEMA: FUTURISTIC AI SOFT CREAM (CBT-KIBI v1.1)
+   TEMA: FUTURISTIC AI SOFT CREAM (CBT-KIBI v1.2)
    Warna Utama: Soft Cream (#FDFBF7), Off-White (#F7F4EF), Warm Gold (#D4A373)
    ========================================================================== */
 
@@ -18,6 +18,12 @@
   --color-answered: #4a90e2;   /* Biru Soft */
   --color-active: #d4a373;     /* Warm Gold Glow */
   
+  /* Status Hasil Ujian */
+  --color-success: #2e7d32;
+  --color-danger: #c62828;
+  --color-warning: #f57c00;
+  --color-info: #1976d2;
+
   --shadow-soft: 0 8px 30px rgba(212, 163, 115, 0.08);
   --shadow-glass: 0 4px 20px rgba(0, 0, 0, 0.04);
   --border-radius: 12px;
@@ -645,7 +651,178 @@ body {
   gap: 12px;
 }
 
-/* Responsif Mobile */
+
+/* ==========================================
+   5. PAGE RESULT: PENGUMUMAN SKOR MODERN (NEW)
+   ========================================== */
+.result-card-container {
+  max-width: 540px;
+  width: 92%;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  box-shadow: 0 12px 35px rgba(74, 62, 86, 0.08);
+  padding: 35px 30px;
+  text-align: center;
+  animation: fadeInScale 0.4s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.result-badge-icon {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 15px;
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  color: var(--color-success);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+}
+
+.result-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-purple);
+  margin-bottom: 6px;
+}
+
+.result-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+/* Card Hasil Ujian Detail */
+.result-detail-box {
+  background: var(--bg-main);
+  border: 1px solid rgba(212, 163, 115, 0.25);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.result-detail-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--brand-purple);
+  border-bottom: 2px solid rgba(212, 163, 115, 0.2);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Breakdown Kategori CAT (TWK/TIU/TKP) */
+.cat-breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cat-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid rgba(212, 163, 115, 0.2);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.cat-item-row:hover {
+  border-color: var(--accent-warm);
+  transform: translateX(3px);
+}
+
+.cat-item-label {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 0.92rem;
+}
+
+.cat-item-score {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-info);
+}
+
+/* Big Score Display Box */
+.score-badge-main {
+  background: linear-gradient(135deg, #f1f8e9, #e8f5e9);
+  border: 1.5px solid #a5d6a7;
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  margin-bottom: 18px;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.8);
+}
+
+.score-badge-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-success);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.score-badge-val {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1b5e20;
+  line-height: 1.1;
+  margin-top: 4px;
+}
+
+/* Stat Grid (Benar, Salah, Kosong) */
+.stat-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  text-align: center;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 163, 115, 0.2);
+  font-size: 0.85rem;
+}
+
+.stat-box-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.stat-box-item span {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.stat-box-item strong {
+  font-size: 1rem;
+}
+
+
+/* ==========================================
+   RESPONSIF MOBILE
+   ========================================== */
 @media (max-width: 768px) {
   .card {
     padding: 25px 20px;
@@ -667,5 +844,12 @@ body {
   }
   .circle-grid {
     grid-template-columns: repeat(6, 1fr);
+  }
+  .result-card-container {
+    padding: 25px 18px;
+    margin: 20px auto;
+  }
+  .score-badge-val {
+    font-size: 2.3rem;
   }
 }
