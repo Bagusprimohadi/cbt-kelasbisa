@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CBT/CAT Online - Kelas Bisa Exam System v1.1</title>
+  <title>CBT/CAT Online - Kelas Bisa Exam System v1.2</title>
   <link rel="stylesheet" href="style.css">
 
   <!-- Konfigurasi MathJax v3 -->
@@ -213,6 +213,63 @@
       </div>
     </footer>
 
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- PAGE 4: PENGUMUMAN SKOR & HASIL UJIAN -->
+  <!-- ========================================== -->
+  <div id="page-result" class="result-card-container hidden">
+    <div class="result-badge-icon">🎉</div>
+    <h2 class="result-title">Ujian Telah Selesai!</h2>
+    <p class="result-subtitle">Terima kasih telah menyelesaikan ujian dengan jujur dan disiplin.</p>
+
+    <div class="result-detail-box">
+      <h3 class="result-detail-title">📄 Rincian Hasil Ujian</h3>
+      
+      <!-- Display Skor Utama / CBT Standard -->
+      <div id="box-skor-utama" class="score-badge-main">
+        <div class="score-badge-label">SKOR AKHIR ANDA</div>
+        <div id="disp-skor-total" class="score-badge-val">0</div>
+      </div>
+
+      <!-- Breakdown Kategori Nilai (Opsional khusus Mode CAT: TWK, TIU, TKP) -->
+      <div id="box-breakdown-cat" class="cat-breakdown-list hidden">
+        <div class="cat-item-row">
+          <span class="cat-item-label">Tes Wawasan Kebangsaan (TWK)</span>
+          <span id="score-twk" class="cat-item-score">0</span>
+        </div>
+        <div class="cat-item-row">
+          <span class="cat-item-label">Tes Intelegensia Umum (TIU)</span>
+          <span id="score-tiu" class="cat-item-score">0</span>
+        </div>
+        <div class="cat-item-row">
+          <span class="cat-item-label">Tes Karakteristik Pribadi (TKP)</span>
+          <span id="score-tkp" class="cat-item-score">0</span>
+        </div>
+      </div>
+
+      <!-- Ringkasan Statistik Jawaban -->
+      <div class="stat-summary-grid">
+        <div class="stat-box-item">
+          <span>Jawaban Benar</span>
+          <strong id="stat-benar" style="color: var(--color-success);">0</strong>
+        </div>
+        <div class="stat-box-item">
+          <span>Jawaban Salah</span>
+          <strong id="stat-salah" style="color: var(--color-danger);">0</strong>
+        </div>
+        <div class="stat-box-item">
+          <span>Tidak Diisi</span>
+          <strong id="stat-kosong" style="color: var(--color-warning);">0</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-buttons-page2">
+      <button type="button" class="btn-secondary" onclick="window.print()">🖨️ Cetak Hasil</button>
+      <button type="button" class="btn-primary" onclick="selesaiDanKeluar()">Selesai & Keluar</button>
+    </div>
   </div>
 
   <script src="script.js" defer></script>
