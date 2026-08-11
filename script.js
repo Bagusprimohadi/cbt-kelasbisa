@@ -436,25 +436,34 @@ function submitJawaban() {
       }
     } else {
       // ----------------------------------------------------
-      // B. ENGINE CBT (MODE 1A, 1B, 1C)
+      // B. ENGINE CBT (MODE 1A, 1B, 1C) - FIX LOGIKA MINUS
       // ----------------------------------------------------
       if (!ans) {
         jumlahKosong++;
-        totalSkor += (skorCfg.skor_kosong || 0);
+        // Hanya Mode 1B yang mengeksekusi penalti/skor untuk jawaban kosong
+        if (modeCBT === "1B") {
+          totalSkor += (skorCfg.skor_kosong || 0);
+        }
       } else if (ans === kunci) {
         jumlahBenar++;
         if (modeCBT === "1C") {
+          // Mode 1C: Bobot Berdasarkan Level Soal (E=1, M=3, H=5)
           const lvl = String(q.Level || "E").trim().toUpperCase();
           let poin = 1;
           if (lvl === "H") poin = 5;
           else if (lvl === "M") poin = 3;
           totalSkor += poin;
         } else {
+          // Mode 1A & 1B: Skor Flat
           totalSkor += (skorCfg.skor_benar || 1);
         }
       } else {
         jumlahSalah++;
-        totalSkor += (skorCfg.skor_salah || 0);
+        // HANYA Mode 1B yang mengeksekusi penalti/skor minus untuk jawaban salah
+        if (modeCBT === "1B") {
+          totalSkor += (skorCfg.skor_salah || 0);
+        }
+        // Mode 1A & 1C secara otomatis bernilai +0 jika salah (Tanpa Minus)
       }
     }
   });
