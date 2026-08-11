@@ -1,9 +1,10 @@
 // ==========================================================
-// CBT-KIBI Versi 1.1 - Core Engine (Mobile Touch & MathJax Fixed)
+// CBT/CAT KIBI Versi 1.2.1 - Core Engine (Hybrid Dual System)
 // ==========================================================
 
 // Variable Global
 let WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwl_bLhSAUz30B-10g3xvP9cXPAuooTGa9cMtQPJAGyKYY9UMyux_OtvO9EH40PRds/exec"; 
+let questionsDataConfig = {}; // [BARU] Menyimpan seluruh konfigurasi JSON
 let questionsData = [];
 let validToken = "";
 let timerDurationMinutes = 60;
@@ -59,7 +60,8 @@ document.getElementById("form-identitas").addEventListener("submit", function(e)
         throw new Error("Token Ujian salah atau tidak berlaku untuk paket ini!");
       }
 
-      // Simpan data konfigurasi soal
+      // Simpan data konfigurasi soal & data global
+      questionsDataConfig = data; // [BARU] Menyimpan metadata CBT/CAT
       currentKodeUjian = kodeInput;
       validToken = data.token || "";
       timerDurationMinutes = data.timer_menit || 60;
@@ -352,9 +354,6 @@ function updateGridStatus() {
   });
 }
 
-// ==========================================================
-// 5. SUBMIT JAWABAN & WEBHOOK INTEGRATION
-// ==========================================================
 function konfirmasiSubmit() {
   const total = questionsData.length;
   const dijawab = Object.keys(userAnswers).length;
@@ -370,6 +369,9 @@ function konfirmasiKeluar() {
   }
 }
 
+// ==========================================================
+// 5. SUBMIT JAWABAN & ENGINE KOREKSI DUAL-SYSTEM (CBT & CAT)
+// ==========================================================
 function submitJawaban() {
   if (isExamSubmitted) return;
   isExamSubmitted = true;
@@ -378,21 +380,121 @@ function submitJawaban() {
   document.removeEventListener("visibilitychange", handleVisibilityChange);
   window.removeEventListener("blur", handleWindowBlur);
 
+  const sistem = questionsDataConfig.sistem_ujian || "CBT";
+  const modeCBT = questionsDataConfig.mode_penilaian || "1A";
+  const skorCfg = questionsDataConfig.skor_config || { skor_benar: 1, skor_salah: 0, skor_kosong: 0 };
+
+  let totalSkor = 0;
+  let jumlahBenar = 0;
+  let jumlahSalah = 0;
+  let jumlahKosong = 0;
+
+  // Objek Penampung Akumulasi Skor Per Kategori CAT (TWK, TIU, TKP, dll)
+  let catBreakdown = {};
+
+  // CORE ENGINE KOREKSI
+  questionsData.forEach((q, idx) => {
+    const displayNo = idx + 1;
+    const ans = userAnswers[displayNo];
+    const kunci = q.Kunci ? String(q.Kunci).trim().toUpperCase() : "";
+    const catCategory = q.CAT ? String(q.CAT).trim().toUpperCase() : "GENERAL";
+
+    if (!catBreakdown[catCategory]) {
+      catBreakdown[catCategory] = 0;
+    }
+
+    if (sistem === "CAT") {
+      // ----------------------------------------------------
+      // A. ENGINE CAT INTEGRATED (SITUASI 1 & SITUASI 2)
+      // ----------------------------------------------------
+      const hasBobot = q.Bobot && typeof q.Bobot === "object" && Object.keys(q.Bobot).length > 0;
+
+      if (hasBobot) {
+        // Situasi 2: Bobot Opsi Tersedia (A-E Memiliki Nilai Bobot Sesuai Excel)
+        if (!ans) {
+          jumlahKosong++;
+        } else if (q.Bobot[ans] !== undefined) {
+          const poinDapat = Number(q.Bobot[ans]);
+          totalSkor += poinDapat;
+          catBreakdown[catCategory] += poinDapat;
+
+          const maxBobot = Math.max(...Object.values(q.Bobot));
+          if (poinDapat === maxBobot) jumlahBenar++;
+          else jumlahSalah++;
+        }
+      } else {
+        // Situasi 1: Bobot Opsi Kosong (Fallback Benar = 5, Salah/Kosong = 0)
+        if (!ans) {
+          jumlahKosong++;
+        } else if (ans === kunci) {
+          jumlahBenar++;
+          totalSkor += 5;
+          catBreakdown[catCategory] += 5;
+        } else {
+          jumlahSalah++;
+        }
+      }
+    } else {
+      // ----------------------------------------------------
+      // B. ENGINE CBT (MODE 1A, 1B, 1C)
+      // ----------------------------------------------------
+      if (!ans) {
+        jumlahKosong++;
+        totalSkor += (skorCfg.skor_kosong || 0);
+      } else if (ans === kunci) {
+        jumlahBenar++;
+        if (modeCBT === "1C") {
+          const lvl = String(q.Level || "E").trim().toUpperCase();
+          let poin = 1;
+          if (lvl === "H") poin = 5;
+          else if (lvl === "M") poin = 3;
+          totalSkor += poin;
+        } else {
+          totalSkor += (skorCfg.skor_benar || 1);
+        }
+      } else {
+        jumlahSalah++;
+        totalSkor += (skorCfg.skor_salah || 0);
+      }
+    }
+  });
+
+  const totalSoal = questionsData.length;
+  const skorAkhir = Number(totalSkor.toFixed(2));
+
+  const detailHasil = {
+    sistem: sistem,
+    mode: modeCBT,
+    benar: jumlahBenar,
+    salah: jumlahSalah,
+    kosong: jumlahKosong,
+    totalSoal: totalSoal,
+    skor: skorAkhir,
+    catBreakdown: catBreakdown
+  };
+
   // Tampilan Loading
   document.getElementById("page-cbt").innerHTML = `
     <div style="text-align:center; padding: 60px 20px; font-family: sans-serif;">
       <h2 style="color: #4a3e56; margin-bottom: 10px;">Mengirimkan Jawaban...</h2>
-      <p style="color: #7d756d;">Mohon tunggu sebentar, jawaban Anda sedang disimpan ke sistem.</p>
+      <p style="color: #7d756d;">Mohon tunggu sebentar, jawaban Anda sedang disimpan dan diproses oleh sistem.</p>
     </div>
   `;
 
-  // Susun Payload dengan kode_ujian
+  // Susun Payload Webhook LENGKAP
   const payload = {
     kode_soal: currentKodeUjian,
+    sistem_ujian: sistem,
+    mode_penilaian: sistem === "CBT" ? modeCBT : "INTEGRATED_CAT",
     identitas: userIdentitas,
     jawaban: userAnswers,
     total_dijawab: Object.keys(userAnswers).length,
-    total_soal: questionsData.length
+    total_soal: totalSoal,
+    jumlah_benar: jumlahBenar,
+    jumlah_salah: jumlahSalah,
+    jumlah_kosong: jumlahKosong,
+    skor_akhir: skorAkhir,
+    breakdown_cat: catBreakdown
   };
 
   if (WEBHOOK_URL && WEBHOOK_URL.trim() !== "") {
@@ -405,24 +507,94 @@ function submitJawaban() {
       body: JSON.stringify(payload)
     })
     .then(() => {
-      tampilkanLayarSelesai();
+      tampilkanLayarSelesai(detailHasil);
     })
     .catch(err => {
       console.error("Error Webhook:", err);
-      tampilkanLayarSelesai();
+      tampilkanLayarSelesai(detailHasil);
     });
   } else {
-    tampilkanLayarSelesai();
+    tampilkanLayarSelesai(detailHasil);
   }
 }
 
-function tampilkanLayarSelesai() {
-  document.getElementById("page-cbt").innerHTML = `
-    <div style="text-align:center; padding: 60px 20px; font-family: sans-serif;">
-      <h2 style="color: #2e7d32; margin-bottom: 10px;">✅ Jawaban Anda Berhasil Diterima!</h2>
-      <p style="color: #555;">Terima kasih telah mengikuti ujian [Kode: <strong>${currentKodeUjian}</strong>] dengan jujur dan tertib.</p>
-    </div>
-  `;
+// ==========================================================
+// 6. PANEL PENGUMUMAN SKOR AKHIR (DIFERENSIASI CBT vs CAT)
+// ==========================================================
+function tampilkanLayarSelesai(detail) {
+  let htmlContent = "";
+
+  if (detail.sistem === "CAT") {
+    // ----------------------------------------------------
+    // 📊 PANEL AKHIR SISTEM CAT (BREAKDOWN KATEGORI TWK/TIU/TKP)
+    // ----------------------------------------------------
+    let catRowsHTML = "";
+    for (const [kategori, skorKat] of Object.entries(detail.catBreakdown)) {
+      catRowsHTML += `
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; margin-bottom: 8px;">
+          <span style="font-weight: bold; color: #333; font-size: 15px;">Skor ${kategori}</span>
+          <span style="font-size: 18px; font-weight: bold; color: #1976d2;">${skorKat}</span>
+        </div>
+      `;
+    }
+
+    htmlContent = `
+      <div style="text-align:center; padding: 30px 15px; font-family: sans-serif; max-width: 520px; margin: 0 auto;">
+        <h2 style="color: #2e7d32; margin-bottom: 5px;">✅ Ujian CAT Selesai!</h2>
+        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Hasil Pengumuman Skor Resmi [Kode: <strong>${currentKodeUjian}</strong>]</p>
+        
+        <div style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 20px; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+          <h3 style="color: #4a3e56; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; font-size: 16px;">📊 Akumulasi Skor Per Kategori</h3>
+          
+          <!-- Breakdown TWK, TIU, TKP -->
+          <div style="margin-bottom: 20px;">
+            ${catRowsHTML}
+          </div>
+
+          <!-- Total Skor Gabungan -->
+          <div style="background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 10px; padding: 15px; text-align: center; margin-bottom: 20px;">
+            <span style="font-size: 12px; color: #2e7d32; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">Total Skor Akumulasi</span>
+            <div style="font-size: 42px; font-weight: bold; color: #1b5e20; margin-top: 2px;">${detail.skor}</div>
+          </div>
+
+          <!-- Rincian Jumlah Jawaban -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 13px; text-align: center; background: #fafafa; padding: 10px; border-radius: 8px;">
+            <div>✔️ Benar: <strong style="color: #2e7d32;">${detail.benar}</strong></div>
+            <div>❌ Salah: <strong style="color: #c62828;">${detail.salah}</strong></div>
+            <div>⚪ Kosong: <strong style="color: #f57c00;">${detail.kosong}</strong></div>
+          </div>
+        </div>
+      </div>
+    `;
+  } else {
+    // ----------------------------------------------------
+    // 📝 PANEL AKHIR SISTEM CBT (INFORMASI RINGKAS 1A/1B/1C)
+    // ----------------------------------------------------
+    htmlContent = `
+      <div style="text-align:center; padding: 30px 15px; font-family: sans-serif; max-width: 500px; margin: 0 auto;">
+        <h2 style="color: #2e7d32; margin-bottom: 5px;">✅ Ujian CBT Selesai!</h2>
+        <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Terima kasih telah menyelesaikan ujian [Kode: <strong>${currentKodeUjian}</strong>]</p>
+        
+        <div style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 20px; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+          <h3 style="color: #4a3e56; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; font-size: 16px;">📊 Hasil Ujian Anda</h3>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 15px; margin-bottom: 20px;">
+            <div>✔️ Benar: <strong style="color: #2e7d32;">${detail.benar}</strong></div>
+            <div>❌ Salah: <strong style="color: #c62828;">${detail.salah}</strong></div>
+            <div>⚪ Kosong: <strong style="color: #f57c00;">${detail.kosong}</strong></div>
+            <div>📝 Total Soal: <strong>${detail.totalSoal}</strong></div>
+          </div>
+
+          <div style="background: #f1f8e9; border: 1px solid #c8e6c9; border-radius: 10px; padding: 15px; text-align: center;">
+            <span style="font-size: 12px; color: #33691e; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;">Skor Akhir CBT</span>
+            <div style="font-size: 40px; font-weight: bold; color: #2e7d32; margin-top: 5px;">${detail.skor}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  document.getElementById("page-cbt").innerHTML = htmlContent;
 }
 
 function toggleNavigator() {
