@@ -3,8 +3,8 @@
 // ==========================================================
 
 // Variable Global
-let WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwl_bLhSAUz30B-10g3xvP9cXPAuooTGa9cMtQPJAGyKYY9UMyux_OtvO9EH40PRds/exec"; 
-let questionsDataConfig = {}; // [BARU] Menyimpan seluruh konfigurasi JSON
+let WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxXnrKu2pN2nURbgRpmjH6iidZEWHeJ1dN6oa2ktoQu-aFeWLw64siMlEb_l022oAc/exec"; 
+let questionsDataConfig = {}; // Menyimpan seluruh konfigurasi JSON
 let questionsData = [];
 let validToken = "";
 let timerDurationMinutes = 60;
@@ -61,7 +61,7 @@ document.getElementById("form-identitas").addEventListener("submit", function(e)
       }
 
       // Simpan data konfigurasi soal & data global
-      questionsDataConfig = data; // [BARU] Menyimpan metadata CBT/CAT
+      questionsDataConfig = data; // Menyimpan metadata CBT/CAT
       currentKodeUjian = kodeInput;
       validToken = data.token || "";
       timerDurationMinutes = data.timer_menit || 60;
@@ -481,7 +481,7 @@ function submitJawaban() {
     </div>
   `;
 
-  // Susun Payload Webhook LENGKAP
+  // Susun Payload Webhook Sesuai Parameter backend Code.gs
   const payload = {
     kode_soal: currentKodeUjian,
     sistem_ujian: sistem,
@@ -490,6 +490,20 @@ function submitJawaban() {
     jawaban: userAnswers,
     total_dijawab: Object.keys(userAnswers).length,
     total_soal: totalSoal,
+    
+    // Penyesuaian nama kunci untuk Code.gs backend
+    skor_total: skorAkhir,
+    skor: skorAkhir,
+    benar: jumlahBenar,
+    salah: jumlahSalah,
+    kosong: jumlahKosong,
+    
+    // Ekstraksi nilai CAT spesifik agar terbaca otomatis di Sheet
+    cat_twk: catBreakdown["TWK"] !== undefined ? catBreakdown["TWK"] : "-",
+    cat_tiu: catBreakdown["TIU"] !== undefined ? catBreakdown["TIU"] : "-",
+    cat_tkp: catBreakdown["TKP"] !== undefined ? catBreakdown["TKP"] : "-",
+    
+    // Menjaga kompatibilitas kunci lama
     jumlah_benar: jumlahBenar,
     jumlah_salah: jumlahSalah,
     jumlah_kosong: jumlahKosong,
