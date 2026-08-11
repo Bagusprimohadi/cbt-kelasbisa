@@ -8,7 +8,7 @@ let questionsData = [];
 let validToken = "";
 let timerDurationMinutes = 60;
 let currentIndex = 0;
-let userAnswers = {};
+let userAnswers = {}; // Format: { 1: "A", 2: "C", ... }
 let userIdentitas = {};
 let timerInterval = null;
 let currentKodeUjian = "";
@@ -43,7 +43,7 @@ document.getElementById("form-identitas").addEventListener("submit", function(e)
   btnSubmit.disabled = true;
   btnSubmit.textContent = "Memeriksa Kode Ujian...";
 
-  // Panggil File JSON Sesuai Kode Ujian (contoh: FISIKA01-Soal.json)
+  // Panggil File JSON Sesuai Kode Ujian (contoh: KEB004-Soal.json)
   const targetJsonFile = `${kodeInput}-Soal.json`;
 
   fetch(targetJsonFile)
@@ -77,17 +77,24 @@ document.getElementById("form-identitas").addEventListener("submit", function(e)
 
       // Set Informasi Branding & Ujian di Page 2 (Information Page)
       if (data.logo) {
-        document.getElementById("logo-lembaga-info").src = data.logo;
-        document.getElementById("logo-lembaga-cbt").src = data.logo;
+        const logoInfo = document.getElementById("logo-lembaga-info");
+        const logoCbt = document.getElementById("logo-lembaga-cbt");
+        if (logoInfo) logoInfo.src = data.logo;
+        if (logoCbt) logoCbt.src = data.logo;
       }
       if (data.lembaga) {
-        document.getElementById("disp-lembaga-info").textContent = data.lembaga;
-        document.getElementById("disp-lembaga-cbt").textContent = data.lembaga;
+        const dispLembagaInfo = document.getElementById("disp-lembaga-info");
+        const dispLembagaCbt = document.getElementById("disp-lembaga-cbt");
+        if (dispLembagaInfo) dispLembagaInfo.textContent = data.lembaga;
+        if (dispLembagaCbt) dispLembagaCbt.textContent = data.lembaga;
       }
       if (data.sub_lembaga) {
-        document.getElementById("disp-sub-lembaga").textContent = data.sub_lembaga;
-        document.getElementById("disp-sub-lembaga-info").textContent = data.sub_lembaga;
-        document.getElementById("disp-sub-lembaga-cbt").textContent = data.sub_lembaga;
+        const dispSub = document.getElementById("disp-sub-lembaga");
+        const dispSubInfo = document.getElementById("disp-sub-lembaga-info");
+        const dispSubCbt = document.getElementById("disp-sub-lembaga-cbt");
+        if (dispSub) dispSub.textContent = data.sub_lembaga;
+        if (dispSubInfo) dispSubInfo.textContent = data.sub_lembaga;
+        if (dispSubCbt) dispSubCbt.textContent = data.sub_lembaga;
       }
 
       document.getElementById("disp-kode-ujian").textContent = currentKodeUjian;
@@ -172,7 +179,9 @@ function startTimer(totalSeconds) {
     const mm = String(minutes).padStart(2, '0');
     const ss = String(seconds).padStart(2, '0');
 
-    timerDisplay.textContent = `${hh}:${mm}:${ss}`;
+    if (timerDisplay) {
+      timerDisplay.textContent = `${hh}:${mm}:${ss}`;
+    }
 
     if (--timerSeconds < 0) {
       clearInterval(timerInterval);
@@ -232,13 +241,17 @@ function loadQuestion(index) {
   const q = questionsData[index];
   if (!q) return;
 
-  document.getElementById("q-num").textContent = index + 1;
+  const displayNo = index + 1; // Nomor sekuensial konsisten (1..N)
+
+  document.getElementById("q-num").textContent = displayNo;
   document.getElementById("q-text").innerHTML = q.Soal;
 
-  // Render Gambar Soal
+  // Render Gambar Soal (Sanitasi String)
   const imgContainer = document.getElementById("q-image-container");
-  if (q.Gambar && String(q.Gambar).trim() !== "") {
-    imgContainer.innerHTML = `<img src="${q.Gambar}" class="img-soal" alt="Gambar Soal">`;
+  const gambarVal = (q.Gambar && typeof q.Gambar === "string") ? q.Gambar.trim() : "";
+  
+  if (gambarVal !== "" && gambarVal !== "-" && gambarVal.toLowerCase() !== "none" && gambarVal.toLowerCase() !== "null") {
+    imgContainer.innerHTML = `<img src="${gambarVal}" class="img-soal" alt="Gambar Soal">`;
   } else {
     imgContainer.innerHTML = "";
   }
@@ -250,20 +263,19 @@ function loadQuestion(index) {
   const optionsKeys = ["A", "B", "C", "D", "E"];
   optionsKeys.forEach(key => {
     if (q[key] && String(q[key]).trim() !== "") {
-      const isSelected = userAnswers[q.No] === key;
+      const isSelected = userAnswers[displayNo] === key;
       
-      // Menggunakan tag <div> agar aman di browser HP
       const optionRow = document.createElement("div"); 
       optionRow.className = `option-row ${isSelected ? 'selected' : ''}`;
       
       optionRow.innerHTML = `
-        <input type="radio" name="option_${q.No}" value="${key}" ${isSelected ? 'checked' : ''} style="pointer-events: none;">
+        <input type="radio" name="option_${displayNo}" value="${key}" ${isSelected ? 'checked' : ''} style="pointer-events: none;">
         <span class="opt-key">${key}.</span>
         <span class="opt-val">${q[key]}</span>
       `;
 
       optionRow.onclick = function() {
-        pilihJawaban(q.No, key);
+        pilihJawaban(displayNo, key);
       };
 
       optionsBox.appendChild(optionRow);
@@ -278,15 +290,17 @@ function loadQuestion(index) {
     ]).catch(err => console.error("MathJax error:", err));
   }
 
-  // Update Status Navigasi
-  document.getElementById("btn-prev").disabled = (index === 0);
-  document.getElementById("btn-next").disabled = (index === questionsData.length - 1);
+  // Update Status Tombol Navigasi
+  const btnPrev = document.getElementById("btn-prev");
+  const btnNext = document.getElementById("btn-next");
+  if (btnPrev) btnPrev.disabled = (index === 0);
+  if (btnNext) btnNext.disabled = (index === questionsData.length - 1);
 
   updateGridStatus();
 }
 
-function pilihJawaban(qNo, key) {
-  userAnswers[qNo] = key;
+function pilihJawaban(displayNo, key) {
+  userAnswers[displayNo] = key;
   loadQuestion(currentIndex);
 }
 
@@ -300,6 +314,7 @@ function navigasi(direction) {
 
 function renderNumberGrid() {
   const grid = document.getElementById("number-grid");
+  if (!grid) return;
   grid.innerHTML = "";
 
   questionsData.forEach((q, idx) => {
@@ -322,9 +337,10 @@ function updateGridStatus() {
     const circle = document.getElementById(`circle-num-${idx}`);
     if (!circle) return;
 
+    const displayNo = idx + 1;
     circle.className = "circle-btn";
 
-    if (userAnswers[q.No]) {
+    if (userAnswers[displayNo]) {
       circle.classList.add("answered");
     } else {
       circle.classList.add("unanswered");
@@ -411,5 +427,7 @@ function tampilkanLayarSelesai() {
 
 function toggleNavigator() {
   const sidebar = document.querySelector(".sidebar-nav");
-  sidebar.classList.toggle("hidden");
+  if (sidebar) {
+    sidebar.classList.toggle("hidden");
+  }
 }
